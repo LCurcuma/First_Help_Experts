@@ -10,7 +10,7 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
     
-    <title>Login - Førstehjælpeksperten</title>
+    <title>Login - Førstehjælpseksperten</title>
     
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -40,20 +40,36 @@ require "settings/init.php";
 
 <body class="login-bg-gradient">
 
-    <div class="vh-100 overflow-hidden text-center">
-        <!-- Cirkler i baggrunden -->
-        <img src="img/ui/circle1.svg" class="circle c1" alt="Baggrunds element">
-        <img src="img/ui/circle1.svg" class="circle c2" alt="Baggrunds element">
-        <img src="img/ui/circle1.svg" class="circle c3" alt="Baggrunds element">
-        <img src="img/ui/circle1.svg" class="circle c4" alt="Baggrunds element">
-        <img src="img/ui/circle1.svg" class="circle c5" alt="Baggrunds element">
+<div class="vh-100 overflow-hidden position-relative text-center">
+
+    <!-- Baggrundscirkler -->
+    <img src="img/ui/circle1.svg" class="login-circle login-c1" alt="Baggrunds element">
+    <img src="img/ui/circle1.svg" class="login-circle login-c2" alt="Baggrunds element">
+    <img src="img/ui/circle1.svg" class="login-circle login-c3" alt="Baggrunds element">
+    <img src="img/ui/circle1.svg" class="login-circle login-c4" alt="Baggrunds element">
+    <img src="img/ui/circle1.svg" class="login-circle login-c5" alt="Baggrunds element">
+
+    <!-- Container -->
+    <div class="login-container h-100 d-flex flex-column align-items-center justify-content-between">
+
+        <!-- Logo -->
+        <img src="img/logo/logohvid.png" class="login-logo" alt="Førstehjælpseksperten logo i hvid version">
+
+        <!-- Tekst -->
+        <p class="login-text text-white fw-bold fs-4">Red liv - i enhver situation</p>
+
+        <!-- Knapper -->
+        <div class="w-100 d-flex flex-column align-items-center gap-4 mb-5">
+            <button class="btn login-btn">Log ind</button>
+            <button class="btn akut-btn">AKUT ADGANG</button>
+        </div>
+
     </div>
 
-    <!-- Wave -->
-    <div data-aos="fade-up">
-        <img src="img/ui/wave.svg" class="wave" alt="Bølge i bunden af skærmen">
-    </div>
-    
+</div>
+
+<!-- Wave -->
+<img src="img/ui/wave.svg" class="login-wave" alt="Wave UI element i bunden af skærmen">
 
 
 <!------------ Bootstrap library ------------>
