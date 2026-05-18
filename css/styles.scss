@@ -203,12 +203,7 @@ body {
 }
 //-------------------------------------//
 
-.phone-container {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px 16px;
-  box-sizing: border-box;
-}
+
 
 //-------- (INDEX) LOGIN MODAL --------//
 .login-modal {
@@ -242,6 +237,12 @@ body {
 
 //---DE-3-ØVERSTE-KORT----//
 
+.phone-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 16px;
+  box-sizing: border-box;
+}
 
 .back-arrow i {
   font-size: 24px;
