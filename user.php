@@ -41,7 +41,7 @@ require "settings/init.php";
 
     <body>
 
-    <div class="top-container">
+    <div class="top_container">
     <a href="forside.php" class="arrow_back">
         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
     </a>
