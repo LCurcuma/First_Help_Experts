@@ -95,11 +95,7 @@ require "settings/init.php";
                     <label class="form-label fs-4">Adgangskode</label>
                     <input type="password" class="form-control border-0 bg-light py-2" placeholder="Indtast din adgangskode"></div>
 
-                <a href="#"
-                    class="small text-decoration-none"
-                    onclick="error404()">
-                    Glemt adgangskode?
-                </a>
+                <a href="#" class="small text-decoration-none" onclick="error404()">Glemt adgangskode?</a>
 
                 <!-- Login -->
                 <a href="forside.php" class="btn modal-login-btn w-100 mt-4">Login</a>
