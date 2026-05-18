@@ -40,10 +40,11 @@ require "settings/init.php";
 
     <body>
     <!--MOBILE VERSION-->
-    <div class="d-flex d-lg-none">
+    <div class="d-flex flex-column d-lg-none">
         <a href="user.php" class="arrow_back_to_user">
             <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
         </a>
+        <?php include "components/money_container_shop.php"; ?>
     </div>
 
     <!------------ Bootstrap library ------------>
