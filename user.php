@@ -52,6 +52,30 @@ require "settings/init.php";
     <?php include "components/avatar.php" ?>
     <!--the score container-->
     <?php include "components/score_container_user.php" ?>
+    <!--container med links-->
+    <section class="links_section">
+        <a href="" class="link_tile" style="background: #CDB4D1;">
+            <h2 class="h2_bold">Check ind</h2>
+            <div class="plus_money">
+                <h2>+5</h2>
+                <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
+            </div>
+        </a>
+        <a href="shop.php" class="link_tile" style="background: #88DB95;">
+            <div>
+                <h2 class="h2_bold">Point shop</h2>
+                <p>350 tilgængelige rewards</p>
+            </div>
+                <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
+        </a>
+        <a href="" class="link_tile" style="background: #F5A623;">
+            <div>
+                <h2 class="h2_bold">Din førstehjælpsbevis</h2>
+                <p>Gyldig til <span>12.04.2026</span></p>
+            </div>
+            <img src="img/icons/3d-icons/checkmark2.png" class="money_image_big" alt="Check">
+        </a>
+    </section>
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

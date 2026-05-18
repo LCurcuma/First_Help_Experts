@@ -220,3 +220,47 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70vw;
 }
+
+//--------------- LINKS SECTION ---------------//
+.links_section{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin: 25px;
+}
+
+.link_tile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
+  border-radius: 20px;
+}
+
+.h2_bold{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.plus_money{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.money_plus_image{
+  height: 35px;
+  margin-top: -15px;
+}
+
+.money_image_big{
+  height: 80px;
+}
