@@ -64,6 +64,7 @@ body {
   position: absolute;
   opacity: 0.25;
   z-index: -1;
+  filter: blur(5px);
 }
 
 //Placere hvert elementerne det rigtige sted
@@ -97,6 +98,37 @@ body {
   left: 30px;;
 }
 //-------------------------------------//
+
+
+//----- (INDEX) CIRCLE ANIMATION ------//
+.login-circle {
+  animation: floatCircle 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+//Forskellig hastighed + delay
+.login-c1 { animation-duration: 14s; }
+.login-c2 { animation-duration: 16s; }
+.login-c3 { animation-duration: 11s; }
+.login-c4 { animation-duration: 18s; }
+.login-c5 { animation-duration: 13s; }
+
+//Animation
+@keyframes floatCircle {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(15px, -20px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+//--------------------------------------//
 
 
 //--------- (INDEX) CONTAINER ---------//
@@ -198,7 +230,6 @@ body {
   margin: auto;
 }
 //-------------------------------------//
-
 
 
 
