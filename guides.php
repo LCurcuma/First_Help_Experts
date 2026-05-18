@@ -49,8 +49,8 @@ require "settings/init.php";
             </div>
         </div>
 
-<div class="row g-0 mb-4">
-    <div class="col-4 px-1">
+        <div class="row g-0 mb-4">
+            <div class="col-4 px-1">
         <div class="data-card bg-data-salmon" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="DE 4 H'ER" data-text="🚨 Skab sikkerhed&#10;Sørg for, at ulykken ikke bliver værre – og pas på dig selv først.&#10;&#10;👀 Vurder personen&#10;Tjek om personen er ved bevidsthed og reagerer.&#10;&#10;📞 Tilkald hjælp&#10;Ring 1-1-2 hvis ingen andre allerede har gjort det.&#10;&#10;🩹 Giv førstehjælp&#10;Hjælp personen efter situationen, indtil hjælpen kommer.">
             <div class="card-image-wrapper">
                 <img src="img/icons/3d-icons/hlr.png" alt="De 4 H'er">
