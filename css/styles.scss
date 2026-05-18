@@ -45,77 +45,240 @@ body {
   margin: 0;
 }
 
-
-/* --- Guides-side --- */
-
-/* --- 3-øverst-kort --- */
-
-.phone-container{
-  width: 100%;
-  max-width: 375px;
-  padding: 24px 1px;
-  box-sizing: border-box;
+//-------- (INDEX) BG GRADIENT --------//
+//Gradient lavet med: https://cssgradient.io
+.login-bg-gradient {
+  background: #70E585;
+  background: linear-gradient(
+                  180deg,
+                  rgba(112, 229, 133, 1) 0%,
+                  rgba(72, 145, 85, 1) 100%
+  );
 }
 
-
-.back-arrow i{
- font-size: 24px;
-  color: #000000;
-  font-weight: bold;
-  display: inline-block;
+//------- (INDEX) CIRCLE I BG -------//
+//Tilføjer cirkler i baggrunden
+.circle {
+  position: absolute;
+  opacity: 0.40;
 }
 
+.c1 {
+  width: 450px;
+  top: -110px;
+  left: -120px;
+}
 
+.c2 {
+  width: 300px;
+  top: 350px;
+  right: -60px;
+}
 
-.data-card{
+.c3 {
+  width: 150px;
+  top: 550px;
+  right: 100px;
+}
+
+.c4 {
+  width: 350px;
+  top: 850px;
+  left: -100px;
+}
+
+.c5 {
+  width: 180px;
+  top: 750px;
+  left: 30px;;
+}
+
+//------- (INDEX) WAVE BOTTOM -------//
+.wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: 0;
+
+}
+
+//--------------- USER.PHP STYLING ---------------//
+//--------------- TOP CONTAINER ---------------//
+.top_container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 175px;
-  border-radius: 24px;
-  cursor: pointer;
-  box-sizing: border-box;
-  padding: 18px 4px 16px 4px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+
+  padding: 20px 25px;
 }
 
-.data-card:active{
-  transform: scale(0.94);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.04);
+//--------------- ARROW ---------------//
+.arrow_back{
+  padding-top: 13px;
+  padding-left: 8px;
 }
 
+.fa-chevron-left{
+  font-size: 25px;
+}
 
-.card-image-wrapper{
-  flex-grow: 1;
+//--------------- POINTS CONTAINER ---------------//
+.money_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  padding: 10px 10px 5px 13px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.money_count{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.money_image{
+  height: 35px;
+  margin-top: -15px;
+  margin-bottom: -10px;
+}
+
+//--------------- AVATAR ---------------//
+.avatar_container{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  height: 100%;
 }
 
-.card-image-wrapper img{
-  height: 75px;
-  width: auto;
-  object-fit: contain;
+.avatar{
+  position: relative;
+  left: 20px;
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #88DE98;
 }
 
-.card-text-wrapper{
-  width: 100%;
+.settings_button{
+  position: relative;
+  top: 65px;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: #88DE98;
+  font-size: 20px;
+}
+
+.username{
+  font-weight: bold;
+  margin-top: 15px;
   text-align: center;
 }
 
-.card-text-wrapper span{
-  color: #FFFBF5;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  display: block;
+//--------------- SCORE CONTAINER ---------------//
+.score_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 35px 20px;
+  margin: 0 25px;
 }
 
-.bg-data-salmon { background-color: #FF8C8C !important; }
-.bg-data-violet { background-color: #C59CE6 !important; }
-.bg-data-blue   { background-color: #7A9FE6 !important; }
+.score{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-/* --- 3-øverst-kort --- */
+.score_text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.progress{
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 70vw;
+  //Når du tager den til desktop version, husk at tilføje @include(breakpoint) med width, som er ikke vw, men % eller px
+}
+
+//--------------- LINKS SECTION ---------------//
+.links_section{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin: 25px;
+}
+
+.link_tile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
+  border-radius: 20px;
+}
+
+.h2_bold{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.plus_money{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.money_plus_image{
+  height: 35px;
+  margin-top: -15px;
+}
+
+.money_image_big{
+  height: 80px;
+}
+
+//--------------- LOG UD KNAP ---------------//
+.logout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #FF4953;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  padding: 15px 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 100px;
+  font-size: 24px;
+}

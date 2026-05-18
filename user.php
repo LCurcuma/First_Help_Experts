@@ -78,6 +78,8 @@ require "settings/init.php";
         </a>
     </section>
 
+    <a href="index.php" class="logout">Log ud</a>
+
     <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
