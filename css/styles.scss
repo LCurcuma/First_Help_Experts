@@ -265,3 +265,20 @@ body {
 .money_image_big{
   height: 80px;
 }
+
+//--------------- LOG UD KNAP ---------------//
+.logout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #FF4953;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  padding: 15px 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 100px;
+  font-size: 24px;
+}
