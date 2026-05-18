@@ -36,15 +36,74 @@ require "settings/init.php";
     <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<body>
+<body class="bodyquiz">
 
-<h1>Quizside</h1>
+<!------------ TILBAGEKNAP ------------>
+<a href="forside.php" class="arrow_back">
+    <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
+</a>
 
+<!------------ KATEGORI CARDS ------------>
+<div class="px-4">
+    <div class="row g-4">
+        <div class="col-6">
+            <div class="emne-card">
+                <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
+                <p>HLR</p>
+            </div>
+        </div>
 
+        <div class="col-6">
+            <div class="emne-card">
+                <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="emne-card-img">
+                <p>HLR med hjertestarter</p>
+            </div>
+        </div>
 
+        <div class="col-6">
+            <div class="emne-card">
+                <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="emne-card-img">
+                <p>Drukning</p>
+            </div>
+        </div>
 
+        <div class="col-6">
+            <div class="emne-card">
+                <img src="img/icons/3d-icons/armsling.png" alt="Person der laver HLR" class="emne-card-img">
+                <p>Forbinding</p>
+            </div>
+        </div>
 
+        <div class="col-6">
+            <div class="emne-card">
+                <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="emne-card-img">
+                <p>Brandsår</p>
+            </div>
+        </div>
 
+        <div class="col-6">
+            <div class="emne-card">
+                <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="emne-card-img">
+                <p>Bilulykke</p>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="emne-card">
+                <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
+                <p>Kvælning</p>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="emne-card">
+                <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
+                <p>Stroke</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------ KATEGORI CARDS ------------>
 
 
 
