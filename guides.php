@@ -38,7 +38,54 @@ require "settings/init.php";
 
 <body>
 
+<div class="d-flex justify-content-center">
+    <div class="phone-container">
 
+        <div class="row mb-3">
+            <div class="col-12">
+                <a href="index.php" class="back-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 19L8 12L15 5" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+<div class="row g-0 mb-4">
+    <div class="col-4 px-1">
+        <div class="data-card bg-data-salmon" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="DE 4 H'ER"  data-bs-text="....">
+            <div class="card-image-wrapper">
+                <img src="img/icons/3d-icons/hlr.png" alt="De 4 H'er">
+            </div>
+            <div class="card-text-wrapper">
+                <span>DE 4 H'ER</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4 px-1">
+        <div class="data-card bg-data-violet" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="ABC" data-text="Her kan du skrive info om ABC metoden...">
+            <div class="card-image-wrapper">
+                <img src="img/icons/3d-icons/oxygen mask.png" alt="ABC">
+            </div>
+            <div class="card-text-wrapper">
+                <span>ABC</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4 px-1">
+        <div class="data-card bg-data-blue" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="ALARM" data-text="Her kan du skrive info om Alarm 112...">
+            <div class="card-image-wrapper">
+                <img src="img/icons/3d-icons/112.png" alt="Alarm">
+            </div>
+            <div class="card-text-wrapper">
+                <span>ALARM</span>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
