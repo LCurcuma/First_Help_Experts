@@ -51,7 +51,7 @@ require "settings/init.php";
 
 <div class="row g-0 mb-4">
     <div class="col-4 px-1">
-        <div class="data-card bg-data-salmon" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="DE 4 H'ER"  data-bs-text="....">
+        <div class="data-card bg-data-salmon" data-bs-toggle="modal" data-bs-target="#infoModal" data-bs-text="....">
             <div class="card-image-wrapper">
                 <img src="img/icons/3d-icons/hlr.png" alt="De 4 H'er">
             </div>
@@ -62,7 +62,7 @@ require "settings/init.php";
     </div>
 
     <div class="col-4 px-1">
-        <div class="data-card bg-data-violet" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="ABC" data-text="Her kan du skrive info om ABC metoden...">
+        <div class="data-card bg-data-violet" data-bs-toggle="modal" data-bs-target="#infoModal" data-bs-text="Her kan du skrive info om ABC metoden...">
             <div class="card-image-wrapper">
                 <img src="img/icons/3d-icons/oxygen mask.png" alt="ABC">
             </div>
@@ -73,20 +73,56 @@ require "settings/init.php";
     </div>
 
     <div class="col-4 px-1">
-        <div class="data-card bg-data-blue" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="ALARM" data-text="Her kan du skrive info om Alarm 112...">
+        <div class="data-card bg-data-blue" data-bs-toggle="modal" data-bs-target="#infoModal" data-bs-text="Her kan du skrive info om Alarm 112...">
             <div class="card-image-wrapper">
                 <img src="img/icons/3d-icons/112.png" alt="Alarm">
             </div>
             <div class="card-text-wrapper">
-                <span>1-1-2</span>
+                <span>ALARM</span>
             </div>
         </div>
     </div>
 
 </div>
 
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog px-3 custom-modal-position">
+                <div class="modal-content custom-modal">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title" id="infoModalLabel">Kort Titel</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Luk"></button>
+                    </div>
+                    <div class="modal-body pt-3">
+                        <p id="modalBodyText" style="white-space: pre-line;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            const infoModal = document.getElementById('infoModal');
+            if (infoModal) {
+                infoModal.addEventListener('show.bs.modal', function (event) {
+                    // Det specifikke kort der lige er blevet klikket på
+                    const card = event.relatedTarget;
+
+                    // Hent data-title="..." og data-text="..." fra kortet
+                    const title = card.getAttribute('data-title');
+                    const text = card.getAttribute('data-text');
+
+                    // Find elementerne inde i selve popup-boksen
+                    const modalTitle = infoModal.querySelector('.modal-title');
+                    const modalBodyText = document.getElementById('modalBodyText');
+
+                    // Indsæt den korrekte tekst og overskrift
+                    modalTitle.textContent = title;
+                    modalBodyText.textContent = text;
+                });
+            }
+        </script>
 
 </body>
 </html>

@@ -311,6 +311,40 @@ body {
 .bg-data-violet { background-color: #C59CE6; }
 .bg-data-blue   { background-color: #7A9FE6; }
 
+//---POP-UP-GUIDES---//
+
+.custom-modal {
+  background-color: #ffffff;
+  border-radius: 32px;
+  border: none !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+}
+
+.custom-modal .modal-title {
+  font-weight: 800;
+  color: #1e1e1e;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.custom-modal .modal-body p {
+  color: #444444;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.custom-modal-position {
+  margin-top: 200px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-close:focus {
+  box-shadow: none !important;
+}
+
 //---DE-3-ØVERSTE-KORT----//
 
 
