@@ -45,8 +45,11 @@ require "settings/init.php";
     <a href="forside.php" class="arrow_back">
         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
     </a>
+        <!--the container with points-->
         <?php include "components/money_container.php" ?>
     </div>
+    <!--the avatar container-->
+    <?php include "components/avatar.php" ?>
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
