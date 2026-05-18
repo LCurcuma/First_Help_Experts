@@ -51,7 +51,7 @@ require "settings/init.php";
 
 <div class="row g-0 mb-4">
     <div class="col-4 px-1">
-        <div class="data-card bg-data-salmon" data-bs-toggle="modal" data-bs-target="#infoModal" data-bs-text="....">
+        <div class="data-card bg-data-salmon" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="DE 4 H'ER" data-text="🚨 Skab sikkerhed&#10;Sørg for, at ulykken ikke bliver værre – og pas på dig selv først.&#10;&#10;👀 Vurder personen&#10;Tjek om personen er ved bevidsthed og reagerer.&#10;&#10;📞 Tilkald hjælp&#10;Ring 1-1-2 hvis ingen andre allerede har gjort det.&#10;&#10;🩹 Giv førstehjælp&#10;Hjælp personen efter situationen, indtil hjælpen kommer.">
             <div class="card-image-wrapper">
                 <img src="img/icons/3d-icons/hlr.png" alt="De 4 H'er">
             </div>
@@ -62,7 +62,7 @@ require "settings/init.php";
     </div>
 
     <div class="col-4 px-1">
-        <div class="data-card bg-data-violet" data-bs-toggle="modal" data-bs-target="#infoModal" data-bs-text="Her kan du skrive info om ABC metoden...">
+        <div class="data-card bg-data-violet" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="ABC" data-text="👄 A – Airway&#10;Sørg for frie luftveje.&#10;&#10;💨 B – Breathing&#10;Tjek om personen trækker vejret normalt.&#10;&#10;❤️ C – Circulation&#10;Undersøg blodcirkulation og stop kraftige blødninger.">
             <div class="card-image-wrapper">
                 <img src="img/icons/3d-icons/oxygen mask.png" alt="ABC">
             </div>
@@ -73,7 +73,7 @@ require "settings/init.php";
     </div>
 
     <div class="col-4 px-1">
-        <div class="data-card bg-data-blue" data-bs-toggle="modal" data-bs-target="#infoModal" data-bs-text="Her kan du skrive info om Alarm 112...">
+        <div class="data-card bg-data-blue" data-bs-toggle="modal" data-bs-target="#infoModal" data-title="ALARM" data-text="📞 Når du ringer 1-1-2&#10;&#10;🔴 Hvad&#10;Fortæl kort hvad der er sket.&#10;&#10;👤 Hvem&#10;Fortæl hvem og hvor mange der er kommet til skade.&#10;&#10;📍 Hvor&#10;Oplys den præcise adresse eller placering.&#10;&#10;🩺 Hvordan&#10; Beskriv personens tilstand og skader.&#10;&#10;☎️ Bliv i røret og følg alarmcentralens vejledning."">
             <div class="card-image-wrapper">
                 <img src="img/icons/3d-icons/112.png" alt="Alarm">
             </div>
