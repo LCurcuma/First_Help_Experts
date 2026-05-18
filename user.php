@@ -35,13 +35,18 @@ require "settings/init.php";
         <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
 
-
+        <!--FontAwesome-->
+        <script src="https://kit.fontawesome.com/737b386bab.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
 
-    <h1>Forside</h1>
-
+    <div class="top-container">
+    <a href="forside.php" class="arrow_back">
+        <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
+    </a>
+        <?php include "components/money_container.php" ?>
+    </div>
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -50,7 +55,5 @@ require "settings/init.php";
     <script>
         AOS.init();
     </script>
-
-
     </body>
     </html>
