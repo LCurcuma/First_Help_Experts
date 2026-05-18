@@ -43,7 +43,7 @@ require "settings/init.php";
 
         <div class="row mb-3">
             <div class="col-12">
-                <a href="index.php" class="back-arrow">
+                <a href="forside.php" class="back-arrow">
                    <i class="bi bi-chevron-left"></i>
                 </a>
             </div>
