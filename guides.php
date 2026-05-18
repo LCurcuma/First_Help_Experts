@@ -44,9 +44,7 @@ require "settings/init.php";
         <div class="row mb-3">
             <div class="col-12">
                 <a href="index.php" class="back-arrow">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 19L8 12L15 5" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                   <i class="bi bi-chevron-left"></i>
                 </a>
             </div>
         </div>
@@ -80,7 +78,7 @@ require "settings/init.php";
                 <img src="img/icons/3d-icons/112.png" alt="Alarm">
             </div>
             <div class="card-text-wrapper">
-                <span>ALARM</span>
+                <span>1-1-2</span>
             </div>
         </div>
     </div>

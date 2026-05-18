@@ -45,6 +45,7 @@ body {
   margin: 0;
 }
 
+
 /* --- Guides-side --- */
 
 /* --- 3-øverst-kort --- */
@@ -57,10 +58,11 @@ body {
 }
 
 
-.back-arrow{
+.back-arrow i{
+ font-size: 24px;
+  color: #000000;
+  font-weight: bold;
   display: inline-block;
-  margin-left: -5px;
-  padding: 10px;
 }
 
 
