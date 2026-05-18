@@ -41,6 +41,7 @@ require "settings/init.php";
 
     <body>
 
+    <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
     <div class="top_container">
     <a href="forside.php" class="arrow_back">
         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
@@ -76,6 +77,10 @@ require "settings/init.php";
             <img src="img/icons/3d-icons/checkmark2.png" class="money_image_big" alt="Check">
         </a>
     </section>
+
+    <a href="index.php" class="logout">Log ud</a>
+
+    <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
