@@ -50,6 +50,8 @@ require "settings/init.php";
     </div>
     <!--the avatar container-->
     <?php include "components/avatar.php" ?>
+    <!--the score container-->
+    <?php include "components/score_container_user.php" ?>
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
