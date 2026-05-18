@@ -99,6 +99,17 @@ body {
   height: 100%;
 }
 
+.avatar{
+  position: relative;
+  left: 20px;
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #88DE98;
+}
+
 .settings_button{
   position: relative;
   top: 65px;
@@ -115,13 +126,8 @@ body {
   font-size: 20px;
 }
 
-.avatar{
-  position: relative;
-  left: 20px;
-  width: 175px;
-  height: 175px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: #88DE98;
+.username{
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
 }
