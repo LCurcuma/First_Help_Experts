@@ -99,6 +99,122 @@ require "settings/init.php";
             </div>
         </div>
 
+    <div class="row g-3">
+
+        <div class="col-6">
+            <a href="hlr-guide.php" class="text-decoration-none">
+                <div class="guide-card guide-card-green">
+                    <div class="guide-image-wrapper">
+                        <img src="img/icons/3d-icons/hlr.png" alt="HLR">
+                    </div>
+                    <div class="guide-text-wrapper">
+                        <span>HLR</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/defibrillator.png" alt="HLR med hjertestarter">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>HLR med hjertestarter</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/drowning.png" alt="Drukning">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>Drukning</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/armsling.png" alt="Blødninger">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>Blødninger</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/burn-hand.png" alt="Brandsår">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>Brandsår</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/ulykke.png" alt="Bilulykke">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>Bilulykke</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/placeholder.png" alt="Kvælning">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>Kvælning</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/placeholder.png" alt="Stroke">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>Stroke</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/placeholder.png" alt="Bevidstløshed">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>Bevidstløshed</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+                <div class="guide-image-wrapper">
+                    <img src="img/icons/3d-icons/placeholder.png" alt="Drukning">
+                </div>
+                <div class="guide-text-wrapper">
+                    <span>Konflikthåndtering</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

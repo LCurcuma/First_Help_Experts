@@ -301,14 +301,14 @@ body {
 
 //---DE-3-ØVERSTE-KORT----//
 
-.phone-container {
+.phone-container{
   width: 100%;
   max-width: 400px;
   padding: 20px 16px;
   box-sizing: border-box;
 }
 
-.back-arrow i {
+.back-arrow i{
   font-size: 24px;
   color: black;
   font-weight: bold;
@@ -317,13 +317,14 @@ body {
 }
 
 
-.data-card {
+.data-card{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 175px;
+  border: 3px solid #EAEAEA;
   border-radius: 35px;
   cursor: pointer;
   box-sizing: border-box;
@@ -333,13 +334,13 @@ body {
 }
 
 
-.data-card:active {
+.data-card:active{
   transform: scale(0.95);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 
-.card-image-wrapper {
+.card-image-wrapper{
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -349,20 +350,20 @@ body {
 }
 
 
-.card-image-wrapper img {
+.card-image-wrapper img{
   height: 72px;
   width: auto;
   object-fit: contain;
 }
 
 
-.card-text-wrapper {
+.card-text-wrapper{
   width: 100%;
   text-align: center;
 }
 
 
-.card-text-wrapper span {
+.card-text-wrapper span{
   color: #FFFBF5;
   font-size: 13px;
   font-weight: 800;
@@ -378,42 +379,103 @@ body {
 
 //---POP-UP-GUIDES---//
 
-.custom-modal {
-  background-color: #ffffff;
+.custom-modal{
+  background-color:$white;
   border-radius: 32px;
   border: none !important;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   padding: 12px;
 }
 
-.custom-modal .modal-title {
+.custom-modal .modal-title{
   font-weight: 800;
-  color: #1e1e1e;
+  color: $black;
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.custom-modal .modal-body p {
+.custom-modal .modal-body p{
   color: #444444;
   font-size: 14px;
   line-height: 1.6;
   white-space: pre-line;
 }
 
-.custom-modal-position {
+.custom-modal-position{
   margin-top: 200px !important;
   margin-left: auto;
   margin-right: auto;
 }
 
-.btn-close:focus {
+.btn-close:focus{
   box-shadow: none !important;
 }
 
 //---DE-3-ØVERSTE-KORT----//
 
+//---guide-kort---//
 
+.guide-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 145px;
+  background-color:$white ;
+  border: 1px solid #EAEAEA;
+  border-radius: 24px;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 16px 8px 14px 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07), 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.guide-card-green{
+  border: 2px solid #67D27A !important;
+}
+
+.guide-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.01), 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.guide-card:active{
+  transform: scale(0.95) translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.guide-image-wrapper{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.guide-image-wrapper img{
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.guide-text-wrapper{
+  width: 100%;
+  text-align: center;
+}
+
+.guide-text-wrapper span{
+  color: #121212 !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: block;
+}
+
+//---guide-kort---//
+
+/*--- GUIDS ---*/
 
 
 //--------------- USER.PHP STYLING ---------------//
