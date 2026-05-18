@@ -4,6 +4,14 @@
  */
 
 require "settings/init.php";
+
+//tage data fra json-fil
+$json = file_get_contents("data/test_data_shop.json");
+
+$data = json_decode($json, true);
+
+foreach ($data as $card) {
+}
 ?>
     <!DOCTYPE html>
     <html lang="da">
@@ -45,6 +53,22 @@ require "settings/init.php";
             <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
         </a>
         <?php include "components/money_container_shop.php"; ?>
+        <div class="cards_container">
+        <?php
+        //loop for at lave cards, som har data fra json fil
+        foreach($data as $card) {
+            //lave variables, som har forskellige data fra json-fil
+            $id = $card["id"];
+            $name = $card["name"];
+            $desc = $card["description"];
+            $points = $card["points"];
+            $img_src = $card["img_src"];
+            $alt = $card["alt"];
+            $color = $card['color'];
+            //includere card med DEN data
+            include "components/shop_card.php";
+        } ?>
+        </div>
     </div>
 
     <!------------ Bootstrap library ------------>
