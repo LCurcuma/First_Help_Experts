@@ -45,6 +45,63 @@ body {
   margin: 0;
 }
 
+//-------- (INDEX) BG GRADIENT --------//
+//Gradient lavet med: https://cssgradient.io
+.login-bg-gradient {
+  background: #70E585;
+  background: linear-gradient(
+                  180deg,
+                  rgba(112, 229, 133, 1) 0%,
+                  rgba(72, 145, 85, 1) 100%
+  );
+}
+
+//------- (INDEX) CIRCLE I BG -------//
+//Tilføjer cirkler i baggrunden
+.circle {
+  position: absolute;
+  opacity: 0.40;
+}
+
+.c1 {
+  width: 450px;
+  top: -110px;
+  left: -120px;
+}
+
+.c2 {
+  width: 300px;
+  top: 350px;
+  right: -60px;
+}
+
+.c3 {
+  width: 150px;
+  top: 550px;
+  right: 100px;
+}
+
+.c4 {
+  width: 350px;
+  top: 850px;
+  left: -100px;
+}
+
+.c5 {
+  width: 180px;
+  top: 750px;
+  left: 30px;;
+}
+
+//------- (INDEX) WAVE BOTTOM -------//
+.wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: 0;
+
+}
+
 //--------------- USER.PHP STYLING ---------------//
 //--------------- TOP CONTAINER ---------------//
 .top_container{

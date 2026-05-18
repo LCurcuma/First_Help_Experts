@@ -38,9 +38,23 @@ require "settings/init.php";
 
 </head>
 
-<body>
+<body class="login-bg-gradient">
 
-<h1>Login side</h1>
+    <div class="vh-100 overflow-hidden text-center">
+        <!-- Cirkler i baggrunden -->
+        <img src="img/ui/circle1.svg" class="circle c1" alt="Baggrunds element">
+        <img src="img/ui/circle1.svg" class="circle c2" alt="Baggrunds element">
+        <img src="img/ui/circle1.svg" class="circle c3" alt="Baggrunds element">
+        <img src="img/ui/circle1.svg" class="circle c4" alt="Baggrunds element">
+        <img src="img/ui/circle1.svg" class="circle c5" alt="Baggrunds element">
+    </div>
+
+    <!-- Wave -->
+    <div data-aos="fade-up">
+        <img src="img/ui/wave.svg" class="wave" alt="Bølge i bunden af skærmen">
+    </div>
+    
+
 
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
