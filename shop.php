@@ -39,8 +39,12 @@ require "settings/init.php";
     </head>
 
     <body>
-
-    <h1>Forside</h1>
+    <!--MOBILE VERSION-->
+    <div class="d-flex d-lg-none">
+        <a href="user.php" class="arrow_back_to_user">
+            <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
+        </a>
+    </div>
 
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
