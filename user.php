@@ -35,13 +35,50 @@ require "settings/init.php";
         <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
 
-
+        <!--FontAwesome-->
+        <script src="https://kit.fontawesome.com/737b386bab.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
 
-    <h1>Forside</h1>
+    <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
+    <div class="top_container">
+    <a href="forside.php" class="arrow_back">
+        <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
+    </a>
+        <!--the container with points-->
+        <?php include "components/money_container.php" ?>
+    </div>
+    <!--the avatar container-->
+    <?php include "components/avatar.php" ?>
+    <!--the score container-->
+    <?php include "components/score_container_user.php" ?>
+    <!--container med links-->
+    <section class="links_section">
+        <a href="" class="link_tile" style="background: #CDB4D1;">
+            <h2 class="h2_bold">Check ind</h2>
+            <div class="plus_money">
+                <h2>+5</h2>
+                <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
+            </div>
+        </a>
+        <a href="shop.php" class="link_tile" style="background: #88DB95;">
+            <div>
+                <h2 class="h2_bold">Point shop</h2>
+                <p>350 tilgængelige rewards</p>
+            </div>
+                <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
+        </a>
+        <a href="" class="link_tile" style="background: #F5A623;">
+            <div>
+                <h2 class="h2_bold">Din førstehjælpsbevis</h2>
+                <p>Gyldig til <span>12.04.2026</span></p>
+            </div>
+            <img src="img/icons/3d-icons/checkmark2.png" class="money_image_big" alt="Check">
+        </a>
+    </section>
 
+    <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -50,7 +87,5 @@ require "settings/init.php";
     <script>
         AOS.init();
     </script>
-
-
     </body>
     </html>
