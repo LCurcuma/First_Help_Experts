@@ -60,8 +60,13 @@ require "settings/init.php";
 
         <!-- Knapper -->
         <div class="w-100 d-flex flex-column align-items-center gap-4 mb-5">
-            <button class="btn login-btn">Log ind</button>
-            <button class="btn akut-btn">AKUT ADGANG</button>
+
+            <!-- Login -->
+            <button class="btn login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Log ind</button>
+
+            <!-- Akut -->
+            <a href="#" class="btn akut-btn d-flex align-items-center justify-content-center">AKUT ADGANG</a>
+
         </div>
 
     </div>
@@ -70,6 +75,48 @@ require "settings/init.php";
 
 <!-- Wave -->
 <img src="img/ui/wave.svg" class="login-wave" alt="Wave UI element i bunden af skærmen">
+
+<!-- Login modalL -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content border-0 rounded-5 p-3 login-modal">
+
+            <div class="modal-body">
+
+                <!-- Brugernavn -->
+                <div class="mb-3">
+                    <label class="form-label fs-4">Brugernavn</label>
+                    <input type="text" class="form-control border-0 bg-light py-2" placeholder="Indtast din brugernavn"></div>
+
+                <!-- Adgangskode -->
+                <div class="mb-1">
+                    <label class="form-label fs-4">Adgangskode</label>
+                    <input type="password" class="form-control border-0 bg-light py-2" placeholder="Indtast din adgangskode"></div>
+
+                <a href="#"
+                    class="small text-decoration-none"
+                    onclick="error404()">
+                    Glemt adgangskode?
+                </a>
+
+                <!-- Login -->
+                <a href="forside.php" class="btn modal-login-btn w-100 mt-4">Login</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function error404() {
+        alert("Funktion kommer snart");
+    }
+</script>
 
 
 <!------------ Bootstrap library ------------>

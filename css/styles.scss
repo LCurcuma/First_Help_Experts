@@ -171,7 +171,32 @@ body {
 //-------------------------------------//
 
 
+//-------- (INDEX) LOGIN MODAL --------//
+.login-modal {
+  background: #efeff4;
+}
 
+.modal-login-btn {
+  border-radius: 50px;
+  padding: 14px 0;
+  border: none;
+
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+
+  //Gradient lavet med: https://cssgradient.io
+  background: linear-gradient(180deg,rgba(84, 177, 100, 1) 0%, rgba(96, 167, 109, 1) 100%);
+}
+
+// Fast størrelse på modal
+#loginModal .modal-dialog {
+  width: 400px;
+  max-width: 400px;
+
+  margin: auto;
+}
+//-------------------------------------//
 
 
 
