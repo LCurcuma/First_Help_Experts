@@ -477,6 +477,180 @@ body {
 
 /*--- GUIDS ---*/
 
+/*--- Trin-for-trin-guide ---*/
+
+.back-arrow-container{
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: -8px;
+}
+
+.guide-container {
+  background-color: $white;
+  width: 100%;
+  max-width: 430px;
+  height: 100vh !important;
+  max-height: 932px;
+  margin: 0 auto !important;
+  padding: 30px 24px 20px 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.guide-container h2.HLR-h2{
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  color: $black;
+  margin-top: 0;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.steps-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.step-badge {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 4px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  color: $black;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.step-badge.active {
+  background-color: #5CD685;
+  color: white;
+  border-color: #5CD685;
+}
+
+.image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  min-width: 180px;
+}
+
+.guide-image{
+  max-width: 85%;
+  height: auto;
+  display: block;
+}
+
+
+.guide-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+#step-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: $black;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.3px;
+}
+
+#step-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: $black;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+
+.husk-box {
+  background-color: #f8d7d7;
+  border-radius: 16px;
+  padding: 14px;
+  color: $black;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.husk-box strong {
+  color: #FF4953;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.husk-box span{
+  color: $black;
+  font-size: 13.5px;
+  line-height: 1.4;
+  display: block;
+}
+
+
+.next-button {
+  background-color:$primary;
+  color: $white;
+  border: none;
+  border-radius: 14px;
+  padding: 18px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(92, 214, 133, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.next-button:active {
+  transform: scale(0.98);
+}
+
+
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.dot {
+  width: 32px;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  transition: background-color 0.2s ease, width 0.2s ease;
+}
+
+.dot.active {
+  background-color:$primary;
+}
+
+/*--- Trin-for-trin-guide ---*/
+
+
 
 //--------------- USER.PHP STYLING ---------------//
 //--------------- TOP CONTAINER ---------------//
