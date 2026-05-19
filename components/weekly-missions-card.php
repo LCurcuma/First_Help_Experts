@@ -22,7 +22,7 @@
         </div>
 
         <!-- Points -->
-        <div class="d-flex align-items-center gap-2 bg-white text-black rounded-5 px-2 py-1">
+        <div class="d-flex align-items-center gap-2 weekly-points-bg text-black rounded-5 px-2 py-1">
             <span class="fs-5 fw-semibold">102</span>
             <img src="img/icons/3d-icons/money.png" alt="Mønter, som viser hvor mange points du har." class="weekly-missions-coin">
         </div>
