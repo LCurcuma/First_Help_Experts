@@ -70,56 +70,58 @@ require "settings/init.php";
 <div class="px-4">
     <div class="row g-4">
         <div class="col-6">
-            <div class="emne-card text-center p-2">
-                <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
-                <p>HLR</p>
-            </div>
+            <a href="quizhlr.php" class="text-decoration-none text-reset">
+                <div class="emne-card text-center p-2">
+                    <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
+                    <p>HLR</p>
+                </div>
+            </a>
         </div>
 
         <div class="col-6">
-            <div class="emne-card text-center p-2">
+            <div class="emne-card text-center p-2" onclick="alert('Funktionen er på vej!')">
                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="emne-card-img">
                 <p class="text-kate">HLR med hjertestarter</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card text-center p-2">
+            <div class="emne-card text-center p-2" onclick="alert('Funktionen er på vej!')">
                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Drukning</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card text-center p-2">
+            <div class="emne-card text-center p-2" onclick="alert('Funktionen er på vej!')">
                 <img src="img/icons/3d-icons/armsling.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Forbinding</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card text-center p-2">
+            <div class="emne-card text-center p-2" onclick="alert('Funktionen er på vej!')">
                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Brandsår</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card text-center p-2">
+            <div class="emne-card text-center p-2 " onclick="alert('Funktionen er på vej!')">
                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Bilulykke</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card text-center p-2">
+            <div class="emne-card text-center p-2" onclick="alert('Funktionen er på vej!')">
                 <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Kvælning</p>
             </div>
         </div>
 
         <div class="col-6 mb-5">
-            <div class="emne-card text-center p-2">
+            <div class="emne-card text-center p-2" onclick="alert('Funktionen er på vej!')">
                 <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Stroke</p>
             </div>
