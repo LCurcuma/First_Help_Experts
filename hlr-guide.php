@@ -106,19 +106,19 @@ require "settings/init.php";
         {
             titel: "3. Start HLR",
             tekst: "Giv 30 brystkompressioner og 2 indblæsninger. Tryk hårdt og hurtigt midt på brystet.",
-            husk: "Tryk dybt (ca. 5-6 cm) og i en takt på 100-120 tryk i minuttet.",
+            husk: "skab fri luftvej og tryk 5-6 cm dybt.",
             billede: "img/icons/3d-icons/HLR-start.png"
         },
         {
             titel: "4. Brug hjertestarter",
-            tekst: "Tænd hjertestarteren og følg instruktionerne.",
+            tekst: "Bed nogen hente hjertestarteren, eller hent den selv, og følg vejledningen.",
             husk: "Følg de talte instruktioner fra maskinen nøje.",
             billede: "img/icons/3d-icons/CPR-defi.png"
         },
         {
             titel: "5. Fortsæt indtil hjælp kommer",
             tekst: "Bliv ved med HLR og brug hjertestarteren indtil ambulancen overtager.",
-            husk: "Skiftes gerne med en anden hvert andet minut, så I ikke bliver udmattede.",
+            husk: "Skift hjælper hver 2. minut, hvis muligt.",
             billede: "img/icons/3d-icons/ambulance.png"
         }
     ];
