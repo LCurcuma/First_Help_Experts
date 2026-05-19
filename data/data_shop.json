@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "ViaPlay",
+    "description": "1 måned",
+    "points": 300,
+    "img_src": "img/card_img/viaplay_1_month.png",
+    "alt": "ViaPlay 1 måned",
+    "color": "#383736"
+  },
+  {
+    "id": 2,
+    "name": "Momondo",
+    "description": "1 x hotelophold",
+    "points": 5000,
+    "img_src": "img/card_img/momondo_1_hotelophold.png",
+    "alt": "Momondo 1 x hotelophold",
+    "color": "#63576C"
+  },
+  {
+    "id": 3,
+    "name": "Mofibo",
+    "description": "1 måned",
+    "points": 300,
+    "img_src": "img/card_img/mofibo_1_month.png",
+    "alt": "Mofibo 1 måned",
+    "color": "#FF8560"
+  },
+  {
+    "id": 4,
+    "name": "ViaPlay",
+    "description": "3 måneder",
+    "points": 1000,
+    "img_src": "img/card_img/viaplay_3_months.png",
+    "alt": "ViaPlay 3 måneder",
+    "color": "#383736"
+  },
+  {
+    "id": 5,
+    "name": "Elgiganten",
+    "description": "1 x gavekort på 500kr.",
+    "points": 6000,
+    "img_src": "img/card_img/elgigantent_gavekort_500.png",
+    "alt": "Elgigantent 1 x gavekort på 500kr.",
+    "color": "#5C6094"
+  },
+  {
+    "id": 6,
+    "name": "Mofibo",
+    "description": "4 måneder",
+    "points": 800,
+    "img_src": "img/card_img/mofibo_4_months.png",
+    "alt": "Mofibo 4 måneder",
+    "color": "#FF8560"
+  },
+  {
+    "id":7,
+    "name": "Momondo",
+    "description": "1 x hotelophold",
+    "points": 5000,
+    "img_src": "img/card_img/momondo_1_hotelophold.png",
+    "alt": "Momondo 1 x hotelophold",
+    "color": "#63576C"
+  },
+  {
+    "id":8,
+    "name": "Lalandia",
+    "description": "1 x ophold for 4",
+    "points": 8000,
+    "img_src": "img/card_img/Lalandia_1_ophold_for_4.png",
+    "alt": "Lalandia 1 x ophold for 4",
+    "color": "#88B9DB"
+  }
+]

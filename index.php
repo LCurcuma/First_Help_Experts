@@ -50,30 +50,90 @@ require "settings/init.php";
     <img src="img/ui/circle1.svg" class="login-circle login-c5" alt="Baggrunds element">
 
     <!-- Container -->
-    <div class="login-container h-100 d-flex flex-column align-items-center justify-content-between">
+    <div class="login-container h-100">
 
-        <!-- Logo -->
-        <img src="img/logo/logohvid.png" class="login-logo" alt="Førstehjælpseksperten logo i hvid version">
+        <!-- MOBIL -->
+        <div class="d-flex d-xl-none flex-column align-items-center justify-content-between h-100 text-center">
 
-        <!-- Tekst -->
-        <p class="login-text text-white fw-bold fs-4">Red liv - i enhver situation</p>
+            <div data-aos="fade-up">
 
-        <!-- Knapper -->
-        <div class="w-100 d-flex flex-column align-items-center gap-4 mb-5">
+                <!-- Logo -->
+                <img src="img/logo/logohvid.png" class="login-logo" alt="Førstehjælpseksperten logo i hvid version">
 
-            <!-- Login -->
-            <button class="btn login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Log ind</button>
+            </div>
 
-            <!-- Akut -->
-            <a href="#" class="btn akut-btn d-flex align-items-center justify-content-center">AKUT ADGANG</a>
 
+            <!-- Knapper -->
+            <div class="w-100 d-flex flex-column align-items-center gap-4 mb-5" data-aos="fade-up">
+
+                <!-- Login -->
+                <button class="btn login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Log ind</button>
+
+                <!-- Akut -->
+                <a href="#" class="btn akut-btn d-flex align-items-center justify-content-center">AKUT ADGANG</a>
+
+            </div>
         </div>
 
+
+        <!-- DESKTOP -->
+        <div data-aos="zoom-in"
+            <div class="d-none d-xl-flex h-100 align-items-center justify-content-center">
+
+                <div class="container">
+
+                    <div class="row align-items-center">
+
+                        <!-- Venstre side -->
+                        <div class="col-xl-6 text-center">
+
+                            <!-- Standard logo -->
+                            <img src="img/logo/logohvid.png" class="desktop-logo1 d-xxl-none" alt="Logo">
+
+                            <!-- Fuldt logo -->
+                            <img src="img/logo/fulllogohvid.png" class="desktop-logo2 d-none d-xxl-block" alt="Fuldt logo">
+
+                        </div>
+
+
+                        <!-- Højre side -->
+                        <div class="col-xl-6 d-flex justify-content-center">
+
+                            <div class="desktop-login-box ">
+
+                                <!-- Brugernavn -->
+                                <div class="mb-3 text-start">
+                                <label class="form-label">Brugernavn</label>
+                                <input type="text" class="form-control" placeholder="Indtast din brugernavn">
+                                </div>
+
+                                <!-- Adgangskode -->
+                                <div class="mb-1 text-start">
+                                    <label class="form-label">Adgangskode</label>
+                                <input type="password" class="form-control" placeholder="Indtast din adgangskode">
+                                </div>
+
+                                <!-- Glemt adgangskode -->
+                                <a href="#" class="small text-decoration-none d-block text-start text-muted opacity-75 pt-1" onclick="error404()">Glemt adgangskode?</a>
+
+                                <!-- Login -->
+                                <a href="forside.php" class="btn login-btn-desktop w-100 mt-4">Login</a>
+
+                                <hr>
+
+                                <!-- Akut -->
+                                <a href="#" class="btn akut-btn w-100">AKUT ADGANG</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</body>
 
-</div>
 
-<!-- Wave -->
 <img src="img/ui/wave.svg" class="login-wave" alt="Wave UI element i bunden af skærmen">
 
 <!-- Login modalL -->
@@ -88,12 +148,14 @@ require "settings/init.php";
                 <!-- Brugernavn -->
                 <div class="mb-3">
                     <label class="form-label fs-4">Brugernavn</label>
-                    <input type="text" class="form-control border-0 bg-light py-2" placeholder="Indtast din brugernavn"></div>
+                    <input type="text" class="form-control border-0 bg-light py-2" placeholder="Indtast din brugernavn">
+                </div>
 
                 <!-- Adgangskode -->
                 <div class="mb-1">
                     <label class="form-label fs-4">Adgangskode</label>
-                    <input type="password" class="form-control border-0 bg-light py-2" placeholder="Indtast din adgangskode"></div>
+                    <input type="password" class="form-control border-0 bg-light py-2" placeholder="Indtast din adgangskode">
+                </div>
 
                 <a href="#" class="small text-decoration-none" onclick="error404()">Glemt adgangskode?</a>
 

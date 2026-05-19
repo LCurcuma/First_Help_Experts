@@ -740,7 +740,52 @@ body {
   margin-bottom: -25px;
 }
 
+//--------------- SHOP.PHP DESKTOP ---------------//
+.user_section{
+  position: fixed;
+  top: 0;
+  right: 20px;
+  background-color: #CDEDCC;
+  margin: 30px 0 0 0;
+  border-radius: 25px;
+  max-height: 93vh;
+  overflow-y: auto;
+}
 
+.withdraw_button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin: 10px auto;
+  background-color: #67D27A;
+  border-radius: 20px;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.swipe_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.withdraw{
+  position: relative;
+  left: -3%;
+  top: 10%;
+}
 
 //--------------- QUIZ SEKTION ---------------//
 .bodyquiz{
@@ -856,31 +901,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  height: 190px;
+  height: 180px;
   background: #FFFBF5;
   border: 0.8px solid #c3c3c3;
-  border-radius: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-  @include media-breakpoint-up(sm) {
-    height: 200px;
-  }
-
-  @include media-breakpoint-up(md) {
-    height: 210px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    height: 220px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    height: 260px;
-  }
 }
+
 .emne-card:hover{
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
   border: 1.5px solid #67D27A;
@@ -889,51 +917,14 @@ body {
 .emne-card-img{
   object-fit: contain;
   width: auto;
-  height: 115px;
-
-  @include media-breakpoint-up(sm) {
-    height: 120px;
-  }
-
-  @include media-breakpoint-up(md) {
-    height: 125px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    height: 130px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    height: 180px;
-  }
+  height: 140px;
 }
 
 .emne-card p{
-  margin-bottom: 0px;
-  margin-top: 8px;
-  font-size: 16px;
-  font-weight: bolder;
-  display: flex;
-  justify-content: center;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 18px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 22px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 24px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 28px;
-  }
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
 }
-
-
 //--------------- EMNE CARDS ---------------//
 
 //--------------- QUIZ SEKTION ---------------//
