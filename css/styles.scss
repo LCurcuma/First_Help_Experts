@@ -513,11 +513,12 @@ body {
 .steps-header {
   display: flex;
   justify-content: space-between;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 20px;
+  padding: 4px;
 }
 
-.step-badge {
+.guide-container .step-badge {
   flex: 1;
   text-align: center;
   font-size: 11px;
@@ -526,16 +527,24 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 20px;
   color: $black;
-  background-color: #ffffff;
+  background-color: lightgray;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-.step-badge.active {
+.guide-container .step-badge.active {
   background-color: #5CD685;
   color: white;
   border-color: #5CD685;
+  box-shadow: 0 4px 12px rgba(92, 214, 133, 0.4);
+  transform: translateY(1px);
+}
+
+.guide-container .step-badge:hover{
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
 }
 
 .image-container{
