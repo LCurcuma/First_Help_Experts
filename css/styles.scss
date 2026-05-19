@@ -487,6 +487,12 @@ body {
   align-items: center;
 
   padding: 20px 25px;
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end;
+
+    padding: 20px 0;
+  }
 }
 
 //--------------- ARROW ---------------//
@@ -510,6 +516,7 @@ body {
   padding: 10px 10px 5px 13px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  background-color: white;
 }
 
 .money_count{
@@ -530,6 +537,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @include media-breakpoint-up(lg){
+    height: auto;
+  }
 }
 
 .avatar{
@@ -541,6 +552,11 @@ body {
   border-radius: 50%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #88DE98;
+
+  @include media-breakpoint-up(lg){
+    width: 150px;
+    height: 150px;
+  }
 }
 
 .settings_button{
@@ -557,6 +573,10 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   color: #88DE98;
   font-size: 20px;
+
+  @include media-breakpoint-up(lg){
+    top: 55px;
+  }
 }
 
 .username{
@@ -577,6 +597,7 @@ body {
   border-radius: 20px;
   padding: 35px 20px;
   margin: 0 25px;
+  background-color: white;
 }
 
 .score{
@@ -595,7 +616,10 @@ body {
   background-color: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70vw;
-  //Når du tager den til desktop version, husk at tilføje @include(breakpoint) med width, som er ikke vw, men % eller px
+
+  @include media-breakpoint-up(lg) {
+    width: 25vw;
+  }
 }
 
 //--------------- LINKS SECTION ---------------//
@@ -738,6 +762,15 @@ body {
   height: 35px;
   margin-top: -50px;
   margin-bottom: -25px;
+}
+
+//--------------- SHOP.PHP DESKTOP ---------------//
+.user_section{
+  background-color: #CDEDCC;
+  margin: 20px -100px 20px 0;
+  border-radius: 25px;
+  max-height: 95vh;
+  overflow-y: auto;
 }
 
 //--------------- QUIZ SEKTION ---------------//
