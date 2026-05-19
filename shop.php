@@ -73,10 +73,10 @@ foreach ($data as $card) {
     <div class="d-none flex-column d-lg-block">
         <div class="container">
             <div class="row">
-                <div class="col col-7"></div>
+                <div class="col col-8"></div>
 
                 <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
-                <div class="col col-5 user_section">
+                <div class="col col-4 user_section">
                     <div class="top_container">
                         <!--the container with points-->
                         <?php include "components/money_container.php" ?>
