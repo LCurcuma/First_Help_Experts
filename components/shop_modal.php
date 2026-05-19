@@ -15,7 +15,7 @@
                     </div>
                     <div class="d-flex flex-row align-items-center gap-3 modal_text">
                         <p class="fw-bold fs-4"><?php echo $points ?></p>
-                        <img src="../img/icons/3d-icons/money.png" class="money_image_modal" alt="Points">
+                        <img src="img/icons/3d-icons/money.png" class="money_image_modal" alt="Points">
                     </div>
                 </div>
             </div>
