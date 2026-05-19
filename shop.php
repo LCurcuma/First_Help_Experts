@@ -67,13 +67,35 @@ foreach ($data as $card) {
             $color = $card['color'];
             //includere card med DEN data
             include "components/shop_card.php";
+            include "components/shop_modal.php";
         } ?>
         </div>
     </div>
     <div class="d-none flex-column d-lg-block">
         <div class="container">
             <div class="row">
-                <div class="col col-8"></div>
+                <div class="col col-8 shop_column">
+                    <a href="forside.php" class="arrow_back_to_user">
+                        <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
+                    </a>
+                    <div class="cards_container">
+                        <?php
+                        //loop for at lave cards, som har data fra json fil
+                        foreach($data as $card) {
+                            //lave variables, som har forskellige data fra json-fil
+                            $id = $card["id"];
+                            $name = $card["name"];
+                            $desc = $card["description"];
+                            $points = $card["points"];
+                            $img_src = $card["img_src"];
+                            $alt = $card["alt"];
+                            $color = $card['color'];
+                            //includere card med DEN data
+                            include "components/shop_card.php";
+                            include "components/shop_modal.php";
+                        } ?>
+                    </div>
+                </div>
 
                 <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
                 <div class="col col-4 user_section">

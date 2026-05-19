@@ -6,4 +6,3 @@
     </div>
 </div>
 
-<?php include "shop_modal.php" ?>
