@@ -6,6 +6,9 @@
     <img src="img/ui/circle1.svg" class="weekly-circle weekly-c3" alt="Baggrunds element">
     <img src="img/ui/circle1.svg" class="weekly-circle weekly-c4" alt="Baggrunds element">
 
+    <!-- Gør selve kortet klikbar -->
+    <a href="#" class="stretched-link"></a>
+
     <!-- Top row -->
     <div class="d-flex justify-content-between align-items-start position-relative z-2">
 
@@ -22,10 +25,10 @@
         </div>
 
         <!-- Points -->
-        <div class="d-flex align-items-center gap-2 weekly-points-bg text-black rounded-5 px-2 py-1">
+        <a href="#" class="d-flex align-items-center gap-2 weekly-points-bg text-black rounded-5 px-2 py-1 position-relative z-3 text-decoration-none">
             <span class="fs-5 fw-semibold">102</span>
             <img src="img/icons/3d-icons/money.png" alt="Mønter, som viser hvor mange points du har." class="weekly-missions-coin">
-        </div>
+        </a>
 
     </div>
 
@@ -53,4 +56,3 @@
     </div>
 
 </div>
-
