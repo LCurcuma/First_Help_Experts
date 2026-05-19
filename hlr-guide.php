@@ -173,8 +173,14 @@ require "settings/init.php";
 
     badges.forEach(badge => {
         badge.addEventListener("click", function() {
-            nuvaerendeTrin = parseInt(this.getAttribute("data-trin"));
-            opdaterSkerm();
+            const valgtTrin =  parseInt(this.getAttribute("data-trin"));
+            if (valgtTrin < nuvaerendeTrin) {
+                nuvaerendeTrin = valgtTrin;
+                opdaterSkerm();
+            } else if (valgtTrin > nuvaerendeTrin) {
+                console.log("Du kan ikke springe frem i guiden. Brug 'NÆSTE TRIN' knappen");
+            }
+
         });
     });
 
