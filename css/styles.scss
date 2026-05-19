@@ -865,10 +865,39 @@ body {
   overflow-y: auto;
 }
 
-.withdraw{
+.withdraw_button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin: 10px auto;
+  background-color: #67D27A;
   border-radius: 20px;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.swipe_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   height: 50px;
-  width: 100%;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.withdraw{
+  position: relative;
+  left: -3%;
+  top: 10%;
 }
 
 //--------------- QUIZ SEKTION ---------------//

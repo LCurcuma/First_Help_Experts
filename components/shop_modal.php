@@ -1,6 +1,6 @@
 
 <!-- Modal -->
-<div class="modal fade" id="<?php echo $id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_<?php echo $id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -20,8 +20,15 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <!--Jeg vil prøve at tilføje "rigtig" withdraw-container, men lige nu den er en knap-->
+                <div class="withdraw_button" onclick="withdraw(<?php echo $points ?>, '<?php echo $name ?>')">
+                    <div id="arrow_button" class="swipe_btn" style="position: relative; right: 30%;">
+                        <i class="fa-solid fa-chevron-right" style="color: rgb(0, 0, 0); transform: rotate(0deg);"></i>
+                    </div>
+                    <p id="withdraw_text" class="withdraw">Withdraw</p>
+                </div>
+                <!--
                 <button type="button" class="btn btn-primary mx-auto text-white withdraw">Withdraw</button>
+                -->
             </div>
         </div>
     </div>

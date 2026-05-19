@@ -67,10 +67,11 @@ foreach ($data as $card) {
             $color = $card['color'];
             //includere card med DEN data
             include "components/shop_card.php";
-            include "components/shop_modal.php";
         } ?>
         </div>
     </div>
+
+    <!--DESKTOP VERSION-->
     <div class="d-none flex-column d-lg-block">
         <div class="container">
             <div class="row">
@@ -92,7 +93,6 @@ foreach ($data as $card) {
                             $color = $card['color'];
                             //includere card med DEN data
                             include "components/shop_card.php";
-                            include "components/shop_modal.php";
                         } ?>
                     </div>
                 </div>
@@ -138,6 +138,59 @@ foreach ($data as $card) {
         </div>
     </div>
 
+    <?php
+    //loop for at lave cards, som har data fra json fil
+    foreach($data as $card) {
+        //lave variables, som har forskellige data fra json-fil
+        $id = $card["id"];
+        $name = $card["name"];
+        $desc = $card["description"];
+        $points = $card["points"];
+        $img_src = $card["img_src"];
+        $alt = $card["alt"];
+        $color = $card['color'];
+        //includere card med DEN data
+        include "components/shop_modal.php";
+    } ?>
+
+    <script>
+        function withdraw(points, name){
+            let pointsContainerMobile = document.getElementById("points_mobile");
+            let pointsContainerDesktop = document.getElementById("points_desk");
+            let withdrawText = document.getElementById("withdraw_text");
+            let currentPointsMobile = parseInt(document.getElementById("points_mobile").textContent, 10);
+            let currentPointsDesktop = parseInt(document.getElementById("points_desk").textContent, 10);
+            let pointsNum = parseInt(points, 10);
+
+            if(currentPointsMobile !== null){
+                if(pointsNum <= currentPointsMobile){
+                    document.getElementById("arrow_button").style.right = "-50%";
+                    document.getElementById("arrow_button").style.transform = "rotate(180deg)";
+                    let newPoints = currentPointsMobile - pointsNum;
+                    newPoints = newPoints.toString();
+                    pointsContainerMobile.innerHTML = newPoints;
+                    pointsContainerDesktop.innerHTML = newPoints;
+                    withdrawText.innerHTML = "Købt";
+                } else {
+                    alert("Ikke nok point");
+                }
+            } else if(currentPointsDesktop !== null){
+                if(pointsNum <= currentPointsDesktop){
+                    document.getElementById("arrow_button").style.right = "-50%";
+                    document.getElementById("arrow_button").style.transform = "rotate(180deg)";
+                    let newPoints = currentPointsDesktop - pointsNum;
+                    newPoints = newPoints.toString();
+                    pointsContainerMobile.innerHTML = newPoints;
+                    pointsContainerDesktop.innerHTML = newPoints;
+                    withdrawText.innerHTML = "Købt";
+                } else {
+                    alert("Ikke nok point");
+                }
+            } else {
+                console.log("Nothing :(")
+            }
+        }
+    </script>
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
