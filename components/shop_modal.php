@@ -20,9 +20,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <div class="withdraw_button" onclick="withdraw(<?php echo $points ?>, '<?php echo $name ?>')">
+                <div class="withdraw_button" onclick="withdraw(<?php echo $points ?>)">
                     <div id="arrow_button" class="swipe_btn" style="position: relative; right: 30%;">
-                        <i class="fa-solid fa-chevron-right" style="color: rgb(0, 0, 0); transform: rotate(0deg);"></i>
+                        <i class="fa-solid fa-chevron-right" style="color: rgb(0, 0, 0);"></i>
                     </div>
                     <p id="withdraw_text" class="withdraw">Withdraw</p>
                 </div>
