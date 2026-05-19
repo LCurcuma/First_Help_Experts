@@ -60,7 +60,7 @@ require "settings/init.php";
 
     <div class="guide-content">
         <div class="image-container">
-        <img id="guide-image" src="" alt="Guide illustration" style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px " ></img>
+        <img id="guide-image" src="" alt="Guide illustration" style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px ">
         </div>
         <h3 id="step-title"></h3>
         <p id="step-text"></p>
