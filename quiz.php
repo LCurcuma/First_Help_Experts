@@ -43,60 +43,83 @@ require "settings/init.php";
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
+<!------------ UGENS MISSION CARD ------------>
+
+<div class="mission-card mx-4 mb-4 p-4">
+    <div class="position-relative">
+        <p class="mini-tekst">Ugens mission</p>
+        <p class="mission-tekst">Tag 3 Quizzer <br> i denne uge!</p>
+
+        <div class="score d-flex justify-content-center">
+            <div class="score_text d-flex justify-content-end">
+                <p class="score-text-quiz">1 / 3</p>
+            </div>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="30">
+                <div class="progress-bar" style="width: 33%;"></div>
+            </div>
+        </div>
+
+        <img src="img/icons/3d-icons/arrow.png" alt="" class="arrow_icon">
+
+    </div>
+</div>
+
+<!------------ UGENS MISSION CARD ------------>
+
 <!------------ KATEGORI CARDS ------------>
 <div class="px-4">
     <div class="row g-4">
         <div class="col-6">
-            <div class="emne-card">
+            <div class="emne-card text-center p-2">
                 <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>HLR</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card">
+            <div class="emne-card text-center p-2">
                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="emne-card-img">
-                <p>HLR med hjertestarter</p>
+                <p class="text-kate">HLR med hjertestarter</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card">
+            <div class="emne-card text-center p-2">
                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Drukning</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card">
+            <div class="emne-card text-center p-2">
                 <img src="img/icons/3d-icons/armsling.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Forbinding</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card">
+            <div class="emne-card text-center p-2">
                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Brandsår</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card">
+            <div class="emne-card text-center p-2">
                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Bilulykke</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="emne-card">
+            <div class="emne-card text-center p-2">
                 <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Kvælning</p>
             </div>
         </div>
 
-        <div class="col-6">
-            <div class="emne-card">
+        <div class="col-6 mb-5">
+            <div class="emne-card text-center p-2">
                 <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="emne-card-img">
                 <p>Stroke</p>
             </div>

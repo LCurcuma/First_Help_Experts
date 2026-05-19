@@ -1,6 +1,6 @@
 
 <!-- Modal -->
-<div class="modal fade" id="<?php echo $id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_<?php echo $id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -15,13 +15,20 @@
                     </div>
                     <div class="d-flex flex-row align-items-center gap-3 modal_text">
                         <p class="fw-bold fs-4"><?php echo $points ?></p>
-                        <img src="../img/icons/3d-icons/money.png" class="money_image_modal" alt="Points">
+                        <img src="img/icons/3d-icons/money.png" class="money_image_modal" alt="Points">
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <!--Jeg vil prøve at tilføje "rigtig" withdraw-container, men lige nu den er en knap-->
+                <div class="withdraw_button" onclick="withdraw(<?php echo $points ?>)">
+                    <div id="arrow_button" class="swipe_btn" style="position: relative; right: 30%;">
+                        <i class="fa-solid fa-chevron-right" style="color: rgb(0, 0, 0);"></i>
+                    </div>
+                    <p id="withdraw_text" class="withdraw">Withdraw</p>
+                </div>
+                <!--
                 <button type="button" class="btn btn-primary mx-auto text-white withdraw">Withdraw</button>
+                -->
             </div>
         </div>
     </div>
