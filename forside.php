@@ -41,7 +41,7 @@ require "settings/init.php";
 <body class="bg-white">
 
 <!-- Velkommen tekst -->
-<div class="p-4 mt-4 ms-2" data-aos="zoom-in">
+<div class="p-3 mt-4 ms-2" data-aos="zoom-in">
 
     <h1 class="fw-bold display-5 mb-2">Hej Laura!</h1>
 
