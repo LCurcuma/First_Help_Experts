@@ -21,7 +21,7 @@
             </div>
             <div class="modal-footer">
                 <!--Jeg vil prøve at tilføje "rigtig" withdraw-container, men lige nu den er en knap-->
-                <button type="button" class="btn btn-primary mx-auto text-white">Withdraw</button>
+                <button type="button" class="btn btn-primary mx-auto text-white withdraw">Withdraw</button>
             </div>
         </div>
     </div>
