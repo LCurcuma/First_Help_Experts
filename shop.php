@@ -6,7 +6,7 @@
 require "settings/init.php";
 
 //tage data fra json-fil
-$json = file_get_contents("data/test_data_shop.json");
+$json = file_get_contents("data/data_shop.json");
 
 $data = json_decode($json, true);
 
