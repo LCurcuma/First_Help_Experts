@@ -185,7 +185,7 @@ body {
 
 //----------- (INDEX) LOGO ------------//
 .login-logo {
-  width: 250px;
+  width: 280px;
 
   //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
@@ -193,7 +193,7 @@ body {
   transition: 0.2s ease-in-out;
 
   @include media-breakpoint-up(lg) {
-    width: 280px;
+    width: 300px;
   }
 }
 //-------------------------------------//
