@@ -833,6 +833,7 @@ body {
   padding: 10px 10px 5px 13px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  background-color: white;
 }
 
 .money_count{
@@ -900,6 +901,7 @@ body {
   border-radius: 20px;
   padding: 35px 20px;
   margin: 0 25px;
+  background-color: white;
 }
 
 .score{
@@ -919,6 +921,10 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70vw;
   //Når du tager den til desktop version, husk at tilføje @include(breakpoint) med width, som er ikke vw, men % eller px
+
+@include media-breakpoint-up(lg){
+  width: 20vw;
+}
 }
 
 //--------------- LINKS SECTION ---------------//
@@ -998,10 +1004,10 @@ body {
   margin-left: auto;
   margin-right: auto;
 
-  background-color: #67D27A;
   padding: 20px 20px 15px 23px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  background-color: white;
 }
 
 .money_shop_image{
@@ -1023,6 +1029,10 @@ body {
   gap: 20px;
 
   margin: 30px 25px 0 25px;
+
+  @include media-breakpoint-up(lg){
+    grid-template-columns: auto auto auto auto;
+  }
 }
 
 //--------------- CARDS ---------------//
@@ -1108,6 +1118,10 @@ body {
   position: relative;
   left: -3%;
   top: 10%;
+}
+
+.shop_column{
+  margin-top: 40px;
 }
 
 //--------------- QUIZ SEKTION ---------------//

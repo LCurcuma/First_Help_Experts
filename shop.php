@@ -134,6 +134,7 @@ foreach ($data as $card) {
 
                     <a href="index.php" class="logout">Log ud</a>
                 </div>
+                <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
             </div>
         </div>
     </div>
