@@ -9,9 +9,6 @@ require "settings/init.php";
 $json = file_get_contents("data/data_shop.json");
 
 $data = json_decode($json, true);
-
-foreach ($data as $card) {
-}
 ?>
     <!DOCTYPE html>
     <html lang="da">
