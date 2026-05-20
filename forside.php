@@ -10,7 +10,7 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
 
-    <title>Forside - Førstehjælpeksperten</title>
+    <title>Forside - Førstehjælpseksperten</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -38,9 +38,23 @@ require "settings/init.php";
 
 </head>
 
-<body>
+<body class="bg-white">
 
-<h1>Forside</h1>
+<!-- Velkommen tekst -->
+<div class="p-3 mt-4 ms-2" data-aos="zoom-in">
+
+    <h1 class="fw-bold display-5 mb-2">Hej Laura!</h1>
+
+    <p class="fs-4">Klar til at redde liv i dag?</p>
+
+</div>
+
+<!-- Weekly missions card -->
+<div class="d-flex justify-content-center align-content-center" data-aos="zoom-in">
+
+    <?php include 'components/weekly-missions-card.php';?>
+
+</div>
 
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
