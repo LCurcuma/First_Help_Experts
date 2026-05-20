@@ -42,43 +42,40 @@ require "settings/init.php";
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
-<div id="quiz-side" class="quiz">
+<div id="quiz-screen" class="quiz">
     <div class="px-4 mb-4 quiz-proces">
-        <span id="proces-text" class="quiz-proces-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
+        <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 10%;"></div>
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
         </div>
     </div>
 
-    <div class="px-4 mb-4">
-        <p id="question-text" class="spg-text fw-bold">Spørgsmål indlæses...</p>
+    <div class="px-4 mb-2">
+        <p id="question-text" class="spg-text fw-bolder">Spørgsmål indlæses...</p>
     </div>
 
-    <div class="px-4 mb-4">
+    <div class="px-4">
         <div class="quiz-img-con">
-            <img id="quiz-img" src="" alt="Situation" class="quiz-img">
+            <img id="quiz-image" src="" alt="Situation" class="quiz-image">
         </div>
     </div>
 
     <div class="px-4" id="options-container"></div>
+</div>
 
-    <div id="result-screen" class="px-4 py-5 text-center d-none">
-        <div class="mb-4" style="font-size: 60px;">
-            <img src="img/icons/3d-icons/checkmark2.png" class="check-img" alt="">
-        </div>
-        <p class="færdig-text mb-3">Sådan, du klarede det!</p>
-        <p class="skala-text mb-4">Du fik <span id="correct-score" class="fw-bold text-success">0</span> ud af <span class="fw-bold">10</span> rigtige.</p>
-
-        <a href="forside.php" class="btn slutquiz-knap py-3">Gå til forsiden</a>
+<div id="result-screen" class="px-2 py-3 text-center d-none">
+    <div class="mb-2">
+        <img src="img/icons/3d-icons/checkmark2.png" class="check-img" alt="">
     </div>
+    <p class="færdig-text">Sådan, du klarede det!</p>
+    <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
+
+    <a href="forside.php" class="btn slutquiz-knap py-3">Gå til forsiden</a>
 </div>
 
 
+<script src="quiz.js"></script>
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-
-</script>
 </body>
 </html>

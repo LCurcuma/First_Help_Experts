@@ -1,0 +1,62 @@
+
+[
+  {
+    "question": "Hvad er det første du gør, hvis du ser en person falde om?",
+    "image": "img/icons/3d-icons/recovery-position.png",
+    "answers": [
+      "Ringer 1-1-2",
+      "Tjekker bevidsthed",
+      "Giver kunstigt åndedræt",
+      "Starter hjertemassage"
+    ],
+    "correctAnswer": 1
+  },
+
+  {
+    "question": "Hvem skal du ringe til?",
+    "image": "img/icons/3d-icons/callinghelp.png",
+    "answers": [
+      "Din kørelærer",
+      "Din mor",
+      "Alarmcentralen 1-1-2",
+      "Din førstehjælpsinstruktør"
+    ],
+    "correctAnswer": 2
+  },
+
+  {
+    "question": "Hvor mange tryk og indblæsninger giver man ved HLR?",
+    "image": "img/icons/3d-icons/HLR-start.png",
+    "answers": [
+      "30 tryk og 2 indblæsninger",
+      "10 tryk og 4 indblæsninger",
+      "50 tryk og 2 indblæsninger",
+      "35 tryk og 3 indblæsninger"
+    ],
+    "correctAnswer": 0
+  },
+
+  {
+    "question": "Hvor dybt skal man trykke?",
+    "image": "img/icons/3d-icons/hlr.png",
+    "answers": [
+      "2 cm",
+      "4-5 cm",
+      "5-6 cm",
+      "8 cm"
+    ],
+    "correctAnswer": 2
+  },
+
+  {
+    "question": "Hvor lang tid skal du lave HLR?",
+    "image": "img/icons/3d-icons/tiredhlr.png",
+    "answers": [
+      "Indtil der er ingen effect",
+      "Indtil du bliver træt",
+      "Indtil din mor kommer",
+      "Indtil ambulancen kommer"
+    ],
+    "correctAnswer": 3
+  }
+]
