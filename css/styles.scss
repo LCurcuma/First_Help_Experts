@@ -491,9 +491,9 @@ body {
 
 
 .card-image-wrapper img{
-  height: 72px;
+  height: 100px;
   width: auto;
-  object-fit: contain;
+  object-fit:cover;
 }
 
 
@@ -596,9 +596,9 @@ body {
 }
 
 .guide-image-wrapper img{
-  height: 60px;
+  height: 100px;
   width: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .guide-text-wrapper{
@@ -665,9 +665,9 @@ body {
   font-weight: 700;
   padding: 8px 4px;
   border: 1px solid #e0e0e0;
-  border-radius: 20px;
+  border-radius: 10px;
   color: $black;
-  background-color: lightgray;
+  background-color: $white;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -675,9 +675,9 @@ body {
 }
 
 .guide-container .step-badge.active {
-  background-color: #5CD685;
+  background-color: $primary;
   color: white;
-  border-color: #5CD685;
+  border-color: $primary;
   box-shadow: 0 4px 12px rgba(92, 214, 133, 0.4);
   transform: translateY(1px);
 }
@@ -728,7 +728,7 @@ body {
 
 
 .husk-box {
-  background-color: #f8d7d7;
+  background-color: #ffd5d2;
   border-radius: 16px;
   padding: 14px;
   color: $black;
