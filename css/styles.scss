@@ -689,7 +689,7 @@ body {
   margin-left: -8px;
 }
 
-.guide-container {
+.guide-container{
   background-color: $white;
   width: 100%;
   max-width: 430px;
@@ -714,7 +714,7 @@ body {
   letter-spacing: -0.5px;
 }
 
-.steps-header {
+.steps-header{
   display: flex;
   justify-content: space-between;
   gap: 8px;
@@ -722,7 +722,7 @@ body {
   padding: 4px;
 }
 
-.guide-container .step-badge {
+.guide-container .step-badge{
   flex: 1;
   text-align: center;
   font-size: 11px;
@@ -738,7 +738,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-.guide-container .step-badge.active {
+.guide-container .step-badge.active{
   background-color: $primary;
   color: white;
   border-color: $primary;
@@ -766,7 +766,7 @@ body {
 }
 
 
-.guide-content {
+.guide-content{
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -774,7 +774,7 @@ body {
 }
 
 
-#step-title {
+#step-title{
   font-size: 22px;
   font-weight: 800;
   color: $black;
@@ -782,7 +782,7 @@ body {
   letter-spacing: -0.3px;
 }
 
-#step-text {
+#step-text{
   font-size: 15px;
   font-weight: 600;
   color: $black;
@@ -791,7 +791,7 @@ body {
 }
 
 
-.husk-box {
+.husk-box{
   background-color: #ffd5d2;
   border-radius: 16px;
   padding: 14px;
@@ -801,7 +801,7 @@ body {
   margin-bottom: 20px;
 }
 
-.husk-box strong {
+.husk-box strong{
   color: #FF4953;
   font-size: 14px;
   font-weight: 800;
@@ -821,7 +821,7 @@ body {
 }
 
 
-.next-button {
+.next-button{
   background-color:$primary;
   color: $white;
   border: none;
@@ -837,19 +837,19 @@ body {
   transition: background-color 0.2s ease;
 }
 
-.next-button:active {
+.next-button:active{
   transform: scale(0.98);
 }
 
 
-.progress-dots {
+.progress-dots{
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-top: 15px;
 }
 
-.dot {
+.dot{
   width: 32px;
   height: 6px;
   background-color: #e0e0e0;
@@ -857,7 +857,7 @@ body {
   transition: background-color 0.2s ease, width 0.2s ease;
 }
 
-.dot.active {
+.dot.active{
   background-color:$primary;
 }
 
