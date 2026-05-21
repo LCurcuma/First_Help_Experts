@@ -54,8 +54,7 @@ require "settings/init.php";
         <span class="step-badge" id="badge-1" data-trin="0">Tjek</span>
         <span class="step-badge" id="badge-2" data-trin="1">Ring</span>
         <span class="step-badge" id="badge-3" data-trin="2">Tryk</span>
-        <span class="step-badge" id="badge-4" data-trin="3">hjertestater</span>
-        <span class="step-badge" id="badge-5" data-trin="4">Fortsæt</span>
+        <span class="step-badge" id="badge-4" data-trin="4">Fortsæt</span>
     </div>
 
     <div class="guide-content">
@@ -101,7 +100,7 @@ require "settings/init.php";
             titel: "2. Ring 1-1-2",
             tekst: "Hvis personen ikke reagerer, ring straks 1-1-2 eller få en anden til det.",
             husk: "Sæt telefonen på højtaler, så du har hænderne fri.",
-            billede: "img/icons/3d-icons/Alarm.png"
+            billede: "img/icons/3d-icons/callinghelp.png"
         },
         {
             titel: "3. Start HLR",
@@ -109,15 +108,10 @@ require "settings/init.php";
             husk: "skab fri luftvej og tryk 5-6 cm dybt.",
             billede: "img/icons/3d-icons/HLR-start.png"
         },
+
         {
-            titel: "4. Brug hjertestarter",
-            tekst: "Bed nogen hente hjertestarteren, eller hent den selv, og følg vejledningen.",
-            husk: "Følg de talte instruktioner fra maskinen nøje.",
-            billede: "img/icons/3d-icons/CPR-defi.png"
-        },
-        {
-            titel: "5. Fortsæt indtil hjælp kommer",
-            tekst: "Bliv ved med HLR og brug hjertestarteren indtil ambulancen overtager.",
+            titel: "4. Fortsæt indtil hjælp kommer",
+            tekst: "Bliv ved med HLR indtil ambulancen overtager.",
             husk: "Skift hjælper hver 2. minut, hvis muligt.",
             billede: "img/icons/3d-icons/ambulance.png"
         }

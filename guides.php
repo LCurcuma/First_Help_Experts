@@ -139,10 +139,10 @@ require "settings/init.php";
         <div class="col-6">
             <div class="guide-card" onclick="alert('Funktionen er på vej!')">
                 <div class="guide-image-wrapper">
-                    <img src="img/icons/3d-icons/armsling.png" alt="Blødninger">
+                    <img src="img/icons/3d-icons/bleeding.png" alt="Blødninger">
                 </div>
                 <div class="guide-text-wrapper">
-                    <span>Forbinding</span>
+                    <span>Blødning</span>
                 </div>
             </div>
         </div>
