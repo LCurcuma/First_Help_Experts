@@ -1,0 +1,74 @@
+[
+  {
+    "question": "Hvad er det første du skal gøre, når en hjertestarter er til stede?",
+    "image": "img/icons/3d-icons/recovery-position.png",
+    "answers": [
+      "Tænde for hjertestarteren på tænd-knappen",
+      "Sætte elektroderne fast på personens bryst",
+      "Stoppe hjertemassagen med det samme for at gøre plads",
+      "Læse brugsanvisningen"
+    ],
+    "correctAnswer": 0
+  },
+
+  {
+    "question": "Hvor skal de to elektrodepads placeres på en voksen person?",
+    "image": "img/icons/3d-icons/callinghelp.png",
+    "answers": [
+      "En midt på brystet og en midt på ryggen",
+      "En på højre side under kravebenet og en på venstre side under armhulen",
+      "Begge elektroder placeres side om side midt på brystkassen",
+      "En på venstre kraveben og en på højre hofte"
+    ],
+    "correctAnswer": 1
+  },
+
+  {
+    "question": "Hvad skal du gøre, hvis personens brystkasse er drivvåd af sved eller vand, inden du sætter elektroderne på?",
+    "image": "img/icons/3d-icons/HLR-start.png",
+    "answers": [
+      "Sætte elektroderne på alligevel, da de har stærk lim",
+      "Placere elektroderne på maven i stedet for",
+      "Vente med at bruge hjertestarteren og kun give hjertemassage",
+      "Tørre brystkassen hurtigt af med et klæde eller T-shirt."
+    ],
+    "correctAnswer": 3
+  },
+
+  {
+    "question": "Hvad er den vigtigste regel, når hjertestarteren siger: 'Rør ikke patienten, analyserer'?",
+    "image": "img/icons/3d-icons/hlr.png",
+    "answers": [
+      "Alle skal slippe personen helt, så maskinen kan måle hjerterytmen uden forstyrrelser",
+      "Du skal fortsætte med kunstigt åndedræt, men stoppe hjertemassagen",
+      "Du skal holde godt fast i personens skuldre for at holde dem i ro",
+      "Man skal trykke hurtigere på brystkassen under analysen"
+    ],
+    "correctAnswer": 0
+  },
+
+  {
+    "question": "Hvorfor skal du råbe 'VÆK' og sikre dig, at ingen rører personen, inden du trykker på stød-knappen?",
+    "image": "img/icons/3d-icons/tiredhlr.png",
+    "answers": [
+      "Fordi maskinen kan gå i stykker, hvis mange rører personen",
+      "For at give personen plads til at trække vejret efter stødet",
+      "Fordi alle, der rører personen, kan få det elektriske stød igennem sig",
+      "Fordi personen vil komme til, at hoppe meget højt op i luften"
+    ],
+    "correctAnswer": 2
+  },
+
+  {
+    "question": "Hvad skal du gøre umiddelbart efter, at hjertestarteren har afgivet et stød?",
+    "image": "img/icons/3d-icons/tiredhlr.png",
+    "answers": [
+      "Vente på, at maskinen analyserer igen",
+      "Genoptag hjertemassagen med det samme (30 tryk og 2 indblæsninger)",
+      "Tjekke om personen har fået puls eller trækker vejret",
+      "Tage elektroderne af for at se, om huden er brændt"
+    ],
+    "correctAnswer": 1
+  }
+]
+

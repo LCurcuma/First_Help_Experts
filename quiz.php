@@ -241,7 +241,7 @@ require "settings/init.php";
                     <p class="færdig-text">Sådan, du klarede det!</p>
                     <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
 
-                    <a href="forside.php" class="btn slutquiz-knap py-3">Gå til forsiden</a>
+                    <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
                 </div>
 
 
