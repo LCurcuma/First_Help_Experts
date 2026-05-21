@@ -81,6 +81,20 @@ require "settings/init.php";
     </div>
 </div>
 
+<div class="modal fade" id="completionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="max-width: 320px; margin: 0 auto;">
+        <div class="modal-content" style="border-radius: 20px; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2); background-color: #ffffff;">
+            <div class="modal-body text-center p-4">
+                <div class="mb-3">
+                    <i class="bi bi-check-circle-fill" style="font-size: 2.5rem; color: #5CD685;"></i>
+                </div>
+                <h4 class="fw-bold mb-2" style="color: #000000; font-size: 20px;">Godt arbejdet!</h4>
+                <p class="text-muted mb-4" style="font-size: 14px; line-height: 1.4;">Du har gennemført guiden i Hjerte-lunge redning.</p>
+                <button type="button" class="btn next-button w-100" data-bs-dismiss="modal" style="background-color: #5CD685; color: white; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 14px;">OKAY</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -183,9 +197,15 @@ require "settings/init.php";
             nuvaerendeTrin++;
             opdaterSkerm();
         } else {
-            alert("Du har gennemført guiden!");
-            nuvaerendeTrin = 0;
-            opdaterSkerm();
+            // Initialiser og vis Bootstrap Modalen i stedet for den gamle alert
+            const myModal = new bootstrap.Modal(document.getElementById('completionModal'));
+            myModal.show();
+
+            // Nulstil guiden når popup'en lukkes
+            document.getElementById('completionModal').addEventListener('hidden.bs.modal', function () {
+                nuvaerendeTrin = 0;
+                opdaterSkerm();
+            });
         }
     });
 
