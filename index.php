@@ -4,6 +4,7 @@
  */
 
 require "settings/init.php";
+//$users = $db->sql("SELECT * FROM users");
 ?>
 <!DOCTYPE html>
 <html lang="da">
