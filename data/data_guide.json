@@ -1,0 +1,26 @@
+[
+  {
+    "titel": "1. Tjek bevidsthed",
+    "tekst": "Rusk forsigtigt personen i skuldrene og spørg højt: 'Er du okay?'",
+    "husk": "Hvis personen ikke reagerer, gå videre til næste trin.",
+    "billede": "img/icons/3d-icons/debris.png"
+  },
+  {
+    "titel": "2. Ring 1-1-2",
+    "tekst": "Hvis personen ikke reagerer, ring straks 1-1-2 eller få en anden til det.",
+    "husk": "Sæt telefonen på højtaler, så du har hænderne fri.",
+    "billede": "img/icons/3d-icons/callinghelp.png"
+  },
+  {
+    "titel": "3. Start HLR",
+    "tekst": "Giv 30 brystkompressioner og 2 indblæsninger. Tryk hårdt og hurtigt midt på brystet.",
+    "husk": "skab fri luftvej og tryk 5-6 cm dybt.",
+    "billede": "img/icons/3d-icons/HLR-start.png"
+  },
+  {
+    "titel": "4. Fortsæt indtil hjælp kommer",
+    "tekst": "Bliv ved med HLR indtil ambulancefolkene er på stedet og overtager.",
+    "husk": "Skift hjælper hver 2. minut, hvis muligt.",
+    "billede": "img/icons/3d-icons/ambulance.png"
+  }
+]
