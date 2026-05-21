@@ -92,7 +92,7 @@ require "settings/init.php";
 
         <div class="col-6">
             <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
-                <img src="img/icons/3d-icons/armsling.png" alt="Person der laver HLR" class="category-card-img">
+                <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Forbinding</p>
             </div>
         </div>
@@ -132,7 +132,7 @@ require "settings/init.php";
 <div class="d-none flex-column d-lg-block">
     <div class="container">
         <div class="row">
-            <div class="col col-6">
+            <div class="col col-6 quiz-colone">
                 <div class="mission-card mx-4 mb-4 p-4">
                     <div class="position-relative">
                         <p class="mini-tekst">Ugens mission</p>
@@ -176,7 +176,7 @@ require "settings/init.php";
 
                             <div class="col-6">
                                 <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
-                                    <img src="img/icons/3d-icons/armsling.png" alt="Person der laver HLR" class="category-card-img">
+                                    <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                                     <p>Forbinding</p>
                                 </div>
                             </div>

@@ -53,7 +53,7 @@ function loadQuestions() {
         const button = document.createElement("button");
 
         button.className = "answer-option w-100 mb-3 text-start d-flex align-items-center gap-3 p-3";
-        button.innerHTML = `<div class="letter-badge">${letters[index]}</div> <span class="fw-semibold text-dark fs-6">${answer}</span>`;
+        button.innerHTML = `<div class="letter-badge">${letters[index]}</div> <span class="fw-semibold text-dark">${answer}</span>`;
 
         button.addEventListener("click", () => checkAnswer(index, button));
         optionsContainer.appendChild(button);
