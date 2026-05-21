@@ -4,6 +4,10 @@
  */
 
 require "settings/init.php";
+//tage id fra link ("forside.php? ->id=1<- id, som bruges")
+$id = $_GET["id"];
+//tage data om bruger med den id
+$userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -43,7 +47,7 @@ require "settings/init.php";
 <!-- Velkommen tekst -->
 <div class="p-3 mt-4 ms-2" data-aos="zoom-in">
 
-    <h1 class="fw-bold display-5 mb-2">Hej Laura!</h1>
+    <h1 class="fw-bold display-5 mb-2">Hej <?php echo $userData[0]->name ?>!</h1>
 
     <p class="fs-4">Klar til at redde liv i dag?</p>
 
@@ -64,7 +68,6 @@ require "settings/init.php";
 <script>
     AOS.init();
 </script>
-
 
 </body>
 </html>

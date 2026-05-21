@@ -26,7 +26,7 @@
 
         <!-- Points -->
         <a href="#" class="d-flex align-items-center gap-2 weekly-points-bg text-black rounded-5 px-2 py-1 position-relative z-3 text-decoration-none">
-            <span class="fs-5 fw-semibold">102</span>
+            <span class="fs-5 fw-semibold"><?php echo $userData[0]->points ?></span>
             <img src="img/icons/3d-icons/money.png" alt="Mønter, som viser hvor mange points du har." class="weekly-missions-coin">
         </a>
 
@@ -38,7 +38,7 @@
         <!-- Opgaver fuldført -->
         <div class="d-flex justify-content-end">
             <div class="mb-1">
-                <span class="fw-semibold">4</span>
+                <span class="fw-semibold"><?php echo $userData[0]->finished_weekly_missions ?></span>
                 /
                 <span class="fw-normal">5</span> opgaver fuldført
             </div>
@@ -47,9 +47,9 @@
         <!-- Progressbaren -->
         <div class="weekly-missions-progress-bg position-relative rounded-5 d-flex justify-content-between align-items-center pe-3">
 
-            <div class="weekly-missions-progress-bar rounded-5"></div>
+            <div class="weekly-missions-progress-bar rounded-5" style="width: <?php echo $userData[0]->finished_weekly_missions/5*100?>%;"></div>
 
-            <span class="text-white fw-light small opacity-50">75%</span>
+            <span class="text-white fw-light small opacity-50"><?php echo $userData[0]->finished_weekly_missions/5*100?>%</span>
 
         </div>
 

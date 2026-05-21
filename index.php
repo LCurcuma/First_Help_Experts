@@ -98,25 +98,25 @@ require "func/login.php";
                         <!-- Højre side -->
                         <div class="col-xl-6 d-flex justify-content-center">
 
-                            <div class="desktop-login-box ">
+                            <div class="desktop-login-box">
 
                                 <!-- Brugernavn -->
                                 <div class="mb-3 text-start">
                                 <label class="form-label">Brugernavn</label>
-                                <input type="text" class="form-control" placeholder="Indtast din brugernavn">
+                                <input id="username_desktop" type="text" class="form-control" placeholder="Indtast din brugernavn" required>
                                 </div>
 
                                 <!-- Adgangskode -->
                                 <div class="mb-1 text-start">
                                     <label class="form-label">Adgangskode</label>
-                                <input type="password" class="form-control" placeholder="Indtast din adgangskode">
+                                <input id="password_desktop" type="password" class="form-control" placeholder="Indtast din adgangskode" required>
                                 </div>
 
                                 <!-- Glemt adgangskode -->
                                 <a href="#" class="small text-decoration-none d-block text-start text-muted opacity-75 pt-1" onclick="error404()">Glemt adgangskode?</a>
 
                                 <!-- Login -->
-                                <a href="forside.php" class="btn login-btn-desktop w-100 mt-4">Login</a>
+                                <a href="#" class="btn login-btn-desktop w-100 mt-4" onclick="login(document.getElementById('username_desktop').value, document.getElementById('password_desktop').value)">Login</a>
 
                                 <hr>
 
@@ -159,7 +159,7 @@ require "func/login.php";
                 <a href="#" class="small text-decoration-none" onclick="error404()">Glemt adgangskode?</a>
 
                 <!-- Login -->
-                <a id="loginBTN" href="#" class="btn modal-login-btn w-100 mt-4" onclick="login(document.getElementById('username').value, document.getElementById('password').value)">Login</a>
+                <a href="#" class="btn modal-login-btn w-100 mt-4" onclick="login(document.getElementById('username').value, document.getElementById('password').value)">Login</a>
 
             </div>
 
