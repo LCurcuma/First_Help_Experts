@@ -1297,7 +1297,7 @@ body {
 
 
 //--------------- EMNE CARDS ---------------//
-.emne-card{
+.category-card{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1311,12 +1311,12 @@ body {
 
 }
 
-.emne-card:hover{
+.category-card:hover{
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
   border: 1.5px solid #67D27A;
 }
 
-.emne-card-img{
+.category-card-img{
   object-fit: contain;
   width: auto;
   height: 115px;
@@ -1334,11 +1334,11 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    height: 180px;
+    height: 100px;
   }
 }
 
-.emne-card p{
+.category-card p{
   margin-bottom: 0px;
   margin-top: 8px;
   font-size: 16px;
