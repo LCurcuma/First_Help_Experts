@@ -19,17 +19,21 @@
                     </div>
                 </div>
             </div>
+            <form method="post">
+                <input type="hidden" name="withdraw_points" value="<?php echo $points ?>">
+                <input type="hidden" name="user_id" value="<?php echo $userData[0]->id ?>">
             <div class="modal-footer">
-                <div class="withdraw_button" onclick="withdraw(<?php echo $points ?>)">
+                <button class="withdraw_button border-0" type="submit" onclick="startWithdraw(this.form)">
                     <div id="arrow_button" class="swipe_btn" style="position: relative; right: 30%;">
                         <i class="fa-solid fa-chevron-right" style="color: rgb(0, 0, 0);"></i>
                     </div>
                     <p id="withdraw_text" class="withdraw">Withdraw</p>
-                </div>
+                </button>
                 <!--
                 <button type="button" class="btn btn-primary mx-auto text-white withdraw">Withdraw</button>
                 -->
             </div>
+            </form>
         </div>
     </div>
 </div>

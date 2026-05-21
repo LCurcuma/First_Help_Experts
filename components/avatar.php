@@ -5,6 +5,6 @@
             <i class="fa-solid fa-gear"></i>
         </a>
     </div>
-    <h1 class="username">Laura Larsen</h1>
+    <h1 class="username"><?php echo $userData[0]->name?></h1>
 
 
