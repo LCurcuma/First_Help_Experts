@@ -695,7 +695,7 @@ body {
   height: 100vh !important;
   max-height: 932px;
   margin: 0 auto !important;
-  padding: 30px 24px 20px 24px;
+  padding: 30px 24px 40px 24px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
@@ -769,7 +769,8 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 10px;
 }
 
 
@@ -779,6 +780,7 @@ body {
   color: $black;
   margin: 0 0 10px 0;
   letter-spacing: -0.3px;
+  margin-left: 5px;
 }
 
 #step-text{
@@ -787,17 +789,18 @@ body {
   color: $black;
   line-height: 1.5;
   margin-bottom: 15px;
+  margin-left: 5px;
 }
 
 
 .husk-box{
   background-color: #ffd5d2;
-  border-radius: 16px;
-  padding: 14px;
+  border-radius: 24px;
+  padding: 16px;
   color: $black;
-  font-size: 13px;
-  line-height: 1.4;
-  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 25px
 }
 
 .husk-box strong{
@@ -806,8 +809,8 @@ body {
   font-weight: 800;
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 6px;
+  gap: 8px;
+  margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -817,6 +820,7 @@ body {
   font-size: 13.5px;
   line-height: 1.4;
   display: block;
+  padding: 10px;
 }
 
 
@@ -854,10 +858,13 @@ body {
   background-color: #e0e0e0;
   border-radius: 20px;
   transition: background-color 0.2s ease, width 0.2s ease;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .dot.active{
   background-color:$primary;
+  box-shadow: 0 4px 12px rgba(92, 214, 133, 0.5), 0 1px 4px rgba(0, 0, 0, 0.15);
+  transform: scaleY(1.1);
 }
 
 /*--- Trin-for-trin-guide ---*/
