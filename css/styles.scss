@@ -430,7 +430,6 @@ body {
 }
 
 .weekly-missions-progress-bar {
-  width: 75%;
   height: 25px;
   background: $white;
 
@@ -1239,7 +1238,11 @@ body {
   }
 
   @include media-breakpoint-up(mg) {
-    font-size: 40px;
+    font-size: 38px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 35px;
   }
 }
 
@@ -1292,62 +1295,81 @@ body {
   @include media-breakpoint-up(mg) {
     height: 180px;
   }
+
+  @include media-breakpoint-up(lg) {
+    height: 150px;
+    top: 5%;
+  }
 }
 
 
 
 //--------------- EMNE CARDS ---------------//
-.emne-card{
+
+.quiz-colone{
+  border-right: 2px solid #d6d6d6;
+  padding-right: 30px;
+  padding-left: 0px;
+}
+
+.category-card{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 180px;
-  max-height: 500px;
+  height: 190px;
   background: #FFFBF5;
   border: 0.8px solid #c3c3c3;
   border-radius: 15px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
+  @include media-breakpoint-up(md) {
+    height: 200px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 250px;
+  }
+
 }
 
-.emne-card:hover{
+.category-card:hover{
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
   border: 1.5px solid #67D27A;
 }
 
-.emne-card-img{
+.category-card-img{
   object-fit: contain;
   width: auto;
   height: 115px;
 
   @include media-breakpoint-up(sm) {
-    height: 120px;
-  }
-
-  @include media-breakpoint-up(md) {
     height: 125px;
   }
 
+  @include media-breakpoint-up(md) {
+    height: 135px;
+  }
+
   @include media-breakpoint-up(mg) {
-    height: 130px;
+    height: 140px;
   }
 
   @include media-breakpoint-up(lg) {
-    height: 180px;
+    height: 145px;
   }
 }
 
-.emne-card p{
+.category-card p{
   margin-bottom: 0px;
   margin-top: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bolder;
   display: flex;
   justify-content: center;
 
   @include media-breakpoint-up(sm) {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   @include media-breakpoint-up(md) {
@@ -1359,7 +1381,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 28px;
+    font-size: 25px;
   }
 }
 //--------------- EMNE CARDS ---------------//
@@ -1369,11 +1391,43 @@ body {
 .quiz-progress-text{
   font-size: 13px;
   opacity: 80%;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 14px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 15px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 17px;
+  }
 }
 
 .spg-text{
   font-size: 22px;
   margin-bottom: 0px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 26px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 28px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 30px;
+  }
 }
 
 .quiz-img-con {
@@ -1387,6 +1441,22 @@ body {
   width: auto;
   height: 300px;
   object-fit: cover;
+
+  @include media-breakpoint-up(sm) {
+    height: 310px;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 320px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    height: 330px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 340px;
+  }
 }
 
 .answer-option{
@@ -1415,11 +1485,51 @@ body {
   font-size: 16px;
   flex-shrink: 0;
   transition: all 0.2s ease;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 17px;
+    width: 39px;
+    height: 39px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 19px;
+    width: 41px;
+    height: 41px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 20px;
+    width: 42px;
+    height: 42px;
+  }
 }
 
 .answer-option span {
   font-size: 16px;
   font-weight: bolder;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 17px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 19px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 19px;
+  }
 }
 
 .answer-option.correct-choice {

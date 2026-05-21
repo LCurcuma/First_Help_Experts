@@ -16,8 +16,8 @@ const correctScoreText = document.getElementById("correct-score");
 const totalQuestionsText = document.getElementById("total-questions");
 
 //Henter data fra JSON fil
-function fetchQuestions() {
-    fetch('quiz.json')
+function fetchQuestions(jsonFilnavn) {
+    fetch(jsonFilnavn)
         .then(response =>{
             if (!response.ok) {
                 throw new Error("Kunne ikke hente data fra JSON-fil");
@@ -53,7 +53,7 @@ function loadQuestions() {
         const button = document.createElement("button");
 
         button.className = "answer-option w-100 mb-3 text-start d-flex align-items-center gap-3 p-3";
-        button.innerHTML = `<div class="letter-badge">${letters[index]}</div> <span class="fw-semibold text-dark fs-6">${answer}</span>`;
+        button.innerHTML = `<div class="letter-badge">${letters[index]}</div> <span class="fw-semibold text-dark">${answer}</span>`;
 
         button.addEventListener("click", () => checkAnswer(index, button));
         optionsContainer.appendChild(button);
@@ -97,6 +97,30 @@ function loadQuestions() {
 
 // EVENT LISTENER: Kører så snart HTML-strukturen er helt indlæst i browseren
 document.addEventListener('DOMContentLoaded', () => {
-    fetchQuestions();
+    const categoryCards = document.querySelectorAll('.category-card');
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+
+    categoryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const jsonFilnavn = card.getAttribute('data-quiz');
+
+            currentQuestionIndex = 0;
+            score = 0;
+
+            // 2. SKJUL BEGGE SKÆRME: Ryd højre side med det samme
+            if (quizScreen) quizScreen.classList.add("d-none");
+            if (resultScreen) resultScreen.classList.add("d-none");
+
+            // 3. HVIS DEN NYE KATEGORI HAR EN QUIZ-FIL (f.eks. data-quiz="hlr.json")
+            if (jsonFilnavn) {
+                // Vis quiz-skærmen igen for den nye test
+                quizScreen.classList.remove("d-none");
+
+                // Hent de nye spørgsmål ind
+                fetchQuestions(jsonFilnavn);
+            }
+        });
+    });
 });
 
