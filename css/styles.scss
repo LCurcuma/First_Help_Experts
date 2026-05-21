@@ -268,6 +268,66 @@ body {
 //-------------------------------------//
 
 
+//------- (INDEX) DESKTOP LOGIN -------//
+.desktop-logo1 {
+  width: 300px;
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+}
+
+.desktop-logo2 {
+  width: 600px;
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45));
+}
+
+.desktop-login-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+
+  background: #efeff4;
+  border-radius: 25px;
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+}
+
+.desktop-login-box input {
+    border: none;
+    background: #f8f8f8;
+}
+
+.login-btn-desktop{
+  width: 75%;
+  max-width: 360px;
+  border-radius: 25px;
+  padding: 14px 0;
+  font-size: 23px;
+  font-weight: 600;
+  border: none;
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+
+  color: $white;
+  background: #67D27A;
+
+  //Gradient lavet med: https://cssgradient.io
+  background: linear-gradient(180deg, rgba(103, 210, 122, 1) 0%, rgba(96, 167, 109, 1) 100%);
+}
+
+@include media-breakpoint-up(xl) {
+  .login-container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+//-------------------------------------//
+
+
 //-------- (INDEX) LOGIN MODAL --------//
 .login-modal {
   background: #efeff4;
@@ -435,7 +495,11 @@ body {
 //-------------------------------------//
 
 
-
+//----------- (FP) CONTAINER ----------//
+.fp-container{
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
 /*--- GUIDS ---*/
 
