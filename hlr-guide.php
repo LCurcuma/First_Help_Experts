@@ -77,7 +77,6 @@ require "settings/init.php";
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="dot"></span>
         </div>
     </div>
 </div>
@@ -111,7 +110,7 @@ require "settings/init.php";
 
         {
             titel: "4. Fortsæt indtil hjælp kommer",
-            tekst: "Bliv ved med HLR indtil ambulancen overtager.",
+            tekst: "Bliv ved med HLR indtil ambulancefolkene er på stedet og overtager.",
             husk: "Skift hjælper hver 2. minut, hvis muligt.",
             billede: "img/icons/3d-icons/ambulance.png"
         }
