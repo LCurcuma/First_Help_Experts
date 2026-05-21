@@ -555,9 +555,9 @@ body {
 
 
 .card-image-wrapper img{
-  height: 72px;
+  height: 100px;
   width: auto;
-  object-fit: contain;
+  object-fit:cover;
 }
 
 
@@ -660,9 +660,9 @@ body {
 }
 
 .guide-image-wrapper img{
-  height: 60px;
+  height: 100px;
   width: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .guide-text-wrapper{
@@ -689,7 +689,7 @@ body {
   margin-left: -8px;
 }
 
-.guide-container {
+.guide-container{
   background-color: $white;
   width: 100%;
   max-width: 430px;
@@ -714,7 +714,7 @@ body {
   letter-spacing: -0.5px;
 }
 
-.steps-header {
+.steps-header{
   display: flex;
   justify-content: space-between;
   gap: 8px;
@@ -722,26 +722,26 @@ body {
   padding: 4px;
 }
 
-.guide-container .step-badge {
+.guide-container .step-badge{
   flex: 1;
   text-align: center;
   font-size: 11px;
   font-weight: 700;
   padding: 8px 4px;
   border: 1px solid #e0e0e0;
-  border-radius: 20px;
+  border-radius: 10px;
   color: $black;
-  background-color: lightgray;
+  background-color: $white;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-.guide-container .step-badge.active {
-  background-color: #5CD685;
+.guide-container .step-badge.active{
+  background-color: $primary;
   color: white;
-  border-color: #5CD685;
+  border-color: $primary;
   box-shadow: 0 4px 12px rgba(92, 214, 133, 0.4);
   transform: translateY(1px);
 }
@@ -766,7 +766,7 @@ body {
 }
 
 
-.guide-content {
+.guide-content{
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -774,7 +774,7 @@ body {
 }
 
 
-#step-title {
+#step-title{
   font-size: 22px;
   font-weight: 800;
   color: $black;
@@ -782,7 +782,7 @@ body {
   letter-spacing: -0.3px;
 }
 
-#step-text {
+#step-text{
   font-size: 15px;
   font-weight: 600;
   color: $black;
@@ -791,8 +791,8 @@ body {
 }
 
 
-.husk-box {
-  background-color: #f8d7d7;
+.husk-box{
+  background-color: #ffd5d2;
   border-radius: 16px;
   padding: 14px;
   color: $black;
@@ -801,7 +801,7 @@ body {
   margin-bottom: 20px;
 }
 
-.husk-box strong {
+.husk-box strong{
   color: #FF4953;
   font-size: 14px;
   font-weight: 800;
@@ -821,7 +821,7 @@ body {
 }
 
 
-.next-button {
+.next-button{
   background-color:$primary;
   color: $white;
   border: none;
@@ -837,19 +837,19 @@ body {
   transition: background-color 0.2s ease;
 }
 
-.next-button:active {
+.next-button:active{
   transform: scale(0.98);
 }
 
 
-.progress-dots {
+.progress-dots{
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-top: 15px;
 }
 
-.dot {
+.dot{
   width: 32px;
   height: 6px;
   background-color: #e0e0e0;
@@ -857,7 +857,7 @@ body {
   transition: background-color 0.2s ease, width 0.2s ease;
 }
 
-.dot.active {
+.dot.active{
   background-color:$primary;
 }
 

@@ -139,10 +139,10 @@ require "settings/init.php";
         <div class="col-6">
             <div class="guide-card" onclick="alert('Funktionen er på vej!')">
                 <div class="guide-image-wrapper">
-                    <img src="img/icons/3d-icons/armsling.png" alt="Blødninger">
+                    <img src="img/icons/3d-icons/bleeding.png" alt="Blødninger">
                 </div>
                 <div class="guide-text-wrapper">
-                    <span>Forbinding</span>
+                    <span>Blødning</span>
                 </div>
             </div>
         </div>
@@ -172,7 +172,7 @@ require "settings/init.php";
         <div class="col-6">
             <div class="guide-card" onclick="alert('Funktionen er på vej!')">
                 <div class="guide-image-wrapper">
-                    <img src="img/icons/3d-icons/kvælning.png" alt="Kvælning">
+                    <img src="img/icons/3d-icons/choking.png" alt="Kvælning">
                 </div>
                 <div class="guide-text-wrapper">
                     <span>Kvælning</span>
@@ -183,7 +183,7 @@ require "settings/init.php";
         <div class="col-6">
             <div class="guide-card" onclick="alert('Funktionen er på vej!')">
                 <div class="guide-image-wrapper">
-                    <img src="img/icons/3d-icons/Stroke.png" alt="Stroke">
+                    <img src="img/icons/3d-icons/strokeperson.png" alt="Stroke">
                 </div>
                 <div class="guide-text-wrapper">
                     <span>Stroke</span>
