@@ -506,9 +506,26 @@ body {
 
 .phone-container{
   width: 100%;
-  max-width: 400px;
-  padding: 20px 16px;
+  max-width: 100%;
+  padding: 12px 10px;
   box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @include media-breakpoint-up(sm){
+    max-width: 540px;
+    padding: 16px 14px;
+  }
+
+  @include media-breakpoint-up(md){
+    max-width: 720px;
+    padding: 20px 16px;
+  }
+
+  @include media-breakpoint-up(mg){
+    max-width: 820px;
+    padding: 24px 20px;
+  }
 }
 
 .back-arrow i{
@@ -517,6 +534,16 @@ body {
   font-weight: bold;
   display: inline-block;
   margin-left: -10px;
+
+  @include media-breakpoint-up(sm){
+    font-size: 22px;
+    margin-left: -8px;
+  }
+
+  @include media-breakpoint-up(mg){
+    font-size: 26px;
+  }
+
 }
 
 
@@ -534,8 +561,19 @@ body {
   padding: 12px 6px 20px 6px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
 
+  @include media-breakpoint-up(sm){
+    height: 155px;
+    border-radius: 26px;
+    padding: 12px 6px 16px 6px;
+  }
+
+  @include media-breakpoint-up(mg){
+    height: 190px;
+    padding: 14px 8px 22px 8px;
+    border-radius: 32px;
+  }
+}
 
 .data-card:active{
   transform: scale(0.95);
@@ -557,6 +595,14 @@ body {
   height: 100px;
   width: auto;
   object-fit:cover;
+
+  @include media-breakpoint-up(sm){
+    height: 85px;
+  }
+
+  @include media-breakpoint-up(mg){
+    height: 110px;
+  }
 }
 
 
@@ -573,6 +619,15 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   display: block;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 12px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 14px;
+    letter-spacing: 0.7px;
+  }
 }
 
 
@@ -588,6 +643,17 @@ body {
   border: none !important;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   padding: 12px;
+
+  @include media-breakpoint-up(sm){
+    border-radius: 28px;
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(mg){
+    border-radius: 36px;
+    padding: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+  }
 }
 
 .custom-modal .modal-title{
@@ -596,19 +662,59 @@ body {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(mg){
+    font-size: 20px;
+    letter-spacing: 0.8px;
+  }
 }
 
 .custom-modal .modal-body p{
   color: #444444;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.5;
   white-space: pre-line;
+
+  @include media-breakpoint-up(sm){
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  @include media-breakpoint-up(md){
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  @include media-breakpoint-up(mg){
+    font-size: 15px;
+    line-height: 1.65;
+  }
 }
 
 .custom-modal-position{
-  margin-top: 200px !important;
+  margin-top: 80px !important;
   margin-left: auto;
   margin-right: auto;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 140px !important;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-top: 200px !important;
+  }
+
+  @include media-breakpoint-up(mg) {
+    margin-top: 240px !important;
+  }
 }
 
 .btn-close:focus{
