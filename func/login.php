@@ -21,7 +21,7 @@ require "settings/init.php";
         })
 
         if(success){
-            window.location.href = `forside.php?${id}`;
+            window.location.href = `forside.php?id=${id}`;
         } else {
             alert("Wrong username or password");
         }
