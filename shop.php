@@ -7,15 +7,61 @@ require "settings/init.php";
 
 //tage data fra json-fil
 $json = file_get_contents("data/data_shop.json");
-
+//converterer til json-format, så den kan bruges i JavaScript, for eksempel
 $data = json_decode($json, true);
+
+//tage id fra link ("forside.php? ->id=1<- id, som bruges")
+$id = $_GET["id"];
+//tage data om bruger med den id
+$userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+
+//når man laver withdraw (eller submitter formular)
+if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
+
+    //tage data om points og id
+    $pointsToBuy = (int) $_POST['withdraw_points'];
+    $userId = (int) $_POST['user_id'];
+
+    // get current points
+    $user = $db->sql("SELECT points FROM users WHERE id = '$userId'");
+    $currentPoints = (int) $user[0]->points;
+
+    //hvis bruger har nok points
+    if ($pointsToBuy <= $currentPoints) {
+
+        //new points
+        $newPoints = $currentPoints - $pointsToBuy;
+
+        //opdaterer database
+        $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+
+        //opdaterer data på side
+        $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+        //gå til den samme side med success index
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&success=1");
+        exit();
+    } else {
+        //ellers gå till den samme side med error index
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&error=1");
+        exit();
+    }
+}
 ?>
+<!-- hvis success, alerte Købt, ellers - Ikke nok -->
+<?php if (isset($_GET['success'])): ?>
+    <script>alert('Købt!');</script>
+<?php endif; ?>
+
+<?php if (isset($_GET['error'])): ?>
+    <script>alert('Ikke nok!');</script>
+<?php endif; ?>
+
     <!DOCTYPE html>
     <html lang="da">
     <head>
         <meta charset="utf-8">
 
-        <title>Forside - Førstehjælpeksperten</title>
+        <title>Shop - Førstehjælpeksperten</title>
 
         <meta name="robots" content="All">
         <meta name="author" content="Udgiver">
@@ -46,7 +92,7 @@ $data = json_decode($json, true);
     <body>
     <!--MOBILE VERSION-->
     <div class="d-flex flex-column d-lg-none">
-        <a href="user.php" class="arrow_back_to_user">
+        <a href="user.php?id=<?php echo $userData[0]->id?>" class="arrow_back_to_user">
             <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
         </a>
         <?php include "components/money_container_shop.php"; ?>
@@ -73,7 +119,7 @@ $data = json_decode($json, true);
         <div class="container">
             <div class="row">
                 <div class="col col-8 shop_column">
-                    <a href="forside.php" class="arrow_back_to_user">
+                    <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back_to_user">
                         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
                     </a>
                     <div class="cards_container">
@@ -151,10 +197,10 @@ $data = json_decode($json, true);
         include "components/shop_modal.php";
     } ?>
 
-    <script src="func/withdraw.js"></script>
     <!------------ Bootstrap library ------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Funktion for Withdraw -->
+    <script src="func/startWithdraw.js"></script>
     <!------------ AOS LIBRARY ------------>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

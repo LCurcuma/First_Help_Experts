@@ -4,14 +4,17 @@
  */
 
 require "settings/init.php";
-//$users = $db->sql("SELECT * FROM users");
+//tage id fra link ("forside.php? ->id=1<- id, som bruges")
+$id = $_GET["id"];
+//tage data om bruger med den id
+$userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 ?>
     <!DOCTYPE html>
     <html lang="da">
     <head>
         <meta charset="utf-8">
 
-        <title>Laura Larsen</title>
+        <title><?php echo $userData[0]->name ?></title>
 
         <meta name="robots" content="All">
         <meta name="author" content="Udgiver">
@@ -44,7 +47,7 @@ require "settings/init.php";
 
     <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
     <div class="top_container">
-    <a href="forside.php" class="arrow_back">
+    <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back">
         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
     </a>
         <!--the container with points-->
@@ -63,7 +66,7 @@ require "settings/init.php";
                 <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
             </div>
         </a>
-        <a href="shop.php" class="link_tile" style="background: #88DB95;">
+        <a href="shop.php?id=<?php echo $userData[0]->id?>" class="link_tile" style="background: #88DB95;">
             <div>
                 <h2 class="h2_bold">Point shop</h2>
                 <p>350 tilgængelige rewards</p>
