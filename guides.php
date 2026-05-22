@@ -208,8 +208,6 @@ require "settings/init.php";
             </div>
         </div>
 
-
-
         <div class="col-6">
             <div class="guide-card" onclick="alert('Funktionen er på vej!')">
                 <div class="guide-image-wrapper">
