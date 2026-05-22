@@ -4,6 +4,26 @@
  */
 
 require "settings/init.php";
+
+// 1. Hent JSON-dataen og lav den om til et PHP-array
+$jsonData = file_get_contents("data/data_guide.json");
+$trinData = json_decode($jsonData, true);
+
+// 2. Find ud af, hvilket trin brugeren er på (standard er trin 0)
+$nuvaerendeTrin = isset($_GET['trin']) ? (int)$_GET['trin'] : 0;
+$antalTrin = count($trinData);
+
+// Sikkerhed: Sørg for at trinnet ikke er uden for arrayets grænser
+if ($nuvaerendeTrin < 0) $nuvaerendeTrin = 0;
+$visModal = false;
+
+if ($nuvaerendeTrin >= $antalTrin) {
+    $visModal = true; // Trigger Bootstrap modalen hvis guiden er færdig
+    $nuvaerendeTrin = $antalTrin - 1; // Hold os på sidste trin i baggrunden
+}
+
+// Hent data for det aktuelle trin
+$data = $trinData[$nuvaerendeTrin];
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -51,32 +71,43 @@ require "settings/init.php";
     <h2 class="HLR-h2">Hjerte-lunge redning</h2>
 
     <div class="steps-header">
-        <span class="step-badge" id="badge-1" data-trin="0">Tjek</span>
-        <span class="step-badge" id="badge-2" data-trin="1">Ring</span>
-        <span class="step-badge" id="badge-3" data-trin="2">Tryk</span>
-        <span class="step-badge" id="badge-4" data-trin="4">Fortsæt</span>
+        <?php
+        $badgeNavne = ["Tjek", "Ring", "Tryk", "Fortsæt"];
+        foreach ($badgeNavne as $index => $navn):
+            // Kun tillad at klikke bagud (ligesom i din JS-kode)
+            if ($index <= $nuvaerendeTrin): ?>
+                <a href="?trin=<?php echo $index; ?>" class="step-badge <?php echo ($index === $nuvaerendeTrin) ? 'active' : ''; ?>">
+                    <?php echo $navn; ?>
+                </a>
+            <?php else: ?>
+                <span class="step-badge"><?php echo $navn; ?></span>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </div>
 
     <div class="guide-content">
         <div class="image-container">
-        <img id="guide-image" src="" alt="Guide illustration" style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px ">
+            <img src="<?php echo $data['billede']; ?>" alt="Guide illustration" style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px ">
         </div>
-        <h3 id="step-title"></h3>
-        <p id="step-text"></p>
+        <h3 class="fw-bold"><?php echo $data['titel']; ?></h3>
+        <p class="fw-bold"><?php echo $data['tekst']; ?></p>
 
-        <div id="husk-box" class="husk-box">
-            <strong>💡 HUSK:</strong> <span id="husk-text"></span>
+        <div class="husk-box">
+            <strong>💡 HUSK:</strong> <span><?php echo $data['husk']; ?></span>
         </div>
     </div>
 
     <div class="guide-footer">
-        <button id="next-btn" class="next-button">NÆSTE TRIN</button>
+        <?php if ($nuvaerendeTrin === $antalTrin - 1): ?>
+            <a href="?trin=<?php echo $antalTrin; ?>" class="next-button text-center text-decoration-none d-block" style="background-color: #2196F3; line-height: 24px;">AFSLUT GUIDE</a>
+        <?php else: ?>
+            <a href="?trin=<?php echo $nuvaerendeTrin + 1; ?>" class="next-button text-center text-decoration-none d-block" style="background-color: #5CD685; line-height: 24px;">NÆSTE TRIN</a>
+        <?php endif; ?>
 
         <div class="progress-dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <?php for ($i = 0; $i < $antalTrin; $i++): ?>
+                <span class="dot <?php echo ($i === $nuvaerendeTrin) ? 'active' : ''; ?>"></span>
+            <?php endfor; ?>
         </div>
     </div>
 </div>
@@ -90,7 +121,7 @@ require "settings/init.php";
                 </div>
                 <h4 class="fw-bold mb-2" style="color: #000000; font-size: 20px;">Godt arbejdet!</h4>
                 <p class="text-muted mb-4" style="font-size: 14px; line-height: 1.4;">Du har gennemført guiden i Hjerte-lunge redning.</p>
-                <button type="button" class="btn next-button w-100" data-bs-dismiss="modal" style="background-color: #5CD685; color: white; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 14px;">OKAY</button>
+                <a href="hlr-guide.php" class="btn next-button w-100 text-center text-decoration-none" style="background-color: #5CD685; color: white; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 14px; line-height: 20px;">OKAY</a>
             </div>
         </div>
     </div>
@@ -100,119 +131,13 @@ require "settings/init.php";
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<?php if ($visModal): ?>
 <script>
-
-    const trinData = [
-        {
-            titel: "1. Tjek bevidsthed",
-            tekst: "Rusk forsigtigt personen i skuldrene og spørg højt: 'Er du okay?'",
-            husk: "Hvis personen ikke reagerer, gå videre til næste trin.",
-            billede: "img/icons/3d-icons/debris.png"
-        },
-        {
-            titel: "2. Ring 1-1-2",
-            tekst: "Hvis personen ikke reagerer, ring straks 1-1-2 eller få en anden til det.",
-            husk: "Sæt telefonen på højtaler, så du har hænderne fri.",
-            billede: "img/icons/3d-icons/callinghelp.png"
-        },
-        {
-            titel: "3. Start HLR",
-            tekst: "Giv 30 brystkompressioner og 2 indblæsninger. Tryk hårdt og hurtigt midt på brystet.",
-            husk: "skab fri luftvej og tryk 5-6 cm dybt.",
-            billede: "img/icons/3d-icons/HLR-start.png"
-        },
-
-        {
-            titel: "4. Fortsæt indtil hjælp kommer",
-            tekst: "Bliv ved med HLR indtil ambulancefolkene er på stedet og overtager.",
-            husk: "Skift hjælper hver 2. minut, hvis muligt.",
-            billede: "img/icons/3d-icons/ambulance.png"
-        }
-    ];
-
-    let nuvaerendeTrin = 0;
-
-    // Hent HTML-elementerne
-    const guideImage = document.getElementById("guide-image");
-    const stepTitle = document.getElementById("step-title");
-    const stepText = document.getElementById("step-text");
-    const huskText = document.getElementById("husk-text");
-    const nextBtn = document.getElementById("next-btn");
-    const dots = document.querySelectorAll(".dot");
-    const badges = document.querySelectorAll(".step-badge"); // Hent badges i toppen
-
-    function opdaterSkerm() {
-        const data = trinData[nuvaerendeTrin];
-
-        // Opdater billede og tekst
-        guideImage.src = data.billede;
-        stepTitle.innerText = data.titel;
-        stepText.innerText = data.tekst;
-        huskText.innerText = data.husk;
-
-        // Skift knaptekst og farve på sidste trin
-        if (nuvaerendeTrin === trinData.length - 1) {
-            nextBtn.innerText = "AFSLUT GUIDE";
-            nextBtn.style.backgroundColor = "#2196F3";
-        } else {
-            nextBtn.innerText = "NÆSTE TRIN";
-            nextBtn.style.backgroundColor = "#5CD685";
-        }
-
-        // DYNAMISK FIX: Opdater hvilken knap i toppen der er aktiv
-        badges.forEach((badge, index) => {
-            if (index === nuvaerendeTrin) {
-                badge.classList.add("active");
-            } else {
-                badge.classList.remove("active");
-            }
-        });
-
-        // Opdater de små prikker i bunden
-        dots.forEach((dot, index) => {
-            if (index === nuvaerendeTrin) {
-                dot.classList.add("active");
-            } else {
-                dot.classList.remove("active");
-            }
-        });
-    }
-
-    badges.forEach(badge => {
-        badge.addEventListener("click", function() {
-            const valgtTrin =  parseInt(this.getAttribute("data-trin"));
-            if (valgtTrin < nuvaerendeTrin) {
-                nuvaerendeTrin = valgtTrin;
-                opdaterSkerm();
-            } else if (valgtTrin > nuvaerendeTrin) {
-                console.log("Du kan ikke springe frem i guiden. Brug 'NÆSTE TRIN' knappen");
-            }
-
-        });
-    });
-
-    // Klik-hændelse
-    nextBtn.addEventListener("click", () => {
-        if (nuvaerendeTrin < trinData.length - 1) {
-            nuvaerendeTrin++;
-            opdaterSkerm();
-        } else {
-            // Initialiser og vis Bootstrap Modalen i stedet for den gamle alert
-            const myModal = new bootstrap.Modal(document.getElementById('completionModal'));
-            myModal.show();
-
-            // Nulstil guiden når popup'en lukkes
-            document.getElementById('completionModal').addEventListener('hidden.bs.modal', function () {
-                nuvaerendeTrin = 0;
-                opdaterSkerm();
-            });
-        }
-    });
-
-    // Indlæs første trin ved start
-    opdaterSkerm();
-
+    const myModal = new bootstrap.Modal(document.getElementById('completionModal'));
+    myModal.show();
 </script>
+<?php endif; ?>
+
 
 </body>
 </html>
