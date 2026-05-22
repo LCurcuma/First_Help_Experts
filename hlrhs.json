@@ -24,6 +24,18 @@
   },
 
   {
+    "question": "Hvad gør du, hvis du tænder hjertestarteren, og den siger 'Sæt elektroder på patientens bryst', men personen har et tykt lag brysthår?",
+    "image": "img/hlr-7.jpg",
+    "answers": [
+      "Brug den medfølgende skraber i kittet til hurtigt at barbere håret af de steder, hvor padsene skal sidde.",
+      "Sæt elektroderne oven på håret og tryk ekstra hårdt ned.",
+      "Placer elektroderne på maven i stedet for, hvor der er mindre hår.",
+      "Undlad at bruge hjertestarteren og fortsæt kun med hjertemassage."
+    ],
+    "correctAnswer": 0
+  },
+
+  {
     "question": "Hvad skal du gøre, hvis personens brystkasse er drivvåd af sved eller vand, inden du sætter elektroderne på?",
     "image": "img/icons/3d-icons/HLR-start.png",
     "answers": [

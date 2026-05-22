@@ -1457,6 +1457,10 @@ body {
 //--------------- EMNE CARDS ---------------//
 
 .quiz-colone{
+  padding-left: 30px;
+}
+
+.cate-colone{
   border-right: 2px solid #d6d6d6;
   padding-right: 30px;
   padding-left: 0px;
@@ -1537,6 +1541,12 @@ body {
 //--------------- EMNE CARDS ---------------//
 
 //--------------- HLR TEST SIDE ---------------//
+
+.quiz-progress{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 
 .quiz-progress-text{
   font-size: 13px;
@@ -1754,6 +1764,15 @@ body {
   color: $white;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(95, 203, 106, 0.3);
+}
+
+.guiz-progress-beholder {
+    background-color: $white !important;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.quiz-progress-fyld{
+  background-color: $primary !important;
 }
 
 //--------------- HLR TEST SIDE ---------------//
