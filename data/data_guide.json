@@ -51,10 +51,80 @@
       "billede": "img/icons/3d-icons/læg_forbinding.png"
     },
     {
-      "titel": "Kontakt alarmcentralen.",
+      "titel": "5. Kontakt alarmcentralen.",
       "tekst": "Hvis blødningen ikke stopper eller der er meget blodtab eller personen mister bevidstheden.",
       "husk": "Tal roligt og trygt for at skabe tryghed og overblik.",
       "billede": "img/icons/3d-icons/not-okay.png"
+    }
+  ],
+  "brandsår": [
+    {
+      "titel": "1. Skab ro og sikkerhed.",
+      "tekst": "Fjern personen fra varmekilden og sørg for området er sikkert.",
+      "husk": "Fjern aldrig tøj, der sidder fast i brandsåret.",
+      "billede": "img/icons/3d-icons/burning.png"
+    },
+    {
+      "titel": "2. Køl brandsåret.",
+      "tekst": "Skyld med køligt lunken rindende vand i ca. 20 minutter.",
+      "husk": "Prik ikke hul på blærer",
+      "billede": "img/icons/3d-icons/water.png"
+    },
+    {
+      "titel": "3. Fjern stramt tøj og smykker.",
+      "tekst": "Fjern forsigtigt ringe, armbånd eller stramt tøj nær brandsåret.",
+      "husk": "Brug ikke smør, olie, eller creme på brandsåret.",
+      "billede": "img/icons/3d-icons/fjern-smykker.png"
+    },
+    {
+      "titel": "4. Dæk brandsåret. ",
+      "tekst": "Dæk med en ren, tør og ikke-klæbende forbinding eller klud.",
+      "husk": "Hold øje med med tegn på chok, fx bleghed, svimmelhed eller koldsved.",
+      "billede": "img/icons/3d-icons/coverburn.png"
+    },
+    {
+      "titel": "5. Hold personen varm.",
+      "tekst": "Undgå nedkøling, især ved større brandsår.",
+      "husk": "Små brandsår kan forværres over tid - hold øje med huden.",
+      "billede": "img/icons/3d-icons/warm.png"
+    },
+    {
+      "titel": "6. Ring 1-1-2 ved alvorlige brandsår.",
+      "tekst": "Ring ved stor, dybe eller smertefulde brandsår eller hvis personen er utilpas.",
+      "husk": "Børn og ældre skal altid vurderes ekstra forsigtigt.",
+      "billede": "img/icons/3d-icons/ring112.png"
+    }
+  ],
+  "bevidstløshed": [
+    {
+      "titel": "1. Tjek bevidsthed.",
+      "tekst": "Rusk forsigtigt personen i skulderne og spørg højt: 'Er du okay?'",
+      "husk": "Sørg altid for at området er sikkert.",
+      "billede": "img/icons/3d-icons/debris.png"
+    },
+    {
+      "titel": "2. Ring 1-1-2.",
+      "tekst": "Hvis personen ikke reagerer, ring straks 1-1-2 eller få en anden til det.",
+      "husk": "Ring heller 1-1-2 en gang formeget end en gang for lidt.",
+      "billede": "img/icons/3d-icons/callinghelp.png"
+    },
+    {
+      "titel": "3. Skab frie luftveje. ",
+      "tekst": "Bøj hovedet let bagover og løft hagen op for at åbne luftvejene.",
+      "husk": "Forlad ikke personen alene.",
+      "billede": "img/icons/3d-icons/tjek-vejr.png"
+    },
+    {
+      "titel": "4. Stabilt sideleje. ",
+      "tekst": "Hvis personen trækker vejret normalt, lægges vedkommende i stabilt sideleje.",
+      "husk": "Hold personen varm og under opsyn.",
+      "billede": "img/icons/3d-icons/sideleje.png"
+    },
+    {
+      "titel": "5. HLR",
+      "tekst": "Hvis personen ikke tækker vejret, start hjerte-lunge redning.",
+      "husk": "Giv 2 indblæsninger og 30 brystkompressioner, indtil hjælp kommer.",
+      "billede": "img/icons/3d-icons/HLR-start.png"
     }
   ]
 }
