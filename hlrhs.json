@@ -1,7 +1,7 @@
 [
   {
     "question": "Hvad er det første du skal gøre, når en hjertestarter er til stede?",
-    "image": "img/icons/3d-icons/recovery-position.png",
+    "image": "img/icons/3d-icons/defibrillator.png",
     "answers": [
       "Tænde for hjertestarteren på tænd-knappen",
       "Sætte elektroderne fast på personens bryst",
@@ -12,8 +12,20 @@
   },
 
   {
+    "question": "Hvorfor følger der ofte en saks med i tasken sammen med en hjertestarter?",
+    "image": "img/icons/3d-icons/defibriwiths.png",
+    "answers": [
+      "Til at klippe elektroderne til, hvis de er for store til personen.",
+      "Til at klippe ledningerne over, hvis maskinen fejler.",
+      "Til hurtigt at klippe tøjet op, så elektroderne kan sættes direkte på huden.",
+      "Til brug for redningsmandskabet, når de ankommer."
+    ],
+    "correctAnswer": 2
+  },
+
+  {
     "question": "Hvor skal de to elektrodepads placeres på en voksen person?",
-    "image": "img/icons/3d-icons/callinghelp.png",
+    "image": "img/icons/3d-icons/personwithdefibrillator.png",
     "answers": [
       "En midt på brystet og en midt på ryggen",
       "En på højre side under kravebenet og en på venstre side under armhulen",
@@ -24,8 +36,20 @@
   },
 
   {
-    "question": "Hvad skal du gøre, hvis personens brystkasse er drivvåd af sved eller vand, inden du sætter elektroderne på?",
-    "image": "img/icons/3d-icons/HLR-start.png",
+    "question": "Hvad gør du, hvis personen har et tykt lag brysthår?",
+    "image": "img/icons/3d-icons/skraber.png",
+    "answers": [
+      "Brug den medfølgende skraber i kittet til hurtigt at barbere håret af de steder, hvor padsene skal sidde.",
+      "Sæt elektroderne oven på håret og tryk ekstra hårdt ned.",
+      "Placer elektroderne på maven i stedet for, hvor der er mindre hår.",
+      "Undlad at bruge hjertestarteren og fortsæt kun med hjertemassage."
+    ],
+    "correctAnswer": 0
+  },
+
+  {
+    "question": "Hvad skal du gøre, hvis personens brystkasse er våd af sved eller vand, inden du sætter elektroderne på?",
+    "image": "img/icons/3d-icons/personwet.png",
     "answers": [
       "Sætte elektroderne på alligevel, da de har stærk lim",
       "Placere elektroderne på maven i stedet for",
@@ -37,7 +61,7 @@
 
   {
     "question": "Hvad er den vigtigste regel, når hjertestarteren siger: 'Rør ikke patienten, analyserer'?",
-    "image": "img/icons/3d-icons/hlr.png",
+    "image": "img/icons/3d-icons/placedpads.png",
     "answers": [
       "Alle skal slippe personen helt, så maskinen kan måle hjerterytmen uden forstyrrelser",
       "Du skal fortsætte med kunstigt åndedræt, men stoppe hjertemassagen",
@@ -49,7 +73,7 @@
 
   {
     "question": "Hvorfor skal du råbe 'VÆK' og sikre dig, at ingen rører personen, inden du trykker på stød-knappen?",
-    "image": "img/icons/3d-icons/tiredhlr.png",
+    "image": "img/icons/3d-icons/action.png",
     "answers": [
       "Fordi maskinen kan gå i stykker, hvis mange rører personen",
       "For at give personen plads til at trække vejret efter stødet",
@@ -61,10 +85,10 @@
 
   {
     "question": "Hvad skal du gøre umiddelbart efter, at hjertestarteren har afgivet et stød?",
-    "image": "img/icons/3d-icons/tiredhlr.png",
+    "image": "img/icons/3d-icons/recovery-position.png",
     "answers": [
       "Vente på, at maskinen analyserer igen",
-      "Genoptag hjertemassagen med det samme (30 tryk og 2 indblæsninger)",
+      "Genoptag hjertemassagen med det samme",
       "Tjekke om personen har fået puls eller trækker vejret",
       "Tage elektroderne af for at se, om huden er brændt"
     ],

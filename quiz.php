@@ -77,7 +77,7 @@ require "settings/init.php";
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+            <div class="category-card text-center p-2" data-quiz="hlrhs.json">
                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                 <p>HLR med hjertestarter</p>
             </div>
@@ -132,7 +132,7 @@ require "settings/init.php";
 <div class="d-none flex-column d-lg-block">
     <div class="container">
         <div class="row">
-            <div class="col col-6 quiz-colone">
+            <div class="col col-6 cate-colone">
                 <div class="mission-card mx-4 mb-4 p-4">
                     <div class="position-relative">
                         <p class="mini-tekst">Ugens mission</p>
@@ -161,7 +161,7 @@ require "settings/init.php";
                             </div>
 
                             <div class="col-6">
-                                <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                                <div class="category-card text-center p-2" data-quiz="hlrhs.json"">
                                     <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                                     <p>HLR med hjertestarter</p>
                                 </div>
@@ -212,12 +212,14 @@ require "settings/init.php";
                 </div>
             </div>
 
-            <div class="col col-6">
+            <div class="col col-6 quiz-colone">
                 <div id="quiz-screen" class="quiz d-none">
-                    <div class="px-4 mb-4 quiz-proces">
+                    <div class="px-4 mb-4">
                         <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
-                        <div class="progress">
-                            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
+                        <div class="quiz-progress">
+                            <div class="progress quiz-progress-beholder">
+                                <div id="progress-bar" class="progress-bar quiz-progress-fyld" role="progressbar" style="width: 0%;"></div>
+                            </div>
                         </div>
                     </div>
 

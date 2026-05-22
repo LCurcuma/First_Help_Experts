@@ -45,8 +45,10 @@ require "settings/init.php";
 <div id="quiz-screen" class="quiz">
     <div class="px-4 mb-4 quiz-proces">
         <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
-        <div class="progress">
-            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
+        <div class="quiz-progress">
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
+            </div>
         </div>
     </div>
 
