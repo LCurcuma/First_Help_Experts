@@ -25,6 +25,18 @@
   },
 
   {
+    "question": "Du finder en person med hjertestop, som har kastet op, hvad gør du, før du giver indblæsninger?",
+    "image": "img/hlr-speciel-4.jpg",
+    "answers": [
+      "Fortsæt indblæsningerne med det samme uden at fjerne noget.",
+      "Undlad helt at røre munden og giv i stedet hårdere hjertemassage.",
+      "Vent på ambulancen, da man ikke må rense luftvejene selv.",
+      "Drej personens hoved til siden og rens hurtigt munden ud med dine fingre."
+    ],
+    "correctAnswer": 3
+  },
+
+  {
     "question": "Hvor mange tryk og indblæsninger giver man ved HLR?",
     "image": "img/icons/3d-icons/HLR-start.png",
     "answers": [
@@ -46,6 +58,30 @@
       "8 cm"
     ],
     "correctAnswer": 2
+  },
+
+  {
+    "question": "Hvorfor er det vigtigt, at du slipper presset helt på brystkassen mellem hvert enkelt tryk under hjertemassagen?",
+    "image": "img/hlr-scenarie-4.jpg",
+    "answers": [
+      "For at dine egne håndled og arme kan nå at slappe af undervejs.",
+      "For at tillade brystkassen at udvide sig helt, så hjertet kan blive fyldt med blod igen, før næste tryk.",
+      "For at give personen mulighed for selv at trække vejret mekanisk imellem trykkene.",
+      "For at mindske risikoen for, at huden på brystkassen bliver rød og irriteret."
+    ],
+    "correctAnswer": 1
+  },
+
+  {
+    "question": "Hvis I er flere personer til stede på ulykkesstedet, hvor ofte bør I så bytte, for at trykkene forbliver effektive?",
+    "image": "img/hlr-scenarie-4.jpg",
+    "answers": [
+      "Præcis hvert 2. minut",
+      "Først når den person, der trykker, er helt udmattet og ikke kan mere.",
+      "Efter man har givet 30 tryk og 2 indblæsninger.",
+      "Man må ikke bytte plads, når først genoplivningen er startet."
+    ],
+    "correctAnswer": 0
   },
 
   {

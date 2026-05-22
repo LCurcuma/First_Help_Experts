@@ -12,6 +12,18 @@
   },
 
   {
+    "question": "Hvorfor følger der ofte en saks med i tasken sammen med en hjertestarter?",
+    "image": "img/hlr-10.jpg",
+    "answers": [
+      "Til at klippe elektroderne til, hvis de er for store til personen.",
+      "Til at klippe ledningerne over, hvis maskinen fejler.",
+      "Til hurtigt at klippe tøjet op, så elektroderne kan sættes direkte på huden.",
+      "Til brug for redningsmandskabet, når de ankommer."
+    ],
+    "correctAnswer": 2
+  },
+
+  {
     "question": "Hvor skal de to elektrodepads placeres på en voksen person?",
     "image": "img/icons/3d-icons/callinghelp.png",
     "answers": [
@@ -36,7 +48,7 @@
   },
 
   {
-    "question": "Hvad skal du gøre, hvis personens brystkasse er drivvåd af sved eller vand, inden du sætter elektroderne på?",
+    "question": "Hvad skal du gøre, hvis personens brystkasse er våd af sved eller vand, inden du sætter elektroderne på?",
     "image": "img/icons/3d-icons/HLR-start.png",
     "answers": [
       "Sætte elektroderne på alligevel, da de har stærk lim",
