@@ -844,6 +844,26 @@ body {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
+
+  @include media-breakpoint-up(sm){
+    max-width: 100%;
+    max-height: 820px;
+    height: auto !important;
+    border-radius: 24px;
+    padding: 30px 32px 40px 32px;
+  }
+
+  @include media-breakpoint-up(md){
+    max-width: 100%;
+    max-height: 880px;
+    padding: 30px 40px 40px 40px;
+  }
+
+  @include media-breakpoint-up(mg){
+    max-width: 100%;
+    max-height: 932px;
+    padding: 35px 48px 45px 48px;
+  }
 }
 
 .guide-container h2.HLR-h2{
@@ -854,6 +874,10 @@ body {
   margin-top: 0;
   margin-bottom: 15px;
   letter-spacing: -0.5px;
+
+  @include media-breakpoint-up(sm) { font-size: 22px; }
+  @include media-breakpoint-up(md) { margin-bottom: 20px; }
+  @include media-breakpoint-up(mg) { font-size: 26px; }
 }
 
 .steps-header{
@@ -862,6 +886,8 @@ body {
   gap: 8px;
   margin-bottom: 20px;
   padding: 4px;
+
+  @include media-breakpoint-up(md) { gap: 12px; margin-bottom: 25px; }
 }
 
 .guide-container .step-badge{
@@ -878,6 +904,9 @@ body {
   transition: all 0.2s ease;
   white-space: nowrap;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+  @include media-breakpoint-up(md) { font-size: 12px; padding: 10px 6px; }
+  @include media-breakpoint-up(mg) { font-size: 13px; }
 }
 
 .guide-container .step-badge.active{
@@ -899,12 +928,46 @@ body {
   align-items: center;
   margin-bottom: 15px;
   min-width: 180px;
+  background-color: $white;
+
+  @include media-breakpoint-up(sm) {
+    min-width: 200px;
+    margin-bottom: 15px;
+    background-color: $white;
+  }
+
+  @include media-breakpoint-up(md) {
+    min-width: 220px;
+    margin-bottom: 20px;
+    background-color: $white;
+  }
+
+  @include media-breakpoint-up(mg) {
+    min-width: 240px;
+    margin-bottom: 20px;
+    background-color: $white;
+  }
 }
 
 .guide-image{
-  max-width: 85%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(sm) {
+   height: 200px;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 220px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    height: 240px;
+  }
+
 }
 
 
@@ -924,6 +987,10 @@ body {
   margin: 0 0 10px 0;
   letter-spacing: -0.3px;
   margin-left: 5px;
+
+  @include media-breakpoint-up(sm) { font-size: 20px; }
+  @include media-breakpoint-up(md) { font-size: 22px; margin-bottom: 10px; }
+  @include media-breakpoint-up(mg) { font-size: 24px; }
 }
 
 #step-text{
@@ -933,17 +1000,31 @@ body {
   line-height: 1.5;
   margin-bottom: 15px;
   margin-left: 5px;
+
+  @include media-breakpoint-up(sm) { font-size: 14px; line-height: 1.5; }
+  @include media-breakpoint-up(md) { font-size: 15px; margin-bottom: 20px; }
+  @include media-breakpoint-up(mg) { font-size: 16px; }
 }
 
 
 .husk-box{
   background-color: #ffd5d2;
-  border-radius: 24px;
-  padding: 16px;
+  border-radius: 18px;
+  padding: 12px 20px;
   color: $black;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 25px
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+
+  @include media-breakpoint-up(md){
+    padding: 18px 28px;
+    margin-bottom: 30px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    padding: 20px 32px;
+    margin-bottom: 35px;
+  }
 }
 
 .husk-box strong{
@@ -963,7 +1044,17 @@ body {
   font-size: 13.5px;
   line-height: 1.4;
   display: block;
-  padding: 10px;
+  padding: 10px 15px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 15px;
+    padding: 14px 24px;
+  }
 }
 
 
@@ -972,7 +1063,7 @@ body {
   color: $white;
   border: none;
   border-radius: 14px;
-  padding: 18px;
+  padding: 18px 30px;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
@@ -981,6 +1072,17 @@ body {
   letter-spacing: 0.5px;
   box-shadow: 0 4px 12px rgba(92, 214, 133, 0.15);
   transition: background-color 0.2s ease;
+
+  @include media-breakpoint-up(md) {
+    padding: 20px 40px;
+    font-size: 17px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    padding: 22px 45px;
+    font-size: 18px;
+    border-radius: 16px;
+  }
 }
 
 .next-button:active{
@@ -993,6 +1095,15 @@ body {
   justify-content: center;
   gap: 8px;
   margin-top: 15px;
+
+
+  @include media-breakpoint-up(md) {
+    margin-top: 20px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    margin-top: 25px;
+  }
 }
 
 .dot{
@@ -1000,8 +1111,13 @@ body {
   height: 6px;
   background-color: #e0e0e0;
   border-radius: 20px;
-  transition: background-color 0.2s ease, width 0.2s ease;
+  transition: background-color 0.2s ease, width 0.2s ease, transform 0.2s ease;
   box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.12);
+
+
+  @include media-breakpoint-up(md) {
+   width: 36px;
+  }
 }
 
 .dot.active{
