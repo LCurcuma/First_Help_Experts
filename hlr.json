@@ -26,7 +26,7 @@
 
   {
     "question": "Du finder en person med hjertestop, som har kastet op, hvad gør du, før du giver indblæsninger?",
-    "image": "img/hlr-speciel-4.jpg",
+    "image": "img/icons/3d-icons/opkast.png",
     "answers": [
       "Fortsæt indblæsningerne med det samme uden at fjerne noget.",
       "Undlad helt at røre munden og giv i stedet hårdere hjertemassage.",
@@ -62,7 +62,7 @@
 
   {
     "question": "Hvorfor er det vigtigt, at du slipper presset helt på brystkassen mellem hvert enkelt tryk under hjertemassagen?",
-    "image": "img/hlr-scenarie-4.jpg",
+    "image": "img/icons/3d-icons/pause.png",
     "answers": [
       "For at dine egne håndled og arme kan nå at slappe af undervejs.",
       "For at tillade brystkassen at udvide sig helt, så hjertet kan blive fyldt med blod igen, før næste tryk.",
@@ -74,7 +74,7 @@
 
   {
     "question": "Hvis I er flere personer til stede på ulykkesstedet, hvor ofte bør I så bytte, for at trykkene forbliver effektive?",
-    "image": "img/hlr-scenarie-4.jpg",
+    "image": "img/icons/3d-icons/peoplearound.png",
     "answers": [
       "Præcis hvert 2. minut",
       "Først når den person, der trykker, er helt udmattet og ikke kan mere.",

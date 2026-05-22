@@ -13,7 +13,7 @@
 
   {
     "question": "Hvorfor følger der ofte en saks med i tasken sammen med en hjertestarter?",
-    "image": "img/defibriwiths.png",
+    "image": "img/icons/3d-icons/defibriwiths.png",
     "answers": [
       "Til at klippe elektroderne til, hvis de er for store til personen.",
       "Til at klippe ledningerne over, hvis maskinen fejler.",
@@ -36,8 +36,8 @@
   },
 
   {
-    "question": "Hvad gør du, hvis du tænder hjertestarteren, og den siger 'Sæt elektroder på patientens bryst', men personen har et tykt lag brysthår?",
-    "image": "img/skraber.png",
+    "question": "Hvad gør du, hvis personen har et tykt lag brysthår?",
+    "image": "img/icons/3d-icons/skraber.png",
     "answers": [
       "Brug den medfølgende skraber i kittet til hurtigt at barbere håret af de steder, hvor padsene skal sidde.",
       "Sæt elektroderne oven på håret og tryk ekstra hårdt ned.",
@@ -88,7 +88,7 @@
     "image": "img/icons/3d-icons/recovery-position.png",
     "answers": [
       "Vente på, at maskinen analyserer igen",
-      "Genoptag hjertemassagen med det samme (30 tryk og 2 indblæsninger)",
+      "Genoptag hjertemassagen med det samme",
       "Tjekke om personen har fået puls eller trækker vejret",
       "Tage elektroderne af for at se, om huden er brændt"
     ],
