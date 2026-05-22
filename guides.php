@@ -137,7 +137,8 @@ require "settings/init.php";
         </div>
 
         <div class="col-6">
-            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
+           <a href="blødning-guide.php" class="text-decoration-none">
+            <div class="guide-card guide-card-green">
                 <div class="guide-image-wrapper">
                     <img src="img/icons/3d-icons/bleeding.png" alt="Blødninger">
                 </div>
@@ -145,6 +146,7 @@ require "settings/init.php";
                     <span>Blødning</span>
                 </div>
             </div>
+           </a>
         </div>
 
         <div class="col-6">
