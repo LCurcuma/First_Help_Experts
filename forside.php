@@ -45,7 +45,7 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 <body class="bg-white">
 
 <!-- Velkommen tekst -->
-<div class="p-3 mt-4 ms-2" data-aos="zoom-in">
+<div class="fp-container mt-5" data-aos="zoom-in">
 
     <h1 class="fw-bold display-5 mb-2">Hej <?php echo $userData[0]->name ?>!</h1>
 
@@ -54,7 +54,7 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 </div>
 
 <!-- Weekly missions card -->
-<div class="d-flex justify-content-center align-content-center" data-aos="zoom-in">
+<div class="d-flex justify-content-center align-content-center fp-container" data-aos="zoom-in">
 
     <?php include 'components/weekly-missions-card.php';?>
 
