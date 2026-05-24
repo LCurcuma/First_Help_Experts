@@ -43,6 +43,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
 }
 //-------------------------------------//
 
@@ -581,8 +582,133 @@ body {
 }
 //-------------------------------------//
 
+//------------- (FP) NEWS SLIDER ------------//
 
+//Nyheder overskrift
+.fp-news-heading {
+  font-size: 32px;
+  color: $black;
+  letter-spacing: 1px;
+}
 
+//Container der styrer scroll og centrering
+.fp-slider-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  //Giver smooth scrolling på touch devices som mobil og tablet
+  -webkit-overflow-scrolling: touch;
+
+  //Centrerer første og sidste kort:
+  //50% (midten af skærmen) minus 140px (som er halvdelen af kortets bredde på 280px)
+  //Grunden til det er 280px, er størrelsen jeg har sat nede i fp-news-card
+  padding-left: calc(50% - 140px);
+  padding-right: calc(50% - 140px);
+  gap: 15px;
+
+  //Skjul scrollbar på alle browsere for et rent app-look
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  //Skjuler scrollbar i Internet Explorer og Edge
+  -ms-overflow-style: none;
+
+  //Skjuler scrollbar i Firefox
+  scrollbar-width: none;
+}
+
+//Nyhed card
+.fp-news-card {
+  //Kortet må ikke krympe eller vokse, det skal altid være 280px
+  flex: 0 0 280px;
+  width: 280px;
+  height: 260px;
+
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+
+  //Centrerer automatisk kortet når du slipper det
+  scroll-snap-align: center;
+
+  //Gør så man ikke kan markere tekst eller billeder, når man trækker med musen
+  -webkit-user-select: none; //Safari
+  user-select: none;         //Standard browsere (Chrome, Firefox, Edge, etc.)
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+//Baggrundsbillede på kortet
+.fp-news-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+//Mørkt overlay over billedet, så teksten altid er nem at læse
+.fp-news-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+  padding: 25px;
+
+  //Gør så det billedet er lidt mørkere gennemsigtig farve
+  background: rgba(0, 0, 0, 0.45);
+}
+
+//Tekst-styling indeni nyhedskortet
+.fp-news-title {
+  color: $white;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+//Indikator streger under slideren
+.fp-indicator {
+  width: 35px;
+  height: 6px;
+  margin: 0 5px;
+  border-radius: 10px;
+
+  //Lysegrå for inaktiv
+  background-color: #d1d1d6;
+
+  //Transition mellem inaktiv og aktiv
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  //Aktiv tilstand for indikatoren
+  &.active {
+    //Gør den aktive indikator en mørkere grå
+    background-color: #8e8e93;
+
+    //Gør den aktive indikator lidt større
+    width: 55px;
+    gap: 2px;
+  }
+}
+//-------------------------------------//
 
 
 

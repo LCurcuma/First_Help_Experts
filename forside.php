@@ -129,6 +129,25 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 
 </div>
 
+<!-- Nyheder section -->
+<div class="mt-4 mb-5" data-aos="zoom-in">
+
+    <!-- Overskrift til nyheder -->
+    <h2 class="text-center fw-bold mb-2 fp-news-heading">NYHEDER</h2>
+
+    <!-- Container med slider/kort -->
+    <div class="fp-slider-container" id="newsSlider">
+        <!-- Her indsætter JavaScript alle nyhedskort -->
+    </div>
+
+    <!-- Indicators/dots under slider -->
+    <div class="d-flex justify-content-center mt-3" id="sliderIndicators">
+        <!-- Her laver JavaScript automatisk indicator dots -->
+    </div>
+
+</div>
+
+
 <script>
     //Vælg et tilfældigt motiverende tekst ved load af forside.php
 
@@ -138,7 +157,6 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
         "Førstehjælp starter med dig",
         "Små handlinger kan redde store liv",
         "Hjælp kan starte med dine hænder.",
-        "Bliv den person, andre håber er tæt på.",
         "Tryghed starter med viden."
     ];
 
@@ -151,6 +169,9 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
     //Skifter teksten med det samme til den tilfældige udvalgte tekst fra listen
     textElement.textContent = motivationTexts[randomIndex];
 </script>
+
+<!------------ Carousel script ------------>
+<script src="func/fp-carousel.js"></script>
 
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
