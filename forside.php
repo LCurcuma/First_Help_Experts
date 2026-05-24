@@ -54,12 +54,80 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 </div>
 
 <!-- Weekly missions card -->
-<div class="d-flex justify-content-center align-content-center fp-container" data-aos="zoom-in">
+<div class="d-flex justify-content-center align-content-center fp-container mt-4" data-aos="zoom-in">
 
     <?php include 'components/weekly-missions-card.php';?>
 
 </div>
 
+<!-- Grid med de 4 cards -->
+<div class="d-flex justify-content-center align-content-center fp-container mt-4" data-aos="zoom-in">
+
+    <div class="row g-3 fp-action-cards-grid">
+
+        <!-- Card: Start quiz -->
+        <div class="col-6">
+            <a href="quiz.php?id=1" class="fp-action-card fp-card-purple text-white text-decoration-none position-relative d-block">
+
+                <h2 class="fw-semibold fs-5">Start quiz</h2>
+
+                <p class="fp-card-subtitle">Test din viden</p>
+
+                <img src="img/icons/3d-icons/clipboard.png" alt="Quiz ikon" class="fp-card-icon">
+
+            </a>
+        </div>
+
+        <!-- Card: Læs guide -->
+        <div class="col-6">
+            <a href="guides.php?id=1" class="fp-action-card fp-card-blue text-white text-decoration-none position-relative d-block">
+
+                <h2 class="fw-semibold fs-5 mb-1">Læs guide</h2>
+
+                <p class="fp-card-subtitle">Udvid din viden</p>
+
+                <img src="img/icons/3d-icons/heart.png" alt="Guide ikon" class="fp-card-icon">
+
+            </a>
+        </div>
+
+        <!-- Card: Dagens mission -->
+        <div class="col-6">
+            <a href="#" class="fp-action-card fp-card-pink text-white text-decoration-none position-relative d-block">
+
+                <h2 class="fw-semibold fs-5 mb-1">Dagens mission</h2>
+
+                <p class="fp-card-subtitle">Svar på dagens <br> spørgsmål</p>
+
+                <div class="d-flex align-items-center">
+
+                    <span class="fw-medium fs-6">+10</span>
+
+                    <img src="img/icons/3d-icons/money.png" alt="Mønt ikon" class="ms-1 fp-small-coin">
+
+                </div>
+
+                <img src="img/icons/3d-icons/questionmarks.png" alt="Mission ikon" class="fp-card-icon">
+
+            </a>
+        </div>
+
+        <!-- Card: Se dine point -->
+        <div class="col-6">
+            <a href="shop.php?id=1" class="fp-action-card fp-card-orange text-white text-decoration-none position-relative d-block">
+
+                <h2 class="fw-semibold fs-5">Se dine point</h2>
+
+                <p class="fp-card-subtitle">Vælg lækre <br> præmier</p>
+
+                <img src="img/icons/3d-icons/money.png" alt="Point ikon" class="fp-card-icon">
+
+            </a>
+        </div>
+
+    </div>
+
+</div>
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
