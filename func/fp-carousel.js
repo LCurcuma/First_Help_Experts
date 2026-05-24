@@ -26,22 +26,22 @@ fetch('data/data_news.json')
     //Når data er hentet korrekt
     .then(function(data) {
 
-        // Gemmer antal nyheder/slides
+        //Gemmer antal nyheder/slides
         totalSlides = data.length;
 
-        // Loop igennem alle nyheder og byg HTML
+        //Loop igennem alle nyheder og byg HTML
         data.forEach(function(news, index) {
 
-            // Opretter selve kort-elementet som et link (a-tag) i stedet for en div
+            //Opretter selve kort-elementet som et link (a-tag) i stedet for en div
             const card = document.createElement('a');
 
-            // Gør linket klikbart
+            //Gør linket klikbart
             card.href = news.link;
 
-            // Giver kortet CSS class samt Bootstrap-klasser for korrekt layout og ingen understregning
+            //Giver kortet CSS class samt Bootstrap-klasser for korrekt layout og ingen understregning
             card.className = 'fp-news-card text-decoration-none d-block';
 
-            // Indsætter HTML indhold i kortet
+            //Indsætter HTML indhold i kortet
             card.innerHTML = `
                 <img src="${news.image}" alt="Nyhedsbillede" class="fp-news-bg">
                 <div class="fp-news-overlay">
@@ -53,61 +53,61 @@ fetch('data/data_news.json')
                 </div>
             `;
 
-            // Tilføjer kortet ind i slideren
+            //Tilføjer kortet ind i slideren
             slider.appendChild(card);
 
-            // Opretter indicator element
+            //Opretter indicator element
             const indicator = document.createElement('div');
 
-            // Giver første indicator active class
+            //Giver første indicator active class
             indicator.className = 'fp-indicator' + (index === 0 ? ' active' : '');
 
-            // Tilføjer indicator til HTML
+            //Tilføjer indicator til HTML
             indicatorsContainer.appendChild(indicator);
         });
 
-        // Starter automatisk scroll
+        //Starter automatisk scroll
         startAutoScroll();
 
-        // Holder øje med manuel scroll
+        //Holder øje med manuel scroll
         slider.addEventListener('scroll', updateActiveIndicator);
     });
 
 //Funktion der opdaterer hvilken indicator der er aktiv
 function updateActiveIndicator() {
 
-    // Finder første nyhedskort
+    //Finder første nyhedskort
     const cardElement = slider.querySelector('.fp-news-card');
 
-    // Stop hvis der ikke findes et kort
+    //Stop hvis der ikke findes et kort
     if (!cardElement) return;
 
-    // Finder kortets bredde + gap mellem kort
+    //Finder kortets bredde + gap mellem kort
     const cardWidth = cardElement.offsetWidth + 15;
 
-    // Finder hvilket slide der er tættest på midten
+    //Finder hvilket slide der er tættest på midten
     const index = Math.round(slider.scrollLeft / cardWidth);
 
-    // Finder alle indicator elementer
+    //Finder alle indicator elementer
     const indicators = document.querySelectorAll('.fp-indicator');
 
-    // Loop gennem alle indicators
+    //Loop gennem alle indicators
     indicators.forEach(function(indicator, i) {
 
-        // Hvis indicator matcher aktivt slide
+        //Hvis indicator matcher aktivt slide
         if (i === index) {
 
-            // Gør indicator aktiv
+            //Gør indicator aktiv
             indicator.classList.add('active');
 
         } else {
 
-            // Fjern active class
+            //Fjern active class
             indicator.classList.remove('active');
         }
     });
 
-    // Gem aktivt slide index
+    //Gem aktivt slide index
     currentSlideIndex = index;
 }
 
@@ -117,32 +117,32 @@ function startAutoScroll() {
     // Starter interval hvert 5 sekund
     autoScrollTimer = setInterval(function() {
 
-        // Finder første nyhedskort
+        //Finder første nyhedskort
         const cardElement = slider.querySelector('.fp-news-card');
 
-        // Stop hvis der ikke findes et kort
+        //Stop hvis der ikke findes et kort
         if (!cardElement) return;
 
-        // Gå til næste slide
+        //Gå til næste slide
         currentSlideIndex++;
 
-        // Hvis vi er nået til sidste slide
+        //Hvis vi er nået til sidste slide
         if (currentSlideIndex >= totalSlides) {
 
-            // Start forfra
+            //Start forfra
             currentSlideIndex = 0;
         }
 
-        // Finder kort bredde + gap
+        //Finder kort bredde + gap
         const cardWidth = cardElement.offsetWidth + 15;
 
-        // Scroller smooth til næste kort
+        //Scroller smooth til næste kort
         slider.scrollTo({
             left: currentSlideIndex * cardWidth,
             behavior: 'smooth'
         });
 
-    }, 5000); // 5000ms = 5 sekunder
+    }, 5000); //5000ms = 5 sekunder
 }
 
 //Stopper auto scroll midlertidigt
