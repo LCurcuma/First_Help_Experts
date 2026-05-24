@@ -449,7 +449,7 @@ body {
   right: 12px;
   transform: translateY(-50%);
   z-index: 2;
-  color: #9a9a9a;
+  color: #ff0000;
 }
 //-------------------------------------//
 
@@ -583,7 +583,6 @@ body {
 //-------------------------------------//
 
 
-//------------- (FP) NEWS SLIDER ------------//
 //Nyheder overskrift
 .fp-news-heading {
   font-size: 32px;
@@ -664,25 +663,43 @@ body {
   width: 100%;
   height: 100%;
 
+  // Bruger flexbox til at skubbe indholdet ned i venstre hjørne
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
 
   z-index: 2;
   padding: 25px;
 
-  //Gør så det billedet er lidt mørkere gennemsigtig farve
-  background: rgba(0, 0, 0, 0.45);
+  // Gradient der gør bunden mørk, så den hvide tekst kan læses tydeligt
+  // Gradient lavet med: https://cssgradient.io
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.9) 100%);
 }
 
-//Tekst-styling indeni nyhedskortet
+// Tekst-styling indeni nyhedskortet
 .fp-news-title {
   color: $white;
   font-weight: 700;
-  font-size: 20px;
-  text-align: center;
-  text-transform: uppercase;
+  font-size: 17px;
+
+  // Teksten skal være venstrestillet
+  text-align: left;
   margin: 0;
+
+  // Begrænser teksten til maksimalt 2 linjer og tilføjer "..." til sidst
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Læs mere tekst med pil
+.fp-news-read-more {
+  color: $white;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
 }
 
 //Indikator streger under slideren

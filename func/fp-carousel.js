@@ -43,15 +43,13 @@ fetch('data/data_news.json')
 
             // Indsætter HTML indhold i kortet
             card.innerHTML = `
-
                 <img src="${news.image}" alt="Nyhedsbillede" class="fp-news-bg">
-
                 <div class="fp-news-overlay">
-
-                    <div class="fp-news-title">
-                        ${news.title}
+                    <div class="fp-news-title">${news.title}</div>
+                    
+                    <div class="fp-news-read-more mt-2">
+                        LÆS MERE <i class="fa-solid fa-arrow-right ms-2"></i>
                     </div>
-
                 </div>
             `;
 
