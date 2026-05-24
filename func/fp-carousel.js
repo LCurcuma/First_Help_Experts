@@ -32,22 +32,22 @@ fetch('data/data_news.json')
         // Loop igennem alle nyheder og byg HTML
         data.forEach(function(news, index) {
 
-            // Opretter selve kort-elementet
-            const card = document.createElement('div');
+            // Opretter selve kort-elementet som et link (a-tag) i stedet for en div
+            const card = document.createElement('a');
 
-            // Giver kortet en CSS class
-            card.className = 'fp-news-card';
+            // Gør linket klikbart og peger på #
+            card.href = '#';
+
+            // Giver kortet CSS class samt Bootstrap-klasser for korrekt layout og ingen understregning
+            card.className = 'fp-news-card text-decoration-none d-block';
 
             // Indsætter HTML indhold i kortet
             card.innerHTML = `
 
-                <!-- Nyhedsbillede -->
                 <img src="${news.image}" alt="Nyhedsbillede" class="fp-news-bg">
 
-                <!-- Mørk overlay ovenpå billedet -->
                 <div class="fp-news-overlay">
 
-                    <!-- Nyheds titel -->
                     <div class="fp-news-title">
                         ${news.title}
                     </div>
@@ -68,7 +68,7 @@ fetch('data/data_news.json')
             indicatorsContainer.appendChild(indicator);
         });
 
-        /// Starter automatisk scroll
+        // Starter automatisk scroll
         startAutoScroll();
 
         // Holder øje med manuel scroll
@@ -147,7 +147,6 @@ function startAutoScroll() {
     }, 8000); // 8000ms = 8 sekunder
 }
 
-
 // Stopper auto scroll midlertidigt
 function stopAutoScroll() {
 
@@ -162,7 +161,6 @@ slider.addEventListener('touchstart', stopAutoScroll);
 slider.addEventListener('mousedown', stopAutoScroll);
 
 
-
 //DESKTOP MOUSE DRAG (Gør det muligt at trække med musen)
 // Holder styr på om musen er klikket ned
 let isDown = false;
@@ -172,7 +170,6 @@ let startX;
 
 // Gemmer sliderens scroll position
 let scrollLeft;
-
 
 // Når brugeren klikker ned
 slider.addEventListener('mousedown', function(e) {
@@ -207,7 +204,7 @@ slider.addEventListener('mousemove', function(e) {
     // Stop hvis musen ikke holdes nede
     if (!isDown) return;
 
-    // Forhindrer markering af tekst
+    // Forhindrer markering af tekst (og forhindrer at browseren forsøger at "trække" i selve linket som et billede)
     e.preventDefault();
 
     // Finder nuværende mus position
