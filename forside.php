@@ -49,7 +49,7 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 
     <h1 class="fw-bold display-5 mb-2">Hej <?php echo $userData[0]->name ?>!</h1>
 
-    <p class="fs-4">Klar til at redde liv i dag?</p>
+    <p class="fs-4" id="motivationalText">Klar til at redde liv i dag?</p>
 
 </div>
 
@@ -128,6 +128,30 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
     </div>
 
 </div>
+
+<script>
+    //Vælg et tilfældigt motiverende tekst ved load af forside.php
+
+    //Liste med de forskellige tekster
+    const motivationTexts = [
+        "Klar til at redde liv i dag?",
+        "Førstehjælp starter med dig",
+        "Små handlinger kan redde store liv",
+        "Hjælp kan starte med dine hænder.",
+        "Bliv den person, andre håber er tæt på.",
+        "Tryghed starter med viden."
+    ];
+
+    //Finder elementet med id "motivationalText"
+    const textElement = document.getElementById("motivationalText");
+
+    // Generer et tilfældigt tal baseret på hvor mange tekster der er i listen
+    const randomIndex = Math.floor(Math.random() * motivationTexts.length);
+
+    //Skifter teksten med det samme til den tilfældige udvalgte tekst fra listen
+    textElement.textContent = motivationTexts[randomIndex];
+</script>
+
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
