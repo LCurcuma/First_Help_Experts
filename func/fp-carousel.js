@@ -144,7 +144,7 @@ function startAutoScroll() {
             behavior: 'smooth'
         });
 
-    }, 8000); // 8000ms = 8 sekunder
+    }, 5000); // 5000ms = 5 sekunder
 }
 
 // Stopper auto scroll midlertidigt
