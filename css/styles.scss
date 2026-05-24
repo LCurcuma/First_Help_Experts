@@ -441,6 +441,16 @@ body {
   //Gradient lavet med: https://cssgradient.io
   background: linear-gradient(90deg, rgb(229, 233, 234) 0%, rgba(249, 254, 255, 1) 100%);
 }
+
+//Tekst ovenpå progressbaren
+.weekly-missions-progress-text {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #bdbdbd;
+}
 //-------------------------------------//
 
 
@@ -504,6 +514,16 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+
+
+
+
+
+
+
+
+
 
 /*--- GUIDS ---*/
 

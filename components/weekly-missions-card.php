@@ -45,14 +45,14 @@
         </div>
 
         <!-- Progressbaren -->
-        <div class="weekly-missions-progress-bg position-relative rounded-5 d-flex justify-content-between align-items-center pe-3">
+        <div class="weekly-missions-progress-bg position-relative rounded-5">
 
+            <!-- Selve progress baren -->
             <div class="weekly-missions-progress-bar rounded-5" style="width: <?php echo $userData[0]->finished_weekly_missions/5*100?>%;"></div>
 
-            <span class="text-white fw-light small opacity-50"><?php echo $userData[0]->finished_weekly_missions/5*100?>%</span>
+            <!-- Procent tekst -->
+            <span class="weekly-missions-progress-text fw-light small opacity-50"></span>
 
         </div>
-
-    </div>
 
 </div>
