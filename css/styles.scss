@@ -1601,6 +1601,10 @@ body {
   gap: 15px;
 
   margin: 25px;
+
+  @include media-breakpoint-up(sm){
+    flex-direction: row;
+  }
 }
 
 .link_tile{
@@ -1614,6 +1618,13 @@ body {
   color: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
   border-radius: 20px;
+  width: 100%;
+
+  @include media-breakpoint-up(sm){
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 35%;
+  }
 }
 
 .h2_bold{
@@ -1627,11 +1638,28 @@ body {
   justify-content: center;
   align-items: center;
   gap: 5px;
+
+  @include media-breakpoint-up(sm){
+    flex-direction: column-reverse;
+  }
 }
 
 .money_plus_image{
   height: 35px;
   margin-top: -15px;
+
+  @include media-breakpoint-up(sm){
+    height: 65px;
+    margin-top: 0;
+  }
+}
+
+.plus_number{
+  font-size: 20px;
+
+  @include media-breakpoint-up(sm){
+    font-size: 24px;
+  }
 }
 
 .money_image_big{
