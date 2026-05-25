@@ -1544,17 +1544,18 @@ body {
 
 //Placeholder inden man vælger kategori for test//
 .placeholder-overskrift{
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bolder;
 }
 
-.placeholder-underskrift{
-  font-size: 18px;
+.placeholder-underrubrik{
+  font-size: 20px;
   font-weight: bold;
+  color: #c3c3c3;
 }
 //---------------------------------------------//
 
-
+//antal spørgsmål i toppen//
 .quiz-progress{
   display: flex !important;
   justify-content: center !important;
@@ -1581,7 +1582,9 @@ body {
     font-size: 17px;
   }
 }
+//---------------------------------------------//
 
+//Spørgsmål//
 .spg-text{
   font-size: 22px;
   margin-bottom: 3px;
@@ -1602,7 +1605,9 @@ body {
     font-size: 30px;
   }
 }
+//---------------------------------------------//
 
+//billede til spørgsmål//
 .quiz-img-con {
   width: 100%;
   overflow: hidden;
@@ -1631,7 +1636,9 @@ body {
     height: 340px;
   }
 }
+//---------------------------------------------//
 
+//svarmuligheder//
 .answer-option{
   background: $white;
   border: 0.8px solid #c3c3c3;
@@ -1726,7 +1733,9 @@ body {
 .disable-clicks {
   pointer-events: none;
 }
+//---------------------------------------------//
 
+//resultat pop up //
 #result-screen {
   max-width: 450px;
   width: 80%;
@@ -1778,6 +1787,7 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(95, 203, 106, 0.3);
 }
+//---------------------------------------------//
 
 .guiz-progress-beholder {
     background-color: $white !important;
