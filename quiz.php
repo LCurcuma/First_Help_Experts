@@ -10,7 +10,7 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
 
-    <title>Forside - Førstehjælpeksperten</title>
+    <title>Quizside</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
