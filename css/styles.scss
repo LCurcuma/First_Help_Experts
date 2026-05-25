@@ -1759,8 +1759,16 @@ body {
 
   margin: 30px 25px 0 25px;
 
+  @include media-breakpoint-up(sm){
+    grid-template-columns: auto auto auto;
+  }
+
   @include media-breakpoint-up(lg){
     grid-template-columns: auto auto auto auto;
+  }
+
+  @include media-breakpoint-up(xxxl){
+    grid-template-columns: auto auto auto auto auto auto;
   }
 }
 
@@ -1850,7 +1858,7 @@ body {
 }
 
 .shop_column{
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 //--------------- QUIZ SEKTION ---------------//

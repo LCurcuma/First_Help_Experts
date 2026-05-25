@@ -117,7 +117,7 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
     <!--DESKTOP VERSION-->
     <div class="d-none flex-column d-lg-block">
         <div class="container">
-            <div class="row">
+            <div class="row w-100">
                 <div class="col col-8 shop_column">
                     <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back_to_user">
                         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
