@@ -8,6 +8,8 @@ require "settings/init.php";
 $id = $_GET["id"];
 //tage data om bruger med den id
 $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+//tage navn som string og lave array, som eksemplevis ["Laura", "Larsen"]
+$nameArray = explode(" ", $userData[0]->name);
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -47,7 +49,7 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 <!-- Velkommen tekst -->
 <div class="fp-container mt-5" data-aos="zoom-in">
 
-    <h1 class="fw-bold display-5 mb-2">Hej <?php echo $userData[0]->name ?>!</h1>
+    <h1 class="fw-bold display-5 mb-2">Hej <?php echo $nameArray[0] ?>!</h1>
 
     <p class="fs-4" id="motivationalText">Klar til at redde liv i dag?</p>
 
