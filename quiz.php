@@ -70,10 +70,12 @@ require "settings/init.php";
 <div class="px-4 d-flex flex-column d-lg-none">
     <div class="row g-4">
         <div id="menu-screen" class="col-6">
-                <div class="category-card text-center p-2" data-quiz="hlr.json">
+            <a href="quizhlr.php" class="text-decoration-none text-reset">
+                <div class="category-card text-center p-2">
                     <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
                     <p>HLR</p>
                 </div>
+            </a>
         </div>
 
         <div class="col-6">
@@ -211,44 +213,43 @@ require "settings/init.php";
                         </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
-            <div class="col col-6 quiz-colone">
-                <div id="quiz-screen" class="quiz d-none">
-                    <div class="px-4 mb-4">
-                        <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
-                        <div class="quiz-progress">
-                            <div class="progress quiz-progress-beholder">
-                                <div id="progress-bar" class="progress-bar quiz-progress-fyld" role="progressbar" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="px-4 mb-2">
-                        <p id="question-text" class="spg-text fw-bolder">Spørgsmål indlæses...</p>
-                    </div>
-
-                    <div class="px-4">
-                        <div class="quiz-img-con">
-                            <img id="quiz-image" src="" alt="Situation" class="quiz-image">
-                        </div>
-                    </div>
-
-                    <div class="px-4" id="options-container"></div>
+<div class="col col-6 quiz-colone">
+    <div id="quiz-screen" class="quiz d-none">
+        <div class="px-4 mb-4">
+            <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
+            <div class="quiz-progress">
+                <div class="progress quiz-progress-beholder">
+                    <div id="progress-bar" class="progress-bar quiz-progress-fyld" role="progressbar" style="width: 0%;"></div>
                 </div>
-
-                <div id="result-screen" class="px-2 py-3 text-center d-none">
-                    <div class="mb-2">
-                        <img src="img/icons/3d-icons/checkmark2.png" class="check-img" alt="">
-                    </div>
-                    <p class="færdig-text">Sådan, du klarede det!</p>
-                    <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
-
-                    <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
-                </div>
-
-
             </div>
         </div>
+
+        <div class="px-4 mb-2">
+            <p id="question-text" class="spg-text fw-bolder">Spørgsmål indlæses...</p>
+        </div>
+
+        <div class="px-4">
+            <div class="quiz-img-con">
+                <img id="quiz-image" src="" alt="Situation" class="quiz-image">
+            </div>
+        </div>
+
+        <div class="px-4" id="options-container"></div>
+    </div>
+
+    <div id="result-screen" class="px-2 py-3 text-center d-none">
+        <div class="mb-2">
+            <img src="img/icons/3d-icons/checkmark2.png" class="check-img" alt="">
+        </div>
+        <p class="færdig-text">Sådan, du klarede det!</p>
+        <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
+
+        <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
     </div>
 </div>
 

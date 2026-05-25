@@ -75,6 +75,7 @@ require "settings/init.php";
     <a href="forside.php" class="btn slutquiz-knap py-3">Gå til forsiden</a>
 </div>
 
+<div id="quiz-config" data-json="hlr.json"></div>
 
 <script src="quiz.js"></script>
 <!------------ Bootstrap library ------------>

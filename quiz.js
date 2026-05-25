@@ -101,6 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const quizScreen = document.getElementById("quiz-screen");
     const resultScreen = document.getElementById("result-screen");
 
+    const config = document.getElementById("quiz-config");
+    if (config) {
+        const mobilJson = config.getAttribute('data-json');
+        if (mobilJson) {
+            currentQuestionIndex = 0;
+            score = 0;
+            if (quizScreen) quizScreen.classList.remove("d-none");
+
+
+            fetchQuestions(mobilJson);
+        }
+    }
+
     categoryCards.forEach(card => {
         card.addEventListener('click', () => {
             const jsonFilnavn = card.getAttribute('data-quiz');
