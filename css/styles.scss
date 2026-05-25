@@ -43,6 +43,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
 }
 //-------------------------------------//
 
@@ -219,8 +220,7 @@ body {
   border: none;
 
   //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
-  box-shadow:
-          0 4px 10px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
 }
 
 // Login knap
@@ -250,7 +250,6 @@ body {
   left: 0;
   z-index: 2;
 
-
   transition: 0.2s ease-in-out;
 
   @include media-breakpoint-up(mg) {
@@ -258,11 +257,17 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    bottom: -70px;
+    width: 100%;
+    transform: scaleY(0.8);
+    transform-origin: bottom;
   }
 
   @include media-breakpoint-up(xl) {
-    bottom: -100px;
+    bottom: -20px;
+
+    width: 100%;
+    transform: scaleY(0.4);
+    transform-origin: bottom;
   }
 }
 //-------------------------------------//
@@ -362,7 +367,6 @@ body {
   height: 190px;
   padding: 20px;
   border-radius: 24px;
-
   color: white;
   background: #67d27a;
 
@@ -371,6 +375,18 @@ body {
 
   //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
   box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+
+  transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+    height: 210px;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 230px;
+    padding: 30px;
+  }
 }
 
 //Styling af cirkler
@@ -406,7 +422,7 @@ body {
   right: -40px;
 }
 
-.weekly-points-bg{
+.weekly-points-bg {
   background: #F9FEFFFF;
 }
 
@@ -435,6 +451,16 @@ body {
 
   //Gradient lavet med: https://cssgradient.io
   background: linear-gradient(90deg, rgb(229, 233, 234) 0%, rgba(249, 254, 255, 1) 100%);
+}
+
+//Tekst ovenpå progressbaren
+.weekly-missions-progress-text {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #a1a1a1;
 }
 //-------------------------------------//
 
@@ -495,10 +521,322 @@ body {
 
 
 //----------- (FP) CONTAINER ----------//
-.fp-container{
-  padding-left: 15px;
-  padding-right: 15px;
+.fp-container {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(sm) {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  @include media-breakpoint-up(md) {
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 680px;
+  }
+
+
+  @include media-breakpoint-up(mg) {
+    max-width: 780px;
+  }
 }
+//-------------------------------------//
+
+
+//------------- (FP) CARDS ------------//
+//Grid opsætning til de 4 små cards, så de har samme størrelse som weekly-mission-card
+.fp-action-cards-grid {
+  max-width: 390px;
+
+  transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(sm) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+//Styling for alle 4 action cards
+.fp-action-card {
+  width: 100%;
+  height: 140px;
+  padding: 15px;
+  border-radius: 24px;
+  display: block;
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+
+  transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(sm) {
+    height: 150px;
+    padding: 20px;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 160px;
+    padding: 25px;
+  }
+}
+
+//Lille tekst
+.fp-card-subtitle {
+  font-size: 12px;
+
+  transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 14px;
+  }
+}
+
+//Størrelse og placering af ikoner
+.fp-card-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 80px;
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+
+  transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(sm) {
+    width: 90px;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 100px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+//Lille mønt på dagens missioner
+.fp-small-coin {
+  width: 25px;
+  height: 25px;
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+//Gradient farver til alle 4 cards
+.fp-card-purple {
+  //Gradient lavet med: https://cssgradient.io
+  background: linear-gradient(180deg, #c79fe5 0%, #9e7fb6 100%);
+}
+
+.fp-card-blue {
+  //Gradient lavet med: https://cssgradient.io
+  background: linear-gradient(180deg, #7ab5fc 0%, #619ae8 100%);
+}
+
+.fp-card-pink {
+  //Gradient lavet med: https://cssgradient.io
+  background: linear-gradient(180deg, #f5aaaf 0%, #f39398 100%);
+}
+
+.fp-card-orange {
+  //Gradient lavet med: https://cssgradient.io
+  background: linear-gradient(180deg, #fcc260 0%, #daa953 100%);
+}
+//-------------------------------------//
+
+
+//------------- (FP) NEWS SLIDER ------------//
+//Nyheder overskrift
+.fp-news-heading {
+  font-size: 32px;
+  color: $black;
+  letter-spacing: 1px;
+}
+
+//Container der styrer scroll og centrering
+.fp-slider-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  //Giver smooth scrolling på touch devices som mobil og tablet
+  -webkit-overflow-scrolling: touch;
+
+  //Centrerer første og sidste kort på mobil
+  //50% (midten af skærmen) minus 140px (som er halvdelen af kortets bredde på 280px)
+  padding-left: calc(50% - 140px);
+  padding-right: calc(50% - 140px);
+  gap: 15px;
+
+  transition: 0.2s ease-in-out;
+
+  //Centrerer med et kort på 310px (halvdelen = 155px)
+  @include media-breakpoint-up(sm) {
+    padding-left: calc(50% - 155px);
+    padding-right: calc(50% - 155px);
+    gap: 20px;
+  }
+
+  //Centrerer med et kort på 340px (halvdelen = 170px)
+  @include media-breakpoint-up(md) {
+    padding-left: calc(50% - 170px);
+    padding-right: calc(50% - 170px);
+    gap: 25px;
+  }
+
+  //Skjul scrollbar på alle browsere for et rent app-look
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  //Skjuler scrollbar i Internet Explorer og Edge
+  -ms-overflow-style: none;
+
+  //Skjuler scrollbar i Firefox
+  scrollbar-width: none;
+}
+
+//Nyhed card
+.fp-news-card {
+  //Kortet må ikke krympe eller vokse, det skal altid være 280px på mobil
+  flex: 0 0 280px;
+  width: 280px;
+  height: 260px;
+
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+
+  //Centrerer automatisk kortet når du slipper det
+  scroll-snap-align: center;
+
+  //Gør så man ikke kan markere tekst eller billeder, når man trækker med musen
+  -webkit-user-select: none; //Safari
+  user-select: none;         //Standard browsere (Chrome, Firefox, Edge, etc.)
+
+  //Shadow lavet med: https://html-css-js.com/css/generator/box-shadow/
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+
+  transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(sm) {
+    flex: 0 0 310px;
+    width: 310px;
+    height: 290px;
+  }
+
+
+  @include media-breakpoint-up(md) {
+    flex: 0 0 340px;
+    width: 340px;
+    height: 320px;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+//Baggrundsbillede på kortet
+.fp-news-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+//Mørkt overlay over billedet, så teksten altid er nem at læse
+.fp-news-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  // Bruger flexbox til at skubbe indholdet ned i venstre hjørne
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  z-index: 2;
+  padding: 25px;
+
+  // Gradient der gør bunden mørk, så den hvide tekst kan læses tydeligt
+  // Gradient lavet med: https://cssgradient.io
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.9) 100%);
+}
+
+//Tekst-styling indeni nyhedskortet
+.fp-news-title {
+  color: $white;
+  font-weight: 700;
+  font-size: 17px;
+
+  //Teksten skal være venstrestillet
+  text-align: left;
+  margin: 0;
+
+  //Begrænser teksten til maksimalt 2 linjer og tilføjer "..." til sidst
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 20px;
+  }
+}
+
+//Læs mere tekst med pil
+.fp-news-read-more {
+  color: $white;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+//Indikator streger under slideren
+.fp-indicator {
+  width: 35px;
+  height: 6px;
+  margin: 0 5px;
+  border-radius: 10px;
+
+  //Lysegrå for inaktiv
+  background-color: #d1d1d6;
+
+  //Transition mellem inaktiv og aktiv
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  //Aktiv tilstand for indikatoren
+  &.active {
+    //Gør den aktive indikator en mørkere grå
+    background-color: #8e8e93;
+
+    //Gør den aktive indikator lidt større
+    width: 55px;
+    gap: 2px;
+  }
+}
+//-------------------------------------//
+
+
 
 /*--- GUIDS ---*/
 
@@ -844,6 +1182,26 @@ body {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
+
+  @include media-breakpoint-up(sm){
+    max-width: 100%;
+    max-height: 820px;
+    height: auto !important;
+    border-radius: 24px;
+    padding: 30px 32px 40px 32px;
+  }
+
+  @include media-breakpoint-up(md){
+    max-width: 100%;
+    max-height: 880px;
+    padding: 30px 40px 40px 40px;
+  }
+
+  @include media-breakpoint-up(mg){
+    max-width: 100%;
+    max-height: 932px;
+    padding: 35px 48px 45px 48px;
+  }
 }
 
 .guide-container h2.HLR-h2{
@@ -854,6 +1212,10 @@ body {
   margin-top: 0;
   margin-bottom: 15px;
   letter-spacing: -0.5px;
+
+  @include media-breakpoint-up(sm) { font-size: 22px; }
+  @include media-breakpoint-up(md) { margin-bottom: 20px; }
+  @include media-breakpoint-up(mg) { font-size: 26px; }
 }
 
 .steps-header{
@@ -862,6 +1224,8 @@ body {
   gap: 8px;
   margin-bottom: 20px;
   padding: 4px;
+
+  @include media-breakpoint-up(md) { gap: 12px; margin-bottom: 25px; }
 }
 
 .guide-container .step-badge{
@@ -878,6 +1242,9 @@ body {
   transition: all 0.2s ease;
   white-space: nowrap;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+  @include media-breakpoint-up(md) { font-size: 12px; padding: 10px 6px; }
+  @include media-breakpoint-up(mg) { font-size: 13px; }
 }
 
 .guide-container .step-badge.active{
@@ -899,12 +1266,46 @@ body {
   align-items: center;
   margin-bottom: 15px;
   min-width: 180px;
+  background-color: $white;
+
+  @include media-breakpoint-up(sm) {
+    min-width: 200px;
+    margin-bottom: 15px;
+    background-color: $white;
+  }
+
+  @include media-breakpoint-up(md) {
+    min-width: 220px;
+    margin-bottom: 20px;
+    background-color: $white;
+  }
+
+  @include media-breakpoint-up(mg) {
+    min-width: 240px;
+    margin-bottom: 20px;
+    background-color: $white;
+  }
 }
 
 .guide-image{
-  max-width: 85%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(sm) {
+   height: 200px;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 220px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    height: 240px;
+  }
+
 }
 
 
@@ -924,6 +1325,10 @@ body {
   margin: 0 0 10px 0;
   letter-spacing: -0.3px;
   margin-left: 5px;
+
+  @include media-breakpoint-up(sm) { font-size: 20px; }
+  @include media-breakpoint-up(md) { font-size: 22px; margin-bottom: 10px; }
+  @include media-breakpoint-up(mg) { font-size: 24px; }
 }
 
 #step-text{
@@ -933,17 +1338,31 @@ body {
   line-height: 1.5;
   margin-bottom: 15px;
   margin-left: 5px;
+
+  @include media-breakpoint-up(sm) { font-size: 14px; line-height: 1.5; }
+  @include media-breakpoint-up(md) { font-size: 15px; margin-bottom: 20px; }
+  @include media-breakpoint-up(mg) { font-size: 16px; }
 }
 
 
 .husk-box{
   background-color: #ffd5d2;
-  border-radius: 24px;
-  padding: 16px;
+  border-radius: 18px;
+  padding: 12px 20px;
   color: $black;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 25px
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+
+  @include media-breakpoint-up(md){
+    padding: 18px 28px;
+    margin-bottom: 30px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    padding: 20px 32px;
+    margin-bottom: 35px;
+  }
 }
 
 .husk-box strong{
@@ -963,7 +1382,17 @@ body {
   font-size: 13.5px;
   line-height: 1.4;
   display: block;
-  padding: 10px;
+  padding: 10px 15px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 15px;
+    padding: 14px 24px;
+  }
 }
 
 
@@ -972,7 +1401,7 @@ body {
   color: $white;
   border: none;
   border-radius: 14px;
-  padding: 18px;
+  padding: 18px 30px;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
@@ -981,6 +1410,17 @@ body {
   letter-spacing: 0.5px;
   box-shadow: 0 4px 12px rgba(92, 214, 133, 0.15);
   transition: background-color 0.2s ease;
+
+  @include media-breakpoint-up(md) {
+    padding: 20px 40px;
+    font-size: 17px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    padding: 22px 45px;
+    font-size: 18px;
+    border-radius: 16px;
+  }
 }
 
 .next-button:active{
@@ -993,6 +1433,15 @@ body {
   justify-content: center;
   gap: 8px;
   margin-top: 15px;
+
+
+  @include media-breakpoint-up(md) {
+    margin-top: 20px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    margin-top: 25px;
+  }
 }
 
 .dot{
@@ -1000,8 +1449,13 @@ body {
   height: 6px;
   background-color: #e0e0e0;
   border-radius: 20px;
-  transition: background-color 0.2s ease, width 0.2s ease;
+  transition: background-color 0.2s ease, width 0.2s ease, transform 0.2s ease;
   box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.12);
+
+
+  @include media-breakpoint-up(md) {
+   width: 36px;
+  }
 }
 
 .dot.active{

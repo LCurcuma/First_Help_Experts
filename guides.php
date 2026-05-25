@@ -115,6 +115,45 @@ require "settings/init.php";
         </div>
 
         <div class="col-6">
+            <a href="blødning-guide.php" class="text-decoration-none">
+                <div class="guide-card guide-card-green">
+                    <div class="guide-image-wrapper">
+                        <img src="img/icons/3d-icons/bleeding.png" alt="Blødninger">
+                    </div>
+                    <div class="guide-text-wrapper">
+                        <span>Blødning</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6">
+            <a href="brandsår-guide.php" class="text-decoration-none">
+                <div class="guide-card guide-card-green">
+                    <div class="guide-image-wrapper">
+                        <img src="img/icons/3d-icons/burn-hand.png" alt="Brandsår">
+                    </div>
+                    <div class="guide-text-wrapper">
+                        <span>Brandsår</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6">
+            <a href="bevidstløs-guide.php" class="text-decoration-none">
+                <div class="guide-card guide-card-green">
+                    <div class="guide-image-wrapper">
+                        <img src="img/icons/3d-icons/recovery-position.png" alt="Bevidstløshed">
+                    </div>
+                    <div class="guide-text-wrapper">
+                        <span>Bevidstløshed</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6">
             <div class="guide-card" onclick="alert('Funktionen er på vej!')">
                 <div class="guide-image-wrapper">
                     <img src="img/icons/3d-icons/defibrillator.png" alt="HLR med hjertestarter">
@@ -132,28 +171,6 @@ require "settings/init.php";
                 </div>
                 <div class="guide-text-wrapper">
                     <span>Drukning</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
-                <div class="guide-image-wrapper">
-                    <img src="img/icons/3d-icons/bleeding.png" alt="Blødninger">
-                </div>
-                <div class="guide-text-wrapper">
-                    <span>Blødning</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
-                <div class="guide-image-wrapper">
-                    <img src="img/icons/3d-icons/burn-hand.png" alt="Brandsår">
-                </div>
-                <div class="guide-text-wrapper">
-                    <span>Brandsår</span>
                 </div>
             </div>
         </div>
@@ -187,17 +204,6 @@ require "settings/init.php";
                 </div>
                 <div class="guide-text-wrapper">
                     <span>Stroke</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="guide-card" onclick="alert('Funktionen er på vej!')">
-                <div class="guide-image-wrapper">
-                    <img src="img/icons/3d-icons/recovery-position.png" alt="Bevidstløshed">
-                </div>
-                <div class="guide-text-wrapper">
-                    <span>Bevidstløshed</span>
                 </div>
             </div>
         </div>
