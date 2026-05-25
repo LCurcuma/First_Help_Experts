@@ -101,6 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const quizScreen = document.getElementById("quiz-screen");
     const resultScreen = document.getElementById("result-screen");
 
+    const desktopPlaceholder = document.getElementById("desktop-placeholder");
+
     const config = document.getElementById("quiz-config");
     if (config) {
         const mobilJson = config.getAttribute('data-json');
@@ -109,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             score = 0;
             if (quizScreen) quizScreen.classList.remove("d-none");
 
+            if (desktopPlaceholder) desktopPlaceholder.classList.add("d-none");
 
             fetchQuestions(mobilJson);
         }
@@ -127,11 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 3. HVIS DEN NYE KATEGORI HAR EN QUIZ-FIL (f.eks. data-quiz="hlr.json")
             if (jsonFilnavn) {
-                // Vis quiz-skærmen igen for den nye test
-                quizScreen.classList.remove("d-none");
 
-                // Hent de nye spørgsmål ind
+                if (desktopPlaceholder) {
+                    desktopPlaceholder.classList.add("d-none");
+                }
+                if (quizScreen) quizScreen.classList.remove("d-none");
                 fetchQuestions(jsonFilnavn);
+
             }
         });
     });

@@ -136,6 +136,7 @@ require "settings/init.php";
 <div class="d-none flex-column d-lg-block">
     <div class="container">
         <div class="row">
+
             <div class="col col-6 cate-colone">
                 <div class="mission-card mx-4 mb-4 p-4">
                     <div class="position-relative">
@@ -156,63 +157,105 @@ require "settings/init.php";
                     </div>
                 </div>
                 <div id="menu-screen" class="kategori-cards px-4">
-                        <div class="row g-4">
-                            <div class="col-6">
-                                    <div class="category-card text-center p-2" data-quiz="hlr.json">
-                                        <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
-                                        <p>HLR</p>
-                                    </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="category-card text-center p-2" data-quiz="hlrhs.json"">
-                                    <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
-                                    <p>HLR med hjertestarter</p>
+                    <div class="row g-4">
+                        <div class="col-6">
+                                <div class="category-card text-center p-2" data-quiz="hlr.json">
+                                    <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
+                                    <p>HLR</p>
                                 </div>
-                            </div>
+                        </div>
 
-                            <div class="col-6">
-                                <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
-                                    <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
-                                    <p>Drukning</p>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
-                                    <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
-                                    <p>Forbinding</p>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
-                                    <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
-                                    <p>Brandsår</p>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="category-card text-center p-2 " onclick="alert('Funktionen er på vej!')">
-                                    <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
-                                    <p>Bilulykke</p>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
-                                    <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
-                                    <p>Kvælning</p>
-                                </div>
-                            </div>
-
-                            <div class="col-6 mb-5">
-                                <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
-                                    <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
-                                    <p>Stroke</p>
-                                </div>
+                        <div class="col-6">
+                            <div class="category-card text-center p-2" data-quiz="hlrhs.json"">
+                                <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
+                                <p>HLR med hjertestarter</p>
                             </div>
                         </div>
+
+                        <div class="col-6">
+                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                                <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
+                                <p>Drukning</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                                <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
+                                <p>Forbinding</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                                <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
+                                <p>Brandsår</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="category-card text-center p-2 " onclick="alert('Funktionen er på vej!')">
+                                <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
+                                <p>Bilulykke</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                                <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
+                                <p>Kvælning</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mb-5">
+                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                                <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
+                                <p>Stroke</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-6 quiz-colone">
+
+                <div id="desktop-placeholder" class="d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 50%;">
+                    <p class="placeholder-overskrift">Vælg en kategori og start quizzen!</p>
+                    <p class="placeholder-underrubrik">Test din vide og se hvad du kan.</p>
+                </div>
+
+
+                <div id="quiz-screen" class="quiz d-none">
+                    <div class="px-4 mb-4">
+                        <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
+                        <div class="quiz-progress">
+                            <div class="progress quiz-progress-beholder">
+                                <div id="progress-bar" class="progress-bar quiz-progress-fyld" role="progressbar" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-4 mb-2">
+                        <p id="question-text" class="spg-text fw-bolder">Spørgsmål indlæses...</p>
+                    </div>
+
+                    <div class="px-4">
+                        <div class="quiz-img-con">
+                            <img id="quiz-image" src="" alt="Situation" class="quiz-image">
+                        </div>
+                    </div>
+
+                    <div class="px-4" id="options-container"></div>
+                </div>
+
+                <div id="result-screen" class="px-2 py-3 text-center d-none">
+                    <div class="mb-2">
+                        <img src="img/icons/3d-icons/checkmark2.png" class="check-img" alt="">
+                    </div>
+                    <p class="færdig-text">Sådan, du klarede det!</p>
+                    <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
+
+                    <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
                 </div>
             </div>
         </div>
@@ -220,40 +263,7 @@ require "settings/init.php";
 </div>
 
 
-<div class="col col-6 quiz-colone">
-    <div id="quiz-screen" class="quiz d-none">
-        <div class="px-4 mb-4">
-            <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
-            <div class="quiz-progress">
-                <div class="progress quiz-progress-beholder">
-                    <div id="progress-bar" class="progress-bar quiz-progress-fyld" role="progressbar" style="width: 0%;"></div>
-                </div>
-            </div>
-        </div>
 
-        <div class="px-4 mb-2">
-            <p id="question-text" class="spg-text fw-bolder">Spørgsmål indlæses...</p>
-        </div>
-
-        <div class="px-4">
-            <div class="quiz-img-con">
-                <img id="quiz-image" src="" alt="Situation" class="quiz-image">
-            </div>
-        </div>
-
-        <div class="px-4" id="options-container"></div>
-    </div>
-
-    <div id="result-screen" class="px-2 py-3 text-center d-none">
-        <div class="mb-2">
-            <img src="img/icons/3d-icons/checkmark2.png" class="check-img" alt="">
-        </div>
-        <p class="færdig-text">Sådan, du klarede det!</p>
-        <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
-
-        <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
-    </div>
-</div>
 
 
 

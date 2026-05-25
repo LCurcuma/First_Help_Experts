@@ -1542,6 +1542,19 @@ body {
 
 //--------------- HLR TEST SIDE ---------------//
 
+//Placeholder inden man vælger kategori for test//
+.placeholder-overskrift{
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.placeholder-underskrift{
+  font-size: 18px;
+  font-weight: bold;
+}
+//---------------------------------------------//
+
+
 .quiz-progress{
   display: flex !important;
   justify-content: center !important;
