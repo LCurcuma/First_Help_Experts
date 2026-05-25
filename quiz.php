@@ -79,10 +79,12 @@ require "settings/init.php";
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" data-quiz="hlrhs.json">
+            <a href="quizhlrhs.php" class="text-decoration-none text-reset">
+            <div class="category-card text-center p-2">
                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                 <p>HLR med hjertestarter</p>
             </div>
+            </a>
         </div>
 
         <div class="col-6">
