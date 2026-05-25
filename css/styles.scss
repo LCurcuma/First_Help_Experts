@@ -1607,6 +1607,14 @@ body {
   }
 }
 
+.links_section_desk{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin: 25px;
+}
+
 .link_tile{
   display: flex;
   flex-direction: row;
@@ -1627,6 +1635,19 @@ body {
   }
 }
 
+.link_tile_desk{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
+  border-radius: 20px;
+}
+
 .h2_bold{
   font-weight: bold;
   font-size: 20px;
@@ -1644,6 +1665,14 @@ body {
   }
 }
 
+.plus_money_desk{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 .money_plus_image{
   height: 35px;
   margin-top: -15px;
@@ -1652,6 +1681,11 @@ body {
     height: 65px;
     margin-top: 0;
   }
+}
+
+.money_plus_image_desk{
+  height: 35px;
+  margin-top: -15px;
 }
 
 .plus_number{

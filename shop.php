@@ -151,22 +151,22 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
                     <!--the score container-->
                     <?php include "components/score_container_user.php" ?>
                     <!--container med links-->
-                    <section class="links_section">
-                        <a href="" class="link_tile" style="background: #CDB4D1;" onclick="alert('Funktion kommer snart')">
+                    <section class="links_section_desk">
+                        <a href="" class="link_tile_desk" style="background: #CDB4D1;" onclick="alert('Funktion kommer snart')">
                             <h2 class="h2_bold">Check ind</h2>
-                            <div class="plus_money">
+                            <div class="plus_money_desk">
                                 <h2>+5</h2>
-                                <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
+                                <img src="img/icons/3d-icons/money.png" class="money_plus_image_desk" alt="Points">
                             </div>
                         </a>
-                        <a href="shop.php" class="link_tile" style="background: #88DB95;">
+                        <a href="shop.php" class="link_tile_desk" style="background: #88DB95;">
                             <div>
                                 <h2 class="h2_bold">Point shop</h2>
                                 <p>350 tilgængelige rewards</p>
                             </div>
                             <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
                         </a>
-                        <a href="" class="link_tile" style="background: #F5A623;" onclick="alert('Funktion kommer snart')">
+                        <a href="" class="link_tile_desk" style="background: #F5A623;" onclick="alert('Funktion kommer snart')">
                             <div>
                                 <h2 class="h2_bold">Din førstehjælpsbevis</h2>
                                 <p>Gyldig til <span>12.04.2026</span></p>
