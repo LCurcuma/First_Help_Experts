@@ -37,8 +37,8 @@ require "settings/init.php";
 </head>
 
 <body class="bodyquiz">
-
-<!------------ TILBAGEKNAP ------------>
+<!------------ MOBIL VERSION ------------>
+    <!------------ TILBAGEKNAP ------------>
 <a href="forside.php" class="arrow_back">
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
@@ -130,13 +130,15 @@ require "settings/init.php";
         </div>
     </div>
 </div>
-<!------------ KATEGORI CARDS ------------>
+    <!------------ KATEGORI CARDS ------------>
+<!------------ MOBIL VERSION ------------>
 
-
+<!------------ DESKTOP VERSION ------------>
 <div class="d-none flex-column d-lg-block">
     <div class="container">
         <div class="row">
 
+            <!------------ UGENS MISSION CARD ------------>
             <div class="col col-6 cate-colone">
                 <div class="mission-card mx-4 mb-4 p-4">
                     <div class="position-relative">
@@ -156,6 +158,9 @@ require "settings/init.php";
 
                     </div>
                 </div>
+                <!------------ UGENS MISSION CARD ------------>
+
+                <!------------ KATEGORI CARDS ------------>
                 <div id="menu-screen" class="kategori-cards px-4">
                     <div class="row g-4">
                         <div class="col-6">
@@ -216,7 +221,10 @@ require "settings/init.php";
                     </div>
                 </div>
             </div>
+        <!------------ KATEGORI CARDS ------------>
 
+
+        <!------------ PLACEHOLDER ------------>
             <div class="col col-6 quiz-colone">
 
                 <div id="desktop-placeholder" class="d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 50%;">
@@ -224,7 +232,9 @@ require "settings/init.php";
                     <p class="placeholder-underrubrik">Test din vide og se hvad du kan.</p>
                 </div>
 
+        <!------------ PLACEHOLDER ------------>
 
+        <!------------ QUIZ SCREEN ------------>
                 <div id="quiz-screen" class="quiz d-none">
                     <div class="px-4 mb-4">
                         <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
@@ -248,6 +258,7 @@ require "settings/init.php";
                     <div class="px-4" id="options-container"></div>
                 </div>
 
+                <!------------ RESULT SCREEN ------------>
                 <div id="result-screen" class="px-2 py-3 text-center d-none">
                     <div class="mb-2">
                         <img src="img/icons/3d-icons/checkmark2.png" class="check-img" alt="">
@@ -257,12 +268,13 @@ require "settings/init.php";
 
                     <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
                 </div>
+                <!------------ RESULT SCREEN ------------>
             </div>
         </div>
+    <!------------ QUIZ SCREEN ------------>
     </div>
 </div>
-
-
+<!------------ DESKTOP VERSION ------------>
 
 
 

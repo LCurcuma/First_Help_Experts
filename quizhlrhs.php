@@ -42,6 +42,7 @@ require "settings/init.php";
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
+<!------------ QUIZ SCREEN ------------>
 <div id="quiz-screen" class="quiz">
     <div class="px-4 mb-4 quiz-proces">
         <span id="progress-text" class="quiz-progress-text d-block text-center mb-2">Spørgsmål 1 ud af 10</span>
@@ -64,7 +65,9 @@ require "settings/init.php";
 
     <div class="px-4" id="options-container"></div>
 </div>
+<!------------ QUIZ SCREEN ------------>
 
+<!------------ RESULT SCREEN ------------>
 <div id="result-screen" class="px-2 py-3 text-center d-none">
     <div class="mb-2">
         <img src="img/icons/3d-icons/checkmark2.png" class="check-img" alt="">
@@ -72,8 +75,9 @@ require "settings/init.php";
     <p class="færdig-text">Sådan, du klarede det!</p>
     <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
 
-    <a href="forside.php" class="btn slutquiz-knap py-3">Gå til forsiden</a>
+    <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
 </div>
+<!------------ RESULT SCREEN ------------>
 
 <div id="quiz-config" data-json="hlrhs.json"></div>
 

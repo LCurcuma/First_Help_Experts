@@ -124,11 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
             currentQuestionIndex = 0;
             score = 0;
 
-            // 2. SKJUL BEGGE SKÆRME: Ryd højre side med det samme
+
             if (quizScreen) quizScreen.classList.add("d-none");
             if (resultScreen) resultScreen.classList.add("d-none");
 
-            // 3. HVIS DEN NYE KATEGORI HAR EN QUIZ-FIL (f.eks. data-quiz="hlr.json")
+
             if (jsonFilnavn) {
 
                 if (desktopPlaceholder) {
