@@ -3,6 +3,7 @@
 let myQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
+let activeCard = null;
 
 //Henter HTML-elementer ind i variabler
 const quizScreen = document.getElementById("quiz-screen");
@@ -93,6 +94,10 @@ function loadQuestions() {
         resultScreen.classList.remove("d-none");
         correctScoreText.innerText = score;
         totalQuestionsText.innerText = myQuestions.length;
+
+        if (activeCard) {
+            activeCard.classList.add("completed");
+        }
     }
 
 // EVENT LISTENER: Kører så snart HTML-strukturen er helt indlæst i browseren
@@ -121,16 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', () => {
             const jsonFilnavn = card.getAttribute('data-quiz');
 
+            activeCard = card;
+
             currentQuestionIndex = 0;
             score = 0;
-
 
             if (quizScreen) quizScreen.classList.add("d-none");
             if (resultScreen) resultScreen.classList.add("d-none");
 
-
             if (jsonFilnavn) {
-
                 if (desktopPlaceholder) {
                     desktopPlaceholder.classList.add("d-none");
                 }

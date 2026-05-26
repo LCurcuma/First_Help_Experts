@@ -80,42 +80,42 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Drukning</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                 <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Forbinding</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Brandsår</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2 " onclick="alert('Funktionen er på vej!')">
+            <div class="category-card completed text-center p-2 " onclick="alert('Du har klaret dinne quiz!')">
                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Bilulykke</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                 <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Kvælning</p>
             </div>
         </div>
 
         <div class="col-6 mb-5">
-            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                 <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Stroke</p>
             </div>
@@ -146,56 +146,56 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
                 <div id="menu-screen" class="kategori-cards px-4">
                     <div class="row g-4">
                         <div class="col-6">
-                                <div class="category-card text-center p-2" data-quiz="data_hlr.json">
+                                <div class="category-card text-center p-2" data-quiz="data/data_hlr.json">
                                     <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
                                     <p>HLR</p>
                                 </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" data-quiz="data_hlrhs.json"">
+                            <div class="category-card text-center p-2" data-quiz="data/data_hlrhs.json"">
                                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>HLR med hjertestarter</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Drukning</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                                 <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Forbinding</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Brandsår</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2 " onclick="alert('Funktionen er på vej!')">
+                            <div class="category-card completed text-center p-2 " onclick="alert('Du har klaret dinne quiz!')">
                                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Bilulykke</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                                 <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Kvælning</p>
                             </div>
                         </div>
 
                         <div class="col-6 mb-5">
-                            <div class="category-card text-center p-2" onclick="alert('Funktionen er på vej!')">
+                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
                                 <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Stroke</p>
                             </div>
