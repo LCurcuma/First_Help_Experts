@@ -4,10 +4,7 @@
  */
 
 require "settings/init.php";
-//tage id fra link ("forside.php? ->id=1<- id, som bruges")
 $id = $_GET["id"];
-//tage data om bruger med den id
-$userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 ?>
 <!DOCTYPE html>
 <html lang="da">
