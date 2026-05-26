@@ -4,6 +4,10 @@
  */
 
 require "settings/init.php";
+//tage id fra link ("forside.php? ->id=1<- id, som bruges")
+$id = $_GET["id"];
+//tage data om bruger med den id
+$userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -39,7 +43,7 @@ require "settings/init.php";
 <body class="bodyquiz">
 <!------------ MOBIL VERSION ------------>
     <!------------ TILBAGEKNAP ------------>
-<a href="forside.php" class="arrow_back">
+<a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back">
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
@@ -70,7 +74,7 @@ require "settings/init.php";
 <div class="px-4 d-flex flex-column d-lg-none">
     <div class="row g-4">
         <div id="menu-screen" class="col-6">
-            <a href="quizhlr.php" class="text-decoration-none text-reset">
+            <a href="quizhlr.php?id=<?php echo $userData[0]->id?>" class="text-decoration-none text-reset">
                 <div class="category-card text-center p-2">
                     <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
                     <p>HLR</p>
@@ -79,7 +83,7 @@ require "settings/init.php";
         </div>
 
         <div class="col-6">
-            <a href="quizhlrhs.php" class="text-decoration-none text-reset">
+            <a href="quizhlrhs.php?id=<?php echo $userData[0]->id?>" class="text-decoration-none text-reset">
             <div class="category-card text-center p-2">
                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                 <p>HLR med hjertestarter</p>
@@ -266,7 +270,7 @@ require "settings/init.php";
                     <p class="færdig-text">Sådan, du klarede det!</p>
                     <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
 
-                    <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
+                    <a href="quiz.php?id=<?php echo $userData[0]->id?>" class="btn slutquiz-knap py-3">Afslut quizzen</a>
                 </div>
                 <!------------ RESULT SCREEN ------------>
             </div>
