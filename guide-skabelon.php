@@ -27,6 +27,7 @@ if ($nuvaerendeTrin >= $antalTrin) {
 
 
 $data = $trinData[$nuvaerendeTrin];
+$id = $_GET["id"];
 ?>
 
 <!DOCTYPE html>
@@ -92,9 +93,9 @@ $data = $trinData[$nuvaerendeTrin];
 
     <div class="guide-footer">
         <?php if ($nuvaerendeTrin === $antalTrin - 1): ?>
-            <a href="?trin=<?php echo $antalTrin; ?>" class="next-button text-center text-decoration-none d-block" style="background-color: #2196F3; line-height: 24px;">AFSLUT GUIDE</a>
+            <a href="?trin=<?php echo $antalTrin; ?>&id=<?php echo $id?>" class="next-button text-center text-decoration-none d-block" style="background-color: #2196F3; line-height: 24px;">AFSLUT GUIDE</a>
         <?php else: ?>
-            <a href="?trin=<?php echo $nuvaerendeTrin + 1; ?>" class="next-button text-center text-decoration-none d-block" style="background-color: #5CD685; line-height: 24px;">NÆSTE TRIN</a>
+            <a href="?trin=<?php echo $nuvaerendeTrin + 1; ?>&id=<?php echo $id?>" class="next-button text-center text-decoration-none d-block" style="background-color: #5CD685; line-height: 24px;">NÆSTE TRIN</a>
         <?php endif; ?>
 
         <div class="progress-dots">
@@ -114,7 +115,7 @@ $data = $trinData[$nuvaerendeTrin];
                 </div>
                 <h4 class="fw-bold mb-2" style="color: #000000; font-size: 20px;">Godt arbejdet!</h4>
                 <p class="text-muted mb-4" style="font-size: 14px; line-height: 1.4;">Du har gennemført guiden i <?php echo $guideTitel; ?>.</p>
-                <a href="guides.php" class="btn next-button w-100 text-center text-decoration-none" style="background-color: #5CD685; color: white; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 14px; line-height: 20px;">OKAY</a>
+                <a href="guides.php?id=<?php echo $id?>" class="btn next-button w-100 text-center text-decoration-none" style="background-color: #5CD685; color: white; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 14px; line-height: 20px;">OKAY</a>
             </div>
         </div>
     </div>

@@ -108,7 +108,7 @@ $id = $_GET["id"];
         </div>
 
         <div class="col-6">
-            <a href="blødning-guide.php?id=<?php echo $id?>" class="text-decoration-none">
+            <a href="blodning-guide.php?id=<?php echo $id?>" class="text-decoration-none">
                 <div class="guide-card guide-card-green">
                     <div class="guide-image-wrapper">
                         <img src="img/icons/3d-icons/bleeding.png" alt="Blødninger">
@@ -121,7 +121,7 @@ $id = $_GET["id"];
         </div>
 
         <div class="col-6">
-            <a href="brandsår-guide.php?id=<?php echo $id?>" class="text-decoration-none">
+            <a href="brandsaar-guide.php?id=<?php echo $id?>" class="text-decoration-none">
                 <div class="guide-card guide-card-green">
                     <div class="guide-image-wrapper">
                         <img src="img/icons/3d-icons/burn-hand.png" alt="Brandsår">
@@ -134,7 +134,7 @@ $id = $_GET["id"];
         </div>
 
         <div class="col-6">
-            <a href="bevidstløs-guide.php?id=<?php echo $id?>" class="text-decoration-none">
+            <a href="bevidstlos-guide.php?id=<?php echo $id?>" class="text-decoration-none">
                 <div class="guide-card guide-card-green">
                     <div class="guide-image-wrapper">
                         <img src="img/icons/3d-icons/recovery-position.png" alt="Bevidstløshed">
