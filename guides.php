@@ -4,6 +4,8 @@
  */
 
 require "settings/init.php";
+//tage id fra link ("forside.php? ->id=1<- id, som bruges")
+$id = $_GET["id"];
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -43,9 +45,13 @@ require "settings/init.php";
 
         <div class="row mb-3">
             <div class="col-12">
-                <a href="forside.php" class="back-arrow">
-                   <i class="bi bi-chevron-left"></i>
-                </a>
+                <!--Hvis man kommer via AKUT ADGANG, så tilbage er index.php-->
+                <?php if($id === "0"){
+                    echo "<a href='index.php' class='back-arrow'><i class='bi bi-chevron-left'></i></a>";
+                } else {
+                    //ellers kommer til forsiden som bruger
+                    echo "<a href='forside.php?id=".$id."' class='back-arrow'><i class='bi bi-chevron-left'></i></a>";
+                }?>
             </div>
         </div>
 
@@ -89,7 +95,7 @@ require "settings/init.php";
     <div class="row g-3">
 
         <div class="col-6">
-            <a href="hlr-guide.php" class="text-decoration-none">
+            <a href="hlr-guide.php?id=<?php echo $id?>" class="text-decoration-none">
                 <div class="guide-card guide-card-green">
                     <div class="guide-image-wrapper">
                         <img src="img/icons/3d-icons/hlr.png" alt="HLR">
@@ -102,7 +108,7 @@ require "settings/init.php";
         </div>
 
         <div class="col-6">
-            <a href="blødning-guide.php" class="text-decoration-none">
+            <a href="blødning-guide.php?id=<?php echo $id?>" class="text-decoration-none">
                 <div class="guide-card guide-card-green">
                     <div class="guide-image-wrapper">
                         <img src="img/icons/3d-icons/bleeding.png" alt="Blødninger">
@@ -115,7 +121,7 @@ require "settings/init.php";
         </div>
 
         <div class="col-6">
-            <a href="brandsår-guide.php" class="text-decoration-none">
+            <a href="brandsår-guide.php?id=<?php echo $id?>" class="text-decoration-none">
                 <div class="guide-card guide-card-green">
                     <div class="guide-image-wrapper">
                         <img src="img/icons/3d-icons/burn-hand.png" alt="Brandsår">
@@ -128,7 +134,7 @@ require "settings/init.php";
         </div>
 
         <div class="col-6">
-            <a href="bevidstløs-guide.php" class="text-decoration-none">
+            <a href="bevidstløs-guide.php?id=<?php echo $id?>" class="text-decoration-none">
                 <div class="guide-card guide-card-green">
                     <div class="guide-image-wrapper">
                         <img src="img/icons/3d-icons/recovery-position.png" alt="Bevidstløshed">
@@ -221,9 +227,11 @@ require "settings/init.php";
 
                 <div class="row mb-3">
                     <div class="col-12">
-                        <a href="forside.php" class="back-arrow">
-                            <i class="bi bi-chevron-left"></i>
-                        </a>
+                        <?php if($id === "0"){
+                            echo "<a href='index.php' class='back-arrow'><i class='bi bi-chevron-left'></i></a>";
+                        } else {
+                            echo "<a href='forside.php?id=".$id."' class='back-arrow'><i class='bi bi-chevron-left'></i></a>";
+                        }?>
                     </div>
                 </div>
 

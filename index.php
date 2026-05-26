@@ -69,7 +69,7 @@ require "func/login.php";
                 <button class="btn login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Log ind</button>
 
                 <!-- Akut -->
-                <a href="#" class="btn akut-btn d-flex align-items-center justify-content-center">AKUT ADGANG</a>
+                <a href="guides.php?id=0" class="btn akut-btn d-flex align-items-center justify-content-center">AKUT ADGANG</a>
 
             </div>
         </div>
@@ -121,7 +121,7 @@ require "func/login.php";
                                 <hr>
 
                                 <!-- Akut -->
-                                <a href="#" class="btn akut-btn w-100">AKUT ADGANG</a>
+                                <a href="guides.php?id=0" class="btn akut-btn w-100">AKUT ADGANG</a>
 
                             </div>
                         </div>
