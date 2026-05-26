@@ -5,6 +5,36 @@
 
 require "settings/init.php";
 $id = $_GET["id"];
+$quizId = $_GET["quiz_id"];
+
+$userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+$oldMissions = $userData[0]->finished_missions_names;
+//hvis oldMissions er ikke tomt (fordi hvis den er tom, så strpo vil ikke virke)
+if(!EMPTY($oldMissions)){
+    //hvis oldMissions har ikke missions id, som vi vil gerne tilføje
+    if(strpos($oldMissions, $quizId)===false){
+// Tilføje nye missioner
+        $newMissions = trim($oldMissions . " " . $quizId);
+
+// Gem
+        $stmt = $db->sql("
+    UPDATE users
+    SET finished_missions_names = '$newMissions'
+    WHERE users.id = '$id'
+");}
+    //hvis oldMissions er tom
+} else {
+    // Tilføje ny mission
+    $newMissions = $quizId;
+
+// Gem
+    $stmt = $db->sql("
+    UPDATE users
+    SET finished_missions_names = '$newMissions'
+    WHERE users.id = '$id'
+");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -77,12 +107,12 @@ $id = $_GET["id"];
     <p class="færdig-text">Sådan, du klarede det!</p>
     <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
 
-    <a href="quiz.php" class="btn slutquiz-knap py-3">Afslut quizzen</a>
+    <a href="quiz.php?id=<?php echo $id?>" class="btn slutquiz-knap py-3">Afslut quizzen</a>
 </div>
 <!------------ RESULT SCREEN ------------>
 
 
-<div id="quiz-config" data-json="data_hlr.json"></div>
+<div id="quiz-config" data-json="data/data_hlr.json"></div>
 
 <script src="func/quiz.js"></script>
 <!------------ Bootstrap library ------------>

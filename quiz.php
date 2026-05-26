@@ -5,6 +5,9 @@
 
 require "settings/init.php";
 $id = $_GET["id"];
+
+$userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -59,8 +62,8 @@ $id = $_GET["id"];
 <div class="px-4 d-flex flex-column d-lg-none">
     <div class="row g-4">
         <div id="menu-screen" class="col-6">
-            <a href="quizhlr.php?id=<?php echo $id?>" class="text-decoration-none text-reset">
-                <div class="category-card text-center p-2">
+            <a href="quizhlr.php?id=<?php echo $id?>&quiz_id=HLR" class="text-decoration-none text-reset">
+                <div class="category-card text-center p-2" id="HLR">
                     <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
                     <p>HLR</p>
                 </div>
@@ -68,8 +71,8 @@ $id = $_GET["id"];
         </div>
 
         <div class="col-6">
-            <a href="quizhlrhs.php?id=<?php echo $id?>" class="text-decoration-none text-reset">
-            <div class="category-card text-center p-2">
+            <a href="quizhlrhs.php?id=<?php echo $id?>&quiz_id=hjertestarter" class="text-decoration-none text-reset">
+            <div class="category-card text-center p-2" id="hjertestarter">
                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                 <p>HLR med hjertestarter</p>
             </div>
@@ -77,42 +80,42 @@ $id = $_GET["id"];
         </div>
 
         <div class="col-6">
-            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+            <div class="category-card text-center p-2" id="drukning">
                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Drukning</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+            <div class="category-card text-center p-2" id="forbinding">
                 <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Forbinding</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+            <div class="category-card text-center p-2" id="brandsar">
                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Brandsår</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card completed text-center p-2 " onclick="alert('Du har klaret dinne quiz!')">
+            <div class="category-card text-center p-2" id="bilulykke">
                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Bilulykke</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+            <div class="category-card text-center p-2" id="kvalning">
                 <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Kvælning</p>
             </div>
         </div>
 
         <div class="col-6 mb-5">
-            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+            <div class="category-card text-center p-2" id="stroke">
                 <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Stroke</p>
             </div>
@@ -143,56 +146,56 @@ $id = $_GET["id"];
                 <div id="menu-screen" class="kategori-cards px-4">
                     <div class="row g-4">
                         <div class="col-6">
-                                <div class="category-card text-center p-2" data-quiz="data/data_hlr.json">
+                                <div class="category-card text-center p-2" id="HLR_desk" data-quiz="data/data_hlr.json">
                                     <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
                                     <p>HLR</p>
                                 </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" data-quiz="data/data_hlrhs.json"">
+                            <div class="category-card text-center p-2" id="hjertestarter_desk" data-quiz="data/data_hlrhs.json"">
                                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>HLR med hjertestarter</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+                            <div class="category-card text-center p-2" id="drukning_desk">
                                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Drukning</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+                            <div class="category-card text-center p-2" id="forbinding_desk">
                                 <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Forbinding</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+                            <div class="category-card text-center p-2" id="brandsar_desk">
                                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Brandsår</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card completed text-center p-2 " onclick="alert('Du har klaret dinne quiz!')">
+                            <div class="category-card text-center p-2" id="bilulykke_desk">
                                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Bilulykke</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+                            <div class="category-card text-center p-2" id="kvalning_desk">
                                 <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Kvælning</p>
                             </div>
                         </div>
 
                         <div class="col-6 mb-5">
-                            <div class="category-card completed text-center p-2" onclick="alert('Du har klaret dinne quiz!')">
+                            <div class="category-card text-center p-2" id="stroke_desk">
                                 <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Stroke</p>
                             </div>
@@ -259,6 +262,26 @@ $id = $_GET["id"];
 
 
 <script src="func/quiz.js"></script>
+<script>
+    <?php
+            //hvis bruger har færdiggørt nogen missioner
+    if($userData[0]->finished_missions_names !== NULL){
+        //lave array ud fra string (altså vi tage "HLR kvalning" fra database og laver ["HLR", "kvalning"] ud fra det)
+        $finishedMissions = explode(" ", $userData[0]->finished_missions_names);
+        //for hver finished mission
+        //tilføje class "completed" på både mobil og desktop cards
+        //tilføje onclick funktion på både mobil og desktop cards
+        foreach($finishedMissions as $finishedMission){
+            echo "
+            document.getElementById('".$finishedMission."').classList.add('completed');
+            document.getElementById('".$finishedMission."_desk').classList.add('completed');
+            document.getElementById('".$finishedMission."').onclick = function(){alert('Du har klaret dinne quiz!')};
+            document.getElementById('".$finishedMission."_desk').onclick = function(){alert('Du har klaret dinne quiz!')};
+            ";
+        }
+    }
+ ?>
+</script>
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
