@@ -7,7 +7,7 @@
     <img src="img/ui/circle1.svg" class="weekly-circle weekly-c4" alt="Baggrunds element">
 
     <!-- Gør selve kortet klikbar -->
-    <a href="#" class="stretched-link"></a>
+    <a href="quiz.php?id=1" class="stretched-link"></a>
 
     <!-- Top row -->
     <div class="d-flex justify-content-between align-items-start position-relative z-2">

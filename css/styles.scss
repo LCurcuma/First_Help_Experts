@@ -464,6 +464,37 @@ body {
 }
 //-------------------------------------//
 
+//--- (COMP) WEEKLY MISSION CARD 2 ---//
+.weekly-missions-progress-2 {
+  position: relative;
+  z-index: 2;
+}
+
+//Styling af ikon
+.weekly-mission2-icon {
+  width: 160px;
+  height: auto;
+
+  position: absolute;
+  top: 20px;
+  right: 1px;
+
+  pointer-events: none;
+
+  @include media-breakpoint-up(sm) {
+    width: 180px;
+    top: 20px;
+    right: 15px;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 200px;
+    top: 20px;
+    right: 25px;
+  }
+}
+//--------------------------------------------------------//
+
 
 //-- (COMP) WEEKLY MISSION ANIMATION --//
 //Baggrund cirkle animation
