@@ -1,0 +1,8 @@
+{
+  "question": "Hvad er det første, du skal gøre, hvis du finder en person, der er faldet om?",
+  "options": [
+    {"text": "Begynde hjertemassage med det samme", "correct": false},
+    {"text": "Sikre dig, at der er sikkert, og skabe kontakt til personen", "correct": true},
+    {"text": "Løbe væk efter en hjertestarter", "correct": false}
+  ]
+}

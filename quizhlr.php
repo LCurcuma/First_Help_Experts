@@ -42,7 +42,7 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 <body class="bodyquiz">
 
 <!------------ TILBAGEKNAP ------------>
-<a href="quiz.php?id=<?php echo $userData[0]->id?>" class="arrow_back">
+<a href="quiz.php?id=<?php echo $id ?>" class="arrow_back">
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
