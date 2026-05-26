@@ -492,6 +492,12 @@ body {
     top: 20px;
     right: 25px;
   }
+
+  @include media-breakpoint-up(lg) {
+    width: 180px;
+    top: 40px;
+    right: 10px;
+  }
 }
 //--------------------------------------------------------//
 
@@ -2132,7 +2138,6 @@ body {
   background: #FFFBF5;
   position: relative;
   overflow-x: hidden;
-  font-family: "Roboto", sans-serif;
 }
 
 

@@ -4,6 +4,10 @@
  */
 
 require "settings/init.php";
+//tage id fra link ("forside.php? ->id=1<- id, som bruges")
+$id = $_GET["id"];
+//tage data om bruger med den id
+$userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -38,7 +42,7 @@ require "settings/init.php";
 <body class="bodyquiz">
 
 <!------------ TILBAGEKNAP ------------>
-<a href="quiz.php" class="arrow_back">
+<a href="quiz.php?id=<?php echo $userData[0]->id?>" class="arrow_back">
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
@@ -81,9 +85,9 @@ require "settings/init.php";
 <!------------ RESULT SCREEN ------------>
 
 
-<div id="quiz-config" data-json="hlr.json"></div>
+<div id="quiz-config" data-json="data_hlr.json"></div>
 
-<script src="quiz.js"></script>
+<script src="func/quiz.js"></script>
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

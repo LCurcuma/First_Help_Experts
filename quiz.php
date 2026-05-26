@@ -47,28 +47,16 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
+
 <!------------ UGENS MISSION CARD ------------>
 
-<div class="mission-card mx-4 mb-4 p-4 d-flex flex-column d-lg-none">
-    <div class="position-relative">
-        <p class="mini-tekst">Ugens mission</p>
-        <p class="mission-tekst">Tag 3 Quizzer <br> i denne uge!</p>
-
-        <div class="score d-flex justify-content-center">
-            <div class="score_text d-flex justify-content-end">
-                <p class="score-text-quiz">1 / 3</p>
-            </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="30">
-                <div class="progress-bar" style="width: 33%;"></div>
-            </div>
-        </div>
-
-        <img src="img/icons/3d-icons/arrow.png" alt="" class="arrow_icon">
-
-    </div>
+<div class="d-flex justify-content-center align-items-center fp-container mt-2 mb-5 d-lg-none">
+    <?php include 'components/weekly-missions-card2.php';?>
 </div>
 
 <!------------ UGENS MISSION CARD ------------>
+
+
 
 <!------------ KATEGORI CARDS ------------>
 <div class="px-4 d-flex flex-column d-lg-none">
@@ -137,6 +125,9 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
     <!------------ KATEGORI CARDS ------------>
 <!------------ MOBIL VERSION ------------>
 
+
+
+
 <!------------ DESKTOP VERSION ------------>
 <div class="d-none flex-column d-lg-block">
     <div class="container">
@@ -144,38 +135,25 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 
             <!------------ UGENS MISSION CARD ------------>
             <div class="col col-6 cate-colone">
-                <div class="mission-card mx-4 mb-4 p-4">
-                    <div class="position-relative">
-                        <p class="mini-tekst">Ugens mission</p>
-                        <p class="mission-tekst">Tag 3 Quizzer <br> i denne uge!</p>
 
-                        <div class="score d-flex justify-content-center">
-                            <div class="score_text d-flex justify-content-end">
-                                <p class="score-text-quiz">1 / 3</p>
-                            </div>
-                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="30">
-                                <div class="progress-bar" style="width: 33%;"></div>
-                            </div>
-                        </div>
-
-                        <img src="img/icons/3d-icons/arrow.png" alt="" class="arrow_icon">
-
-                    </div>
+                <div class="d-flex justify-content-center align-items-center fp-container mt-2 mb-5 ">
+                    <?php include 'components/weekly-missions-card2.php';?>
                 </div>
+
                 <!------------ UGENS MISSION CARD ------------>
 
                 <!------------ KATEGORI CARDS ------------>
                 <div id="menu-screen" class="kategori-cards px-4">
                     <div class="row g-4">
                         <div class="col-6">
-                                <div class="category-card text-center p-2" data-quiz="hlr.json">
+                                <div class="category-card text-center p-2" data-quiz="data_hlr.json">
                                     <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
                                     <p>HLR</p>
                                 </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" data-quiz="hlrhs.json"">
+                            <div class="category-card text-center p-2" data-quiz="data_hlrhs.json"">
                                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>HLR med hjertestarter</p>
                             </div>
@@ -228,15 +206,15 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
         <!------------ KATEGORI CARDS ------------>
 
 
-        <!------------ PLACEHOLDER ------------>
+
             <div class="col col-6 quiz-colone">
 
+                <!------------ PLACEHOLDER ------------>
                 <div id="desktop-placeholder" class="d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 50%;">
                     <p class="placeholder-overskrift">Vælg en kategori og start quizzen!</p>
                     <p class="placeholder-underrubrik">Test din vide og se hvad du kan.</p>
                 </div>
-
-        <!------------ PLACEHOLDER ------------>
+                <!------------ PLACEHOLDER ------------>
 
         <!------------ QUIZ SCREEN ------------>
                 <div id="quiz-screen" class="quiz d-none">
@@ -283,7 +261,7 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 
 
 
-<script src="quiz.js"></script>
+<script src="func/quiz.js"></script>
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
