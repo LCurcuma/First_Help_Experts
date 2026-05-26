@@ -4,6 +4,7 @@
  */
 
 require "settings/init.php";
+$id = $_GET["id"];
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -38,7 +39,7 @@ require "settings/init.php";
 <body class="bodyquiz">
 
 <!------------ TILBAGEKNAP ------------>
-<a href="quiz.php" class="arrow_back">
+<a href="quiz.php/?id=<?php echo $id?>" class="arrow_back">
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
