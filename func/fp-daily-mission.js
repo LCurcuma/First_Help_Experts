@@ -27,7 +27,8 @@ function hasCooldown() {
         var timeDiff = now - parseInt(lastAnswered);
 
         //24 timer i millisekunder (24 * 60 * 60 * 1000)
-        var twentyFourHours = 86400000;
+        //var twentyFourHours = 86400000; //24 timer
+        var twentyFourHours = 10000; //test
 
         //Tjekker om der er gået mindre end 24 timer
         if (timeDiff < twentyFourHours) {
