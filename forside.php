@@ -4,6 +4,9 @@
  */
 
 require "settings/init.php";
+
+// Inkluderer PHP filen der styrer point for dagens mission
+require "func/fp_add_points.php";
 //tage id fra link ("forside.php? ->id=1<- id, som bruges")
 $id = $_GET["id"];
 //tage data om bruger med den id
@@ -149,14 +152,63 @@ $nameArray = explode(" ", $userData[0]->name);
 
 </div>
 
-<!-------- Motivation text script --------->
-<script src="func/motivationtext.js"></script>
+<!-- Gemmer den aktuelle brugers ID -->
+<input type="hidden" id="currentUserId" value="<?php echo $userData[0]->id; ?>">
 
-<!------------ Carousel script ------------>
-<script src="func/fp-carousel.js"></script>
+<!-- Modal til dagens mission -->
+<div class="modal fade" id="dailyMissionModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4 bg-white shadow p-4">
+
+            <!-- Luk knap -->
+            <div class="d-flex justify-content-end mb-2">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Luk"></button>
+            </div>
+
+            <!-- Modal indhold -->
+            <div class="modal-body text-center p-0">
+
+                <!-- Titel -->
+                <div class="fw-bold text-dark fs-4 mb-2">
+                    Dagens Mission
+                </div>
+
+                <!-- Spørgsmål tekst -->
+                <div id="missionQuestionText" class="text-muted fs-6 mb-4">
+                    Henter spørgsmål...
+                </div>
+
+                <!-- Svarmuligheder -->
+                <div id="missionOptionsContainer" class="d-flex flex-column gap-3 mt-3">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Formular til at tilføje point -->
+<form id="pointsForm" method="POST" action="">
+
+    <!-- Antal point der tilføjes -->
+    <input type="hidden" name="add_daily_points" value="10">
+
+    <!-- Brugerens ID -->
+    <input type="hidden" name="user_id" value="<?php echo $userData[0]->id; ?>">
+
+</form>
 
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-------- Motivation text script --------->
+<script src="func/fp-motivationtext.js"></script>
+
+<!--------- Daily mission script ---------->
+<script src="func/fp-daily-mission.js"></script>
+
+<!------------ Carousel script ------------>
+<script src="func/fp-carousel.js"></script>
 
 <!------------ AOS LIBRARY ------------>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
