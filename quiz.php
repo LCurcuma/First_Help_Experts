@@ -40,7 +40,7 @@ $id = $_GET["id"];
 <body class="bodyquiz">
 <!------------ MOBIL VERSION ------------>
     <!------------ TILBAGEKNAP ------------>
-<a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back">
+<a href="forside.php?id=<?php echo $id?>" class="arrow_back">
     <i class="fa-solid fa-chevron-left pb-4 p-4" style="color: #121212"></i>
 </a>
 
@@ -59,7 +59,7 @@ $id = $_GET["id"];
 <div class="px-4 d-flex flex-column d-lg-none">
     <div class="row g-4">
         <div id="menu-screen" class="col-6">
-            <a href="quizhlr.php?id=<?php echo $userData[0]->id?>" class="text-decoration-none text-reset">
+            <a href="quizhlr.php?id=<?php echo $id?>" class="text-decoration-none text-reset">
                 <div class="category-card text-center p-2">
                     <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
                     <p>HLR</p>
@@ -68,7 +68,7 @@ $id = $_GET["id"];
         </div>
 
         <div class="col-6">
-            <a href="quizhlrhs.php?id=<?php echo $userData[0]->id?>" class="text-decoration-none text-reset">
+            <a href="quizhlrhs.php?id=<?php echo $id?>" class="text-decoration-none text-reset">
             <div class="category-card text-center p-2">
                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                 <p>HLR med hjertestarter</p>
@@ -245,7 +245,7 @@ $id = $_GET["id"];
                     <p class="færdig-text">Sådan, du klarede det!</p>
                     <p class="skala-text mb-3">Du fik <span id="correct-score" class="fw-bold">0</span> ud af <span id="total-questions" class="fw-bold">10</span> rigtige.</p>
 
-                    <a href="quiz.php?id=<?php echo $userData[0]->id?>" class="btn slutquiz-knap py-3">Afslut quizzen</a>
+                    <a href="quiz.php?id=<?php echo $id?>" class="btn slutquiz-knap py-3">Afslut quizzen</a>
                 </div>
                 <!------------ RESULT SCREEN ------------>
             </div>
