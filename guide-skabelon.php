@@ -58,7 +58,7 @@ $id = $_GET["id"];
 
     <div class="row mb-3 back-arrow-container">
         <div class="col-12">
-            <a href="guides.php" class="back-arrow">
+            <a href="guides.php?id=<?php echo $id ?>" class="back-arrow">
                 <i class="bi bi-chevron-left"></i>
             </a>
         </div>
@@ -70,7 +70,7 @@ $id = $_GET["id"];
         <?php
         foreach ($badgeNavne as $index => $navn):
             if ($index <= $nuvaerendeTrin): ?>
-                <a href="?trin=<?php echo $index; ?>" class="step-badge <?php echo ($index === $nuvaerendeTrin) ? 'active' : ''; ?>">
+                <a href="?trin=<?php echo $index; ?>&id=<?php echo $id ?>" class="step-badge <?php echo ($index === $nuvaerendeTrin) ? 'active' : ''; ?>">
                     <?php echo $navn; ?>
                 </a>
             <?php else: ?>
