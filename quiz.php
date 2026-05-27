@@ -80,42 +80,42 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" id="drukning">
+            <div class="category-card completed text-center p-2" id="drukning">
                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Drukning</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" id="forbinding">
+            <div class="category-card completed text-center p-2" id="forbinding">
                 <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Forbinding</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" id="brandsar">
+            <div class="category-card completed text-center p-2" id="brandsar">
                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Brandsår</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" id="bilulykke">
+            <div class="category-card completed text-center p-2" id="bilulykke">
                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Bilulykke</p>
             </div>
         </div>
 
         <div class="col-6">
-            <div class="category-card text-center p-2" id="kvalning">
+            <div class="category-card completed text-center p-2" id="kvalning">
                 <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Kvælning</p>
             </div>
         </div>
 
         <div class="col-6 mb-5">
-            <div class="category-card text-center p-2" id="stroke">
+            <div class="category-card completed text-center p-2" id="stroke">
                 <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
                 <p>Stroke</p>
             </div>
@@ -160,42 +160,42 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" id="drukning_desk">
+                            <div class="category-card completed text-center p-2" id="drukning_desk">
                                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Drukning</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" id="forbinding_desk">
+                            <div class="category-card completed text-center p-2" id="forbinding_desk">
                                 <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Forbinding</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" id="brandsar_desk">
+                            <div class="category-card completed text-center p-2" id="brandsar_desk">
                                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Brandsår</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" id="bilulykke_desk">
+                            <div class="category-card completed text-center p-2" id="bilulykke_desk">
                                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Bilulykke</p>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="category-card text-center p-2" id="kvalning_desk">
+                            <div class="category-card completed text-center p-2" id="kvalning_desk">
                                 <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Kvælning</p>
                             </div>
                         </div>
 
                         <div class="col-6 mb-5">
-                            <div class="category-card text-center p-2" id="stroke_desk">
+                            <div class="category-card completed text-center p-2" id="stroke_desk">
                                 <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Stroke</p>
                             </div>
