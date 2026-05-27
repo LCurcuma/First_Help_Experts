@@ -1969,11 +1969,11 @@ body {
 .progress{
   background-color: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 70vw;
+  width: 80vw;
   //Når du tager den til desktop version, husk at tilføje @include(breakpoint) med width, som er ikke vw, men % eller px
 
 @include media-breakpoint-up(lg){
-  width: 20vw;
+  width: 25vw;
 }
 }
 
