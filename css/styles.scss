@@ -620,6 +620,16 @@ body {
     height: 160px;
     padding: 25px;
   }
+
+  @include media-breakpoint-up(lg) {
+    height: 200px;
+    padding: 30px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 210px;
+    padding: 30px;
+  }
 }
 
 //Lille tekst
@@ -652,6 +662,21 @@ body {
   @include media-breakpoint-up(md) {
     width: 100px;
     bottom: 15px;
+    right: 15px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    width: 100px;
+    bottom: 20px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    bottom: 25px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 120px;
+    bottom: 25px;
     right: 15px;
   }
 }

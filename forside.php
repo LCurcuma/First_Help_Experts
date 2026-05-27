@@ -50,12 +50,14 @@ $nameArray = explode(" ", $userData[0]->name);
 <body class="bg-white">
 
 <!--------------- MOBIL LAYOUT -------------->
+<div class="d-lg-none">
+
     <!-- Velkommen tekst -->
     <div class="fp-container mt-5" data-aos="zoom-in">
 
         <h1 class="fw-bold display-5 mb-2">Hej <?php echo $nameArray[0] ?>!</h1>
 
-        <p class="fs-4" id="motivationalText">Klar til at redde liv i dag?</p>
+        <p class="fs-4 motivational-text-js">Klar til at redde liv i dag?</p>
 
     </div>
 
@@ -132,7 +134,6 @@ $nameArray = explode(" ", $userData[0]->name);
             </div>
 
         </div>
-
     </div>
 
     <!-- Nyheder section -->
@@ -152,12 +153,144 @@ $nameArray = explode(" ", $userData[0]->name);
         </div>
 
     </div>
+</div>
 <!--------------- MOBIL LAYOUT -------------->
 
 
 <!-------------- DESKTOP LAYOUT ------------->
+<div class="d-none d-lg-block container mt-5">
 
+    <!-- Desktop grid layout -->
+    <div class="row g-5">
 
+        <!-- Venstre side med cards og nyheder -->
+        <div class="col-8 ">
+
+            <!-- Velkomst tekst -->
+            <div class="mb-4">
+
+                <h1 class="fw-bold display-4 mb-2">Hej <?php echo $nameArray[0] ?>!</h1>
+
+                <p class="fs-4 motivational-text-js">Klar til at redde liv i dag?</p>
+
+            </div>
+
+            <!-- Grid med action cards -->
+            <div class="row g-3">
+
+                <!-- Card: Start quiz -->
+                <div class="col-6">
+
+                    <a href="quiz.php?id=<?php echo $userData[0]->id ?>" class="fp-action-card fp-card-purple text-white text-decoration-none position-relative d-block">
+
+                        <h2 class="fw-semibold fs-4">Start quiz</h2>
+
+                        <p class="fp-card-subtitle">Test din viden</p>
+
+                        <img src="img/icons/3d-icons/clipboard.png" alt="Hjerne ikon" class="fp-card-icon">
+
+                    </a>
+                </div>
+
+                <!-- Card: Læs guide -->
+                <div class="col-6">
+
+                    <a href="guides.php?id=<?php echo $userData[0]->id ?>" class="fp-action-card fp-card-blue text-white text-decoration-none position-relative d-block">
+
+                        <h2 class="fw-semibold fs-4 mb-1">Læs guide</h2>
+
+                        <p class="fp-card-subtitle">Udvid din viden</p>
+
+                        <img src="img/icons/3d-icons/heart.png" alt="Guide ikon" class="fp-card-icon">
+
+                    </a>
+                </div>
+
+                <!-- Card: Ugens mission -->
+                <div class="col-6">
+                    <?php include 'components/weekly-missions-card2-desktop.php'; ?>
+                </div>
+
+                <!-- Card: Dagens mission -->
+                <div class="col-6">
+
+                    <a href="#" class="fp-action-card fp-card-pink text-white text-decoration-none position-relative d-block">
+
+                        <h2 class="fw-semibold fs-4 mb-1">Dagens mission</h2>
+
+                        <p class="fp-card-subtitle">Svar på dagens <br> spørgsmål</p>
+
+                        <!-- Point reward -->
+                        <div class="d-flex align-items-center">
+
+                            <span class="fw-medium fs-5">+10</span>
+
+                            <img src="img/icons/3d-icons/money.png" alt="Mønt ikon" class="ms-1 fp-small-coin">
+
+                        </div>
+
+                        <img src="img/icons/3d-icons/questionmarks.png" alt="Mission ikon" class="fp-card-icon">
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Nyheder section -->
+            <div class="mt-5 mb-5">
+
+                <!-- Nyheder overskrift -->
+                <h2 class="text-start fw-bold mb-4 fp-news-heading">NYHEDER</h2>
+
+                <!-- News slider -->
+                <div class="fp-slider-container" id="newsSliderDesktop"></div>
+
+                <!-- Slider indicators -->
+                <div class="d-flex justify-content-center mt-3" id="sliderIndicatorsDesktop"></div>
+
+            </div>
+
+        </div>
+
+        <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
+        <div class="col col-4 user_section">
+            <div class="top_container">
+                <!--the container with points-->
+                <?php include "components/money_container.php" ?>
+            </div>
+            <!--the avatar container-->
+            <?php include "components/avatar.php" ?>
+            <!--the score container-->
+            <?php include "components/score_container_user.php" ?>
+            <!--container med links-->
+            <section class="links_section_desk">
+                <a href="#" class="link_tile_desk" style="background: #826099;" onclick="alert('Funktion kommer snart')">
+                    <h2 class="h2_bold">Check ind</h2>
+                    <div class="plus_money_desk">
+                        <h2>+5</h2>
+                        <img src="img/icons/3d-icons/money.png" class="money_plus_image_desk" alt="Points">
+                    </div>
+                </a>
+                <a href="shop.php?id=<?php echo $id?>" class="link_tile_desk" style="background: #88DB95;">
+                    <div>
+                        <h2 class="h2_bold">Point shop</h2>
+                        <p>350 tilgængelige rewards</p>
+                    </div>
+                    <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
+                </a>
+                <a href="#" class="link_tile_desk" style="background: linear-gradient(180deg, #F5A623 0%, #DE951C 100%);" onclick="alert('Funktion kommer snart')">
+                    <div>
+                        <h2 class="h2_bold">Din førstehjælps<br/>bevis</h2>
+                        <p>Gyldig til <span>12.04.2026</span></p>
+                    </div>
+                    <img src="img/icons/3d-icons/checkmark2.png" class="money_image_big" alt="Check">
+                </a>
+            </section>
+
+            <a href="index.php" class="logout">Log ud</a>
+        </div>
+        <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
 
 
 
