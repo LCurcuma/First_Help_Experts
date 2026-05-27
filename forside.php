@@ -167,7 +167,7 @@ $nameArray = explode(" ", $userData[0]->name);
         <div class="col-8 ">
 
             <!-- Velkomst tekst -->
-            <div class="mb-4">
+            <div class="mb-4" data-aos="zoom-in">
 
                 <h1 class="fw-bold display-4 mb-2">Hej <?php echo $nameArray[0] ?>!</h1>
 
@@ -176,7 +176,7 @@ $nameArray = explode(" ", $userData[0]->name);
             </div>
 
             <!-- Grid med action cards -->
-            <div class="row g-3">
+            <div class="row g-3" data-aos="zoom-in">
 
                 <!-- Card: Start quiz -->
                 <div class="col-6">
@@ -238,7 +238,7 @@ $nameArray = explode(" ", $userData[0]->name);
             </div>
 
             <!-- Nyheder section -->
-            <div class="mt-5 mb-5">
+            <div class="mt-5 mb-5" data-aos="zoom-in">
 
                 <!-- Nyheder overskrift -->
                 <h2 class="text-start fw-bold mb-4 fp-news-heading">NYHEDER</h2>
@@ -254,7 +254,7 @@ $nameArray = explode(" ", $userData[0]->name);
         </div>
 
         <!-- USER SECTION.PHP COMPONENTS -->
-        <div class="col col-4 user_section">
+        <div class="col col-4 user_section" data-aos="zoom-in">
             <?php include "components/user_section.php"; ?>
         </div>
 
