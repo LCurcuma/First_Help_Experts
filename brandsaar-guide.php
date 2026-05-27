@@ -2,7 +2,7 @@
 
 require "settings/init.php";
 
-$guideId = "brandsår";
+$guideId = "brandsaar";
 $guideTitel = "Brandsår";
 $badgeNavne = ["Ro", "Køl", "Fjern", "Dæk", "Varm", "Alarm"];
 

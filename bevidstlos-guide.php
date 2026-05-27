@@ -2,7 +2,7 @@
 
 require "settings/init.php";
 
-$guideId = "bevidstløshed";
+$guideId = "bevidstloshed";
 $guideTitel = "Bevidstløshed";
 $badgeNavne = ["Tjek", "Ring", "Luftvej", "Sideleje", "HLR"];
 

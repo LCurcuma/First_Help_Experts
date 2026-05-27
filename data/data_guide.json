@@ -25,7 +25,7 @@
       "billede": "img/icons/3d-icons/ambulance.png"
     }
   ],
-  "blødning": [
+  "blodning": [
     {
       "titel": "1. Skab ro og overblik",
       "tekst": "Sørg for, at området er sikret for både dig selv og den tilskadekommende.",
@@ -57,7 +57,7 @@
       "billede": "img/icons/3d-icons/not-okay.png"
     }
   ],
-  "brandsår": [
+  "brandsaar": [
     {
       "titel": "1. Skab ro og sikkerhed.",
       "tekst": "Fjern personen fra varmekilden og sørg for området er sikkert.",
@@ -95,7 +95,7 @@
       "billede": "img/icons/3d-icons/ring112.png"
     }
   ],
-  "bevidstløshed": [
+  "bevidstloshed": [
     {
       "titel": "1. Tjek bevidsthed.",
       "tekst": "Rusk forsigtigt personen i skulderne og spørg højt: 'Er du okay?'",
