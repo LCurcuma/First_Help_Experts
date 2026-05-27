@@ -168,7 +168,8 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
                         </a>
                         <a href="#" class="link_tile_desk" style="background: linear-gradient(180deg, #F5A623 0%, #DE951C 100%);" onclick="alert('Funktion kommer snart')">
                             <div>
-                                <h2 class="h2_bold">Din førstehjælps<br/>bevis</h2>
+                                <h2 class="h2_bold_desktop_small">Din førstehjælps<br/>bevis</h2>
+                                <h2 class="h2_bold_desktop_big">Din førstehjælpsbevis</h2>
                                 <p>Gyldig til <span>12.04.2026</span></p>
                             </div>
                             <img src="img/icons/3d-icons/checkmark2.png" class="money_image_big" alt="Check">
