@@ -8,7 +8,7 @@
 <?php include "components/score_container_user.php" ?>
 <!--container med links-->
 <section class="links_section_desk">
-    <a href="#" class="link_tile_desk" style="background: #826099;" onclick="alert('Funktion kommer snart')">
+    <a href="#" class="link_tile_desk" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);" onclick="alert('Funktion kommer snart')">
         <h2 class="h2_bold">Check ind</h2>
         <div class="plus_money_desk">
             <h2>+5</h2>
@@ -22,7 +22,7 @@
         </div>
         <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
     </a>
-    <a href="#" class="link_tile_desk" style="background: #77e37d;" onclick="alert('Funktion kommer snart')">
+    <a href="#" class="link_tile_desk" style="background: linear-gradient(180deg, #77e37d 0%, #46b14c 100%);" onclick="alert('Funktion kommer snart')">
         <div>
             <h2 class="h2_bold_desktop_small">Din førstehjælps<br/>bevis</h2>
             <h2 class="h2_bold_desktop_big">Din førstehjælpsbevis</h2>

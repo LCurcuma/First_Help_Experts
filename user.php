@@ -59,7 +59,7 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
     <?php include "components/score_container_user.php" ?>
     <!--container med links-->
     <section class="links_section">
-        <a href="#" class="link_tile" style="background: #CDB4D1;">
+        <a href="#" class="link_tile" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
             <h2 class="h2_bold">Check ind</h2>
             <div class="plus_money">
                 <h2 class="plus_number">+5</h2>
@@ -73,7 +73,7 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
             </div>
                 <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
         </a>
-        <a href="#" class="link_tile" style="background: #77e37d;">
+        <a href="#" class="link_tile" style="background: linear-gradient(180deg, #77e37d 0%, #46b14c 100%);">
             <div>
                 <h2 class="h2_bold_mobile_small">Din første<br/>hjælps<br/>bevis</h2>
                 <h2 class="h2_bold_mobile_big">Din førstehjælpsbevis</h2>
