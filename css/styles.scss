@@ -2049,7 +2049,7 @@ body {
   //Når du tager den til desktop version, husk at tilføje @include(breakpoint) med width, som er ikke vw, men % eller px
 
 @include media-breakpoint-up(lg){
-  width: 25vw;
+  width: 23vw;
 }
 }
 
