@@ -159,14 +159,14 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
                                 <img src="img/icons/3d-icons/money.png" class="money_plus_image_desk" alt="Points">
                             </div>
                         </a>
-                        <a href="shop.php?id=<?php echo $id?>" class="link_tile_desk" style="background: #88DB95;">
+                        <a href="shop.php?id=<?php echo $id?>" class="link_tile_desk" style="background: linear-gradient(180deg, #fcc260 0%, #daa953 100%);">
                             <div>
                                 <h2 class="h2_bold">Point shop</h2>
                                 <p>350 tilgængelige rewards</p>
                             </div>
                             <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
                         </a>
-                        <a href="#" class="link_tile_desk" style="background: linear-gradient(180deg, #F5A623 0%, #DE951C 100%);" onclick="alert('Funktion kommer snart')">
+                        <a href="#" class="link_tile_desk" style="background: #77e37d;" onclick="alert('Funktion kommer snart')">
                             <div>
                                 <h2 class="h2_bold_desktop_small">Din førstehjælps<br/>bevis</h2>
                                 <h2 class="h2_bold_desktop_big">Din førstehjælpsbevis</h2>

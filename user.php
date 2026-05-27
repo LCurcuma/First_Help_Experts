@@ -66,14 +66,14 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
                 <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
             </div>
         </a>
-        <a href="shop.php?id=<?php echo $userData[0]->id?>" class="link_tile" style="background: #88DB95;">
+        <a href="shop.php?id=<?php echo $userData[0]->id?>" class="link_tile" style="background: linear-gradient(180deg, #fcc260 0%, #daa953 100%);">
             <div>
                 <h2 class="h2_bold">Point shop</h2>
                 <p>350 tilgængelige rewards</p>
             </div>
                 <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
         </a>
-        <a href="#" class="link_tile" style="background: #F5A623;">
+        <a href="#" class="link_tile" style="background: #77e37d;">
             <div>
                 <h2 class="h2_bold_mobile_small">Din første<br/>hjælps<br/>bevis</h2>
                 <h2 class="h2_bold_mobile_big">Din førstehjælpsbevis</h2>
