@@ -178,10 +178,10 @@ function hopTilTrinP(index) {
 }
 
 function afslutGuideP() {
-    const completionText = document.getElementById('desktopCompletionText-p-p');
+    const completionText = document.getElementById('desktopCompletionText-p');
 
     if (completionText) {
-        completionText.innerText = "Du har gennemført guiden i " +aktivGuideTitelP + ".";
+        completionText.innerText = "Du har gennemført guiden i " + aktivGuideTitelP + ".";
     }
 
     const modalEl = document.getElementById('desktopCompletionModal-p');
