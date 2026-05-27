@@ -492,6 +492,12 @@ body {
     top: 20px;
     right: 25px;
   }
+
+  @include media-breakpoint-up(lg) {
+    width: 180px;
+    top: 40px;
+    right: 10px;
+  }
 }
 //--------------------------------------------------------//
 
@@ -761,7 +767,6 @@ body {
     width: 310px;
     height: 290px;
   }
-
 
   @include media-breakpoint-up(md) {
     flex: 0 0 340px;
@@ -2132,7 +2137,6 @@ body {
   background: #FFFBF5;
   position: relative;
   overflow-x: hidden;
-  font-family: "Roboto", sans-serif;
 }
 
 
@@ -2266,6 +2270,42 @@ body {
   border: 0.8px solid #c3c3c3;
   border-radius: 15px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  position: relative;
+
+  &.completed {
+
+    // 1. Det grønne gennemsigtige overlay
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $primary!important;
+      opacity: 40%;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+
+      margin: auto;
+
+      width: 90px;
+      height: 90px;
+
+      background-image: url('../img/icons/3d-icons/checkmark1.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      z-index: 2;
+    }
+  }
 
   @include media-breakpoint-up(md) {
     height: 200px;
@@ -2274,7 +2314,6 @@ body {
   @include media-breakpoint-up(lg) {
     height: 250px;
   }
-
 }
 
 .category-card:hover{

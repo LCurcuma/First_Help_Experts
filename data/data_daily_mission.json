@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Hvad skal du gøre først, hvis en person ikke reagerer?",
+    "options": [
+      {"text": "Give personen noget vand", "correct": false},
+      {"text": "Tjekke om personen trækker vejret", "correct": true},
+      {"text": "Sætte personen op at sidde", "correct": false}
+    ]
+  },
+  {
+    "question": "Hvad er alarmnummeret i Danmark?",
+    "options": [
+      {"text": "112", "correct": true},
+      {"text": "114", "correct": false},
+      {"text": "911", "correct": false}
+    ]
+  },
+  {
+    "question": "Hvor hurtigt skal man trykke ved hjertemassage?",
+    "options": [
+      {"text": "Ca. 100–120 tryk i minuttet", "correct": true},
+      {"text": "Ca. 40 tryk i minuttet", "correct": false},
+      {"text": "Så langsomt som muligt", "correct": false}
+    ]
+  },
+  {
+    "question": "Hvad gør en hjertestarter (AED)?",
+    "options": [
+      {"text": "Den giver kunstigt åndedræt", "correct": false},
+      {"text": "Den analyserer hjertets rytme og kan give stød", "correct": true},
+      {"text": "Den måler blodtryk", "correct": false}
+    ]
+  },
+  {
+    "question": "Hvor skal hænderne placeres ved hjertemassage?",
+    "options": [
+      {"text": "Midt på brystkassen", "correct": true},
+      {"text": "På maven", "correct": false},
+      {"text": "På skulderen", "correct": false}
+    ]
+  }
+]

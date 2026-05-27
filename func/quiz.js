@@ -3,6 +3,10 @@
 let myQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
+let activeCard = null;
+let activeCardIndex = null;
+const params = new URLSearchParams(window.location.search);
+const userId = params.get("id");
 
 //Henter HTML-elementer ind i variabler
 const quizScreen = document.getElementById("quiz-screen");
@@ -93,6 +97,35 @@ function loadQuestions() {
         resultScreen.classList.remove("d-none");
         correctScoreText.innerText = score;
         totalQuestionsText.innerText = myQuestions.length;
+
+        if (activeCard) {
+            //activeCardIndex er id-attribute af activeCard
+            activeCardIndex = activeCard.id;
+            //hvis den har _desk (for eksempel "HLR_desk"
+            if(activeCardIndex.includes("_desk")) {
+                //fjern "_desk"
+                activeCardIndex = activeCardIndex.replace("_desk", "");
+            }
+            //sender data om cardIndex til save_quiz.php
+            fetch("save_quiz.php?id=" + userId, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    index: activeCardIndex
+                })
+            })
+                .then(r => r.text())
+                .then(data => {
+                    console.log("SAVE RESPONSE:", data);
+                });
+            //ændre styling og tilføje funktion
+            activeCard.classList.add("completed");
+            activeCard.onclick = function(){
+                alert('Du har klaret dinne quiz!');
+            }
+        }
     }
 
 // EVENT LISTENER: Kører så snart HTML-strukturen er helt indlæst i browseren
@@ -121,16 +154,15 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', () => {
             const jsonFilnavn = card.getAttribute('data-quiz');
 
+            activeCard = card;
+
             currentQuestionIndex = 0;
             score = 0;
-
 
             if (quizScreen) quizScreen.classList.add("d-none");
             if (resultScreen) resultScreen.classList.add("d-none");
 
-
             if (jsonFilnavn) {
-
                 if (desktopPlaceholder) {
                     desktopPlaceholder.classList.add("d-none");
                 }
