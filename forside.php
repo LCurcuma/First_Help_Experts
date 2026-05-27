@@ -72,7 +72,7 @@ $nameArray = explode(" ", $userData[0]->name);
 
         <!-- Card: Start quiz -->
         <div class="col-6">
-            <a href="quiz.php?id=1" class="fp-action-card fp-card-purple text-white text-decoration-none position-relative d-block">
+            <a href="quiz.php?id=<?php echo $userData[0]->id ?>" class="fp-action-card fp-card-purple text-white text-decoration-none position-relative d-block">
 
                 <h2 class="fw-semibold fs-5">Start quiz</h2>
 
@@ -85,7 +85,7 @@ $nameArray = explode(" ", $userData[0]->name);
 
         <!-- Card: Læs guide -->
         <div class="col-6">
-            <a href="guides.php?id=1" class="fp-action-card fp-card-blue text-white text-decoration-none position-relative d-block">
+            <a href="guides.php?id=<?php echo $userData[0]->id ?>" class="fp-action-card fp-card-blue text-white text-decoration-none position-relative d-block">
 
                 <h2 class="fw-semibold fs-5 mb-1">Læs guide</h2>
 
@@ -119,7 +119,7 @@ $nameArray = explode(" ", $userData[0]->name);
 
         <!-- Card: Se dine point -->
         <div class="col-6">
-            <a href="shop.php?id=1" class="fp-action-card fp-card-orange text-white text-decoration-none position-relative d-block">
+            <a href="shop.php?id=<?php echo $userData[0]->id ?>" class="fp-action-card fp-card-orange text-white text-decoration-none position-relative d-block">
 
                 <h2 class="fw-semibold fs-5">Se dine point</h2>
 
