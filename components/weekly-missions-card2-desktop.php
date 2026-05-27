@@ -9,7 +9,7 @@
 
         <div>
             <div class="fw-semibold fs-4 mb-1 z-2">Ugens mission</div>
-            <div class="fp-card-subtitle">Tag 5 quizzer<br>denne uge</div>
+            <div class="fp-card-subtitle">Tag 8 quizzer<br>denne uge</div>
         </div>
 
         <div class="w-75 mb-1">
@@ -18,7 +18,7 @@
                 <div class="mb-1">
                     <span class="fw-semibold"><?php echo $userData[0]->finished_weekly_missions ?></span>
                     /
-                    <span class="fw-normal">5</span>
+                    <span class="fw-normal">8</span>
                 </div>
             </div>
 
