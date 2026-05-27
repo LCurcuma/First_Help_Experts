@@ -1,280 +1,147 @@
-//Carousel script til forside.php
+//=========================================================================
+// FUNKTION TIL AT STARTE EN KARRUSEL (Genanvendelig til mobil og desktop)
+//=========================================================================
+function opretKarrusel(sliderId, indicatorsId) {
+    const slider = document.getElementById(sliderId);
+    const indicatorsContainer = document.getElementById(indicatorsId);
 
+    // Hvis karrusellen ikke findes på skærmen, stopper vi koden her
+    if (!slider || !indicatorsContainer) return;
 
-//Finder selve slider-containeren
-const slider = document.getElementById('newsSlider');
+    let currentSlideIndex = 1;
+    let totalSlides = 0;
+    let autoScrollTimer;
+    let cardWidth = 0;
+    let scrollTimeout;
 
-//Finder containeren til indicator-stregerne
-const indicatorsContainer = document.getElementById('sliderIndicators');
+    // Henter nyhederne fra JSON filen med fetch [cite: 659]
+    fetch('data/data_news.json')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            totalSlides = data.length;
 
+            // Loop igennem alle nyheder og opret HTML [cite: 659]
+            data.forEach(function(news, index) {
+                const card = createCardHTML(news);
+                slider.appendChild(card);
 
-//Holder styr på hvilket slide der er aktivt lige nu
-//Starter på 1 fordi første rigtige slide kommer efter den første klon
-let currentSlideIndex = 1;
+                // Opretter indicator prikker i bunden [cite: 659]
+                const indicator = document.createElement('div');
+                indicator.className = 'fp-indicator' + (index === 0 ? ' active' : '');
+                indicatorsContainer.appendChild(indicator);
+            });
 
-//Gemmer hvor mange slides der findes totalt
-let totalSlides = 0;
+            // KLONING TIL UENDELIGT LOOP [cite: 660, 661]
+            const firstClone = slider.firstElementChild.cloneNode(true);
+            const lastClone = slider.lastElementChild.cloneNode(true);
 
-//Gemmer timeren til auto-scroll funktionen
-let autoScrollTimer;
+            slider.appendChild(firstClone);
+            slider.insertBefore(lastClone, slider.firstElementChild);
 
-//Gemmer bredden på hvert kort inklusiv gap
-let cardWidth = 0;
+            // Vent på at browseren renderer, og find bredden på kortet [cite: 663]
+            setTimeout(() => {
+                const cardElement = slider.querySelector('.fp-news-card');
+                if (cardElement) {
+                    cardWidth = cardElement.offsetWidth + 15;
+                    slider.style.scrollBehavior = 'auto';
+                    slider.scrollLeft = cardWidth;
 
-//Bruges til debounce på infinite scroll
-let scrollTimeout;
-
-
-//Henter nyhederne fra JSON filen med fetch
-fetch('data/data_news.json')
-
-    //Konverter response til JSON data
-    .then(function(response) {
-        return response.json();
-    })
-
-    //Når data er hentet korrekt
-    .then(function(data) {
-
-        //Gemmer antal nyheder/slides
-        totalSlides = data.length;
-
-        //Loop igennem alle nyheder og opret HTML
-        data.forEach(function(news, index) {
-
-            //Opretter nyt kort via hjælpefunktion
-            const card = createCardHTML(news);
-
-            //Tilføjer kortet ind i slideren
-            slider.appendChild(card);
-
-            //Opretter indicator element
-            const indicator = document.createElement('div');
-
-            //Giver første indicator active class
-            indicator.className = 'fp-indicator' + (index === 0 ? ' active' : '');
-
-            //Tilføjer indicator til HTML
-            indicatorsContainer.appendChild(indicator);
+                    startAutoScroll();
+                    slider.addEventListener('scroll', handleInfiniteScroll);
+                }
+            }, 100);
         });
 
-
-        //=========================
-        //KLONING TIL UENDELIGT LOOP
-        //=========================
-
-        //Kloner første slide
-        const firstClone = slider.firstElementChild.cloneNode(true);
-
-        //Kloner sidste slide
-        const lastClone = slider.lastElementChild.cloneNode(true);
-
-        //Tilføjer første slide-klon til slutningen
-        slider.appendChild(firstClone);
-
-        //Tilføjer sidste slide-klon til starten
-        slider.insertBefore(lastClone, slider.firstElementChild);
-
-
-        //Vent kort så browseren når at rendere elementerne
-        setTimeout(() => {
-
-            //Finder første kort
-            const cardElement = slider.querySelector('.fp-news-card');
-
-            //Stop hvis der ikke findes et kort
-            if (cardElement) {
-
-                //Finder kortets bredde + gap mellem kort
-                cardWidth = cardElement.offsetWidth + 15;
-
-                //Tvinger et usynligt hop til første rigtige slide uden animation
-                slider.style.scrollBehavior = 'auto';
-                slider.scrollLeft = cardWidth;
-
-                //Starter auto-scroll
-                startAutoScroll();
-
-                //Holder øje med scroll til infinite loop og indicators
-                slider.addEventListener('scroll', handleInfiniteScroll);
-            }
-
-        }, 100);
-    });
-
-
-//Funktion der opretter HTML til et nyhedskort
-function createCardHTML(news) {
-
-    //Opretter selve kort-elementet som et link
-    const card = document.createElement('a');
-
-    //Gør linket klikbart
-    card.href = news.link;
-
-    //Giver kortet CSS classes
-    card.className = 'fp-news-card text-decoration-none d-block';
-
-    //Indsætter HTML indhold i kortet
-    card.innerHTML = `
-        <img src="${news.image}" alt="Nyhedsbillede" class="fp-news-bg">
-
-        <div class="fp-news-overlay">
-
-            <div class="fp-news-title">
-                ${news.title}
+    // Funktion der opretter HTML til et nyhedskort [cite: 664]
+    function createCardHTML(news) {
+        const card = document.createElement('a');
+        card.href = news.link;
+        card.className = 'fp-news-card text-decoration-none d-block';
+        card.innerHTML = `
+            <img src="${news.image}" alt="Nyhedsbillede" class="fp-news-bg">
+            <div class="fp-news-overlay">
+                <div class="fp-news-title">${news.title}</div>
+                <div class="fp-news-read-more mt-2">
+                    LÆS MERE <i class="fa-solid fa-arrow-right ms-2"></i>
+                </div>
             </div>
-
-            <div class="fp-news-read-more mt-2">
-                LÆS MERE <i class="fa-solid fa-arrow-right ms-2"></i>
-            </div>
-
-        </div>
-    `;
-
-    //Returnerer det færdige kort
-    return card;
-}
-
-
-//Funktion der håndterer infinite scroll og active indicators
-function handleInfiniteScroll() {
-
-    //Stop hvis cardWidth ikke er fundet endnu
-    if (!cardWidth) return;
-
-    //Finder hvilket slide der er aktivt
-    const index = Math.round(slider.scrollLeft / cardWidth);
-
-    //Gemmer aktivt slide index
-    currentSlideIndex = index;
-
-    //OPDATER ACTIVE INDICATOR
-    //Regner rigtig indicator ud
-    let indicatorIndex = index - 1;
-
-    //Hvis vi er forbi sidste slide
-    if (indicatorIndex >= totalSlides) {
-        indicatorIndex = 0;
+        `;
+        return card;
     }
 
-    //Hvis vi er før første slide
-    if (indicatorIndex < 0) {
-        indicatorIndex = totalSlides - 1;
-    }
-
-    //Finder alle indicators
-    const indicators = document.querySelectorAll('.fp-indicator');
-
-    //Loop gennem alle indicators
-    indicators.forEach((indicator, i) => {
-
-        //Hvis indicator matcher aktivt slide
-        if (i === indicatorIndex) {
-
-            //Gør indicator aktiv
-            indicator.classList.add('active');
-
-        } else {
-
-            //Fjern active class
-            indicator.classList.remove('active');
-        }
-    });
-
-    //UENDELIGT LOOP LOGIK
-    //Debounce for at sikre at scroll er stoppet helt
-    clearTimeout(scrollTimeout);
-
-    scrollTimeout = setTimeout(() => {
-
-        //Hvis man manuelt trækker tilbage før første slide
-        if (currentSlideIndex === 0) {
-
-            //Hopper usynligt til sidste rigtige slide
-            jumpToPosition(totalSlides * cardWidth);
-
-            //Opdaterer index
-            currentSlideIndex = totalSlides;
-        }
-
-        //Hvis man når forbi sidste slide
-        else if (currentSlideIndex === totalSlides + 1) {
-
-            //Hopper usynligt tilbage til første rigtige slide
-            jumpToPosition(cardWidth);
-
-            //Opdaterer index
-            currentSlideIndex = 1;
-        }
-
-    }, 250);
-}
-
-
-//Hjælpefunktion til usynligt hop mellem slides
-function jumpToPosition(position) {
-
-    //Slår animation fra
-    slider.style.scrollBehavior = 'auto';
-
-    //Hopper direkte til positionen
-    slider.scrollLeft = position;
-
-    //Tvinger browseren til at registrere ændringen
-    //Dette fjerner rewind-effekten
-    void slider.offsetWidth;
-
-    //Slår smooth scroll til igen
-    slider.style.scrollBehavior = 'smooth';
-}
-
-
-//Funktion der automatisk scroller videre
-function startAutoScroll() {
-
-    //Starter interval hvert 5 sekund
-    autoScrollTimer = setInterval(function() {
-
-        //Stop hvis cardWidth ikke findes endnu
+    // Funktion der håndterer infinite scroll og aktive prikker [cite: 668]
+    function handleInfiniteScroll() {
         if (!cardWidth) return;
+        const index = Math.round(slider.scrollLeft / cardWidth);
+        currentSlideIndex = index;
 
-        //SIKKERHEDSNET
-        //Hvis browser-tab var inaktivt og scroll-event ikke blev fanget
-        if (currentSlideIndex >= totalSlides + 1) {
-
-            //Hopper tilbage til første slide
-            jumpToPosition(cardWidth);
-
-            //Reset index
-            currentSlideIndex = 1;
+        let indicatorIndex = index - 1;
+        if (indicatorIndex >= totalSlides) {
+            indicatorIndex = 0;
+        }
+        if (indicatorIndex < 0) {
+            indicatorIndex = totalSlides - 1;
         }
 
+        // Finder prikkerne specifikt i denne karrusel [cite: 673]
+        const indicators = indicatorsContainer.querySelectorAll('.fp-indicator');
+        indicators.forEach((indicator, i) => {
+            if (i === indicatorIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
 
-        //Gå til næste slide
-        currentSlideIndex++;
+        // Tjekker om vi har scrollet forbi enderne og skal hoppe usynligt [cite: 676, 677]
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            if (currentSlideIndex === 0) {
+                jumpToPosition(totalSlides * cardWidth);
+                currentSlideIndex = totalSlides;
+            } else if (currentSlideIndex === totalSlides + 1) {
+                jumpToPosition(cardWidth);
+                currentSlideIndex = 1;
+            }
+        }, 250);
+    }
 
-        //SMOOTH SCROLL TIL NÆSTE
-        //Slår smooth scroll til
+    // Hjælpefunktion til usynligt hop mellem slides [cite: 678]
+    function jumpToPosition(position) {
+        slider.style.scrollBehavior = 'auto';
+        slider.scrollLeft = position;
+        void slider.offsetWidth;
         slider.style.scrollBehavior = 'smooth';
+    }
 
-        //Scroller til næste kort
-        slider.scrollLeft = currentSlideIndex * cardWidth;
+    // Funktion der automatisk scroller videre [cite: 681]
+    function startAutoScroll() {
+        autoScrollTimer = setInterval(function() {
+            if (!cardWidth) return;
+            if (currentSlideIndex >= totalSlides + 1) {
+                jumpToPosition(cardWidth);
+                currentSlideIndex = 1;
+            }
+            currentSlideIndex++;
+            slider.style.scrollBehavior = 'smooth';
+            slider.scrollLeft = currentSlideIndex * cardWidth;
+        }, 5000);
+    }
 
-    }, 5000); //5000ms = 5 sekunder
+    // Stopper auto-scroll [cite: 684]
+    function stopAutoScroll() {
+        clearInterval(autoScrollTimer);
+    }
+
+    // Lyttere til at stoppe scroll ved berøring [cite: 685, 686]
+    slider.addEventListener('touchstart', stopAutoScroll, { passive: true });
+    slider.addEventListener('mousedown', stopAutoScroll);
 }
 
-
-//Stopper auto-scroll midlertidigt
-function stopAutoScroll() {
-
-    //Stop interval timer
-    clearInterval(autoScrollTimer);
-}
-
-
-//Stop auto-scroll når brugeren rører slideren på mobil
-slider.addEventListener('touchstart', stopAutoScroll, { passive: true });
-
-//Stop auto-scroll når brugeren klikker på slideren med mus
-slider.addEventListener('mousedown', stopAutoScroll);
+//=========================================================================
+// AKTIVER KARRUSELLERNE FOR BÅDE MOBIL OG DESKTOP
+//=========================================================================
+opretKarrusel('newsSlider', 'sliderIndicators');
+opretKarrusel('newsSliderDesktop', 'sliderIndicatorsDesktop');
