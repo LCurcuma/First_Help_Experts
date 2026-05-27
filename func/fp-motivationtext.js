@@ -1,5 +1,3 @@
-//Valg af et tilfældigt motiverende tekst til forside.php
-
 //Liste med de forskellige tekster
 const motivationTexts = [
     "Klar til at redde liv i dag?",
@@ -9,11 +7,13 @@ const motivationTexts = [
     "Tryghed starter med viden."
 ];
 
-//Finder elementet med id "motivationalText"
-const textElement = document.getElementById("motivationalText");
+// Finder ALLE elementer med classen "motivational-text-js" (både mobil og desktop)
+const textElements = document.querySelectorAll(".motivational-text-js");
 
 // Generer et tilfældigt tal baseret på hvor mange tekster der er i listen
 const randomIndex = Math.floor(Math.random() * motivationTexts.length);
 
-//Skifter teksten med det samme til den tilfældige udvalgte tekst fra listen
-textElement.textContent = motivationTexts[randomIndex];
+// Kører igennem alle fundne elementer og skifter teksten på dem alle
+textElements.forEach(function(element) {
+    element.textContent = motivationTexts[randomIndex];
+});
