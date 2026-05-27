@@ -4,12 +4,13 @@
 let aktuelleTrinDataP = [];
 let nuvaerendeTrinIndexP = 0;
 let nuvaerendeBadgeNavneP = [];
+let aktivGuideTitelP = "";
 
 function indlaesGuideP(guideKey) {
     fetch('data/data_guide.json')
         .then(response => response.json())
         .then(data => {
-            // SIKKERHED: Tjek om guiden faktisk findes i JSON-dataen
+
             if (!data || !data[guideKey]) {
                 console.error("Guiden kunne ikke findes i JSON: " + guideKey);
                 return;
@@ -18,29 +19,65 @@ function indlaesGuideP(guideKey) {
             aktuelleTrinDataP = data[guideKey];
             nuvaerendeTrinIndexP = 0;
 
-            // Sæt titler og badges dynamisk baseret på guiden
-            if(guideKey === 'hlr') {
+            const titelEl = document.getElementById('desktop-guide-titel-p');
+
+            if (guideKey === 'hlr') {
                 nuvaerendeBadgeNavneP = ["Tjek", "Ring", "Tryk", "Fortsæt"];
-                document.getElementById('desktop-guide-titel-p').innerText = "Hjerte-lunge redning";
-            } else if(guideKey === 'blødning') {
+                aktivGuideTitelP = "Hjerte-lunge redning";
+
+            } else if (guideKey === 'hjertestarter') {
+                nuvaerendeBadgeNavneP = ["Tjek", "Tænd", "Sæt", "Følg"];
+                if (titelEl) titelEl.innerText = "HLR med hjertestarter";
+
+            } else if (guideKey === 'drukning') {
+                nuvaerendeBadgeNavneP = ["Tjek", "Ring", "Luftvej", "HLR"];
+                if (titelEl) titelEl.innerText = "Drukning";
+
+            } else if (guideKey === 'blodning') {
                 nuvaerendeBadgeNavneP = ["Ro", "Stop", "Løft", "Forbind", "Alarm"];
-                document.getElementById('desktop-guide-titel-p').innerText = "Blødning";
-            } else if(guideKey === 'brandsår') {
+                aktivGuideTitelP = "Blødning";
+
+            } else if (guideKey === 'brandsaar') {
                 nuvaerendeBadgeNavneP = ["Ro", "Køl", "Fjern", "Dæk", "Varm", "Alarm"];
-                document.getElementById('desktop-guide-titel-p').innerText = "Brandsår";
-            } else if(guideKey === 'bevidstløshed') {
+                aktivGuideTitelP = "Brandsår";
+
+            } else if (guideKey === 'bilulykke') {
+                nuvaerendeBadgeNavneP = ["Sikkerhed", "Tjek", "Ring", "Hjælp"];
+                if (titelEl) titelEl.innerText = "Bilulykke";
+
+            } else if (guideKey === 'kvaelning') {
+                nuvaerendeBadgeNavneP = ["Host", "Slag", "Tryk", "Ring"];
+                if (titelEl) titelEl.innerText = "Kvælning";
+
+            } else if (guideKey === 'stroke') {
+                nuvaerendeBadgeNavneP = ["Ansigt", "Arm", "Tale", "Ring"];
+                if (titelEl) titelEl.innerText = "Stroke";
+
+            } else if (guideKey === 'bevidstloshed') {
                 nuvaerendeBadgeNavneP = ["Tjek", "Ring", "Luftvej", "Sideleje", "HLR"];
-                document.getElementById('desktop-guide-titel-p').innerText = "Bevidstløshed";
+                aktivGuideTitelP = "Bevidstløshed";
+
+            } else if (guideKey === 'psykisk') {
+                nuvaerendeBadgeNavneP = ["Ro", "Lyt", "Støt", "Hjælp"];
+                if (titelEl) titelEl.innerText = "Psykisk Førstehjælp";
+
+            } else {
+                nuvaerendeBadgeNavneP = [];
+                aktivGuideTitelP = guideKey;
             }
 
-            // Vis skærmen og skjul overlayet
+            if (titelEl) {
+                titelEl.innerText = aktivGuideTitelP;
+            }
+
             const overlay = document.getElementById('desktop-overlay-p');
             const contentArea = document.getElementById('guide-content-area-p');
+            const infoPanel = document.getElementById('desktopInfo');
 
-            if(overlay) overlay.classList.add('d-none');
-            if(contentArea) contentArea.classList.remove('d-none');
+            if (overlay) overlay.classList.add('d-none');
+            if (infoPanel) infoPanel.classList.add('d-none');
+            if (contentArea) contentArea.classList.remove('d-none');
 
-            // Kald først visTrin efter dataene er lagt helt på plads
             visTrinP();
         })
         .catch(error => {
@@ -49,57 +86,52 @@ function indlaesGuideP(guideKey) {
 }
 
 function visTrinP() {
-    // FIX FOR LINJE 33 CRASH: Hvis data ikke er hentet eller arrayet er tomt, stop funktionen med det samme
     if (!aktuelleTrinDataP || aktuelleTrinDataP.length === 0 || !aktuelleTrinDataP[nuvaerendeTrinIndexP]) {
         return;
     }
 
-    let trin = aktuelleTrinDataP[nuvaerendeTrinIndexP];
+    const trin = aktuelleTrinDataP[nuvaerendeTrinIndexP];
 
-    // Opdater elementer på siden med sikkerhedstjek (så det ikke crasher hvis et ID mangler)
     const imgEl = document.getElementById('desktop-billede-p');
     const titelEl = document.getElementById('desktop-trin-titel-p');
     const tekstEl = document.getElementById('desktop-tekst-p');
     const huskEl = document.getElementById('desktop-husk-p');
-
+    const huskContainer = document.getElementById('desktop-husk-container-p');
 
     if (imgEl) imgEl.src = trin.billede;
     if (titelEl) titelEl.innerText = trin.titel;
     if (tekstEl) tekstEl.innerText = trin.tekst;
 
-    // NY RELEVANT PLACERING (Styrer om din nye HTML-boks vises eller skjules):
-    const huskContainer = document.getElementById('desktop-husk-container-p');
     if (huskContainer && huskEl) {
         if (trin.husk && trin.husk.trim() !== "") {
-            huskEl.innerText = trin.husk;          // Sætter selve teksten ind i din <span>
-            huskContainer.style.display = "block"; // Viser den rosa boks
+            huskEl.innerText = trin.husk;
+            huskContainer.style.display = "block";
         } else {
-            huskContainer.style.display = "none";  // Skjuler boksen helt, hvis trinnet ikke har en husk-tekst
+            huskContainer.style.display = "none";
             huskEl.innerText = "";
         }
     }
 
-    // Byg badges i toppen med mobil-looket (Tydelig knap hele tiden)
     const badgesContainer = document.getElementById('desktop-badges-p');
+
     if (badgesContainer) {
         let badgesHTML = '';
+
         nuvaerendeBadgeNavneP.forEach((navn, i) => {
             if (i === nuvaerendeTrinIndexP) {
-                // Aktivt trin (Grønt via CSS)
                 badgesHTML += `<button type="button" class="step-badge-p active">${navn}</button>`;
             } else if (i < nuvaerendeTrinIndexP) {
-                // Tidligere trin (Hvidt via CSS - klikbart bagud)
                 badgesHTML += `<button type="button" class="step-badge-p" onclick="hopTilTrinP(${i})">${navn}</button>`;
             } else {
-                // Fremtidigt trin (Tydeligt hvidt udseende, men låst for klik fremad)
                 badgesHTML += `<button type="button" class="step-badge-p disabled-step" disabled>${navn}</button>`;
             }
         });
+
         badgesContainer.innerHTML = badgesHTML;
     }
 
-    // Konfigurer knappen i bunden
-    let btn = document.getElementById('desktop-next-btn-p');
+    const btn = document.getElementById('desktop-next-btn-p');
+
     if (btn) {
         if (nuvaerendeTrinIndexP === aktuelleTrinDataP.length - 1) {
             btn.innerText = "AFSLUT GUIDE";
@@ -111,6 +143,24 @@ function visTrinP() {
             btn.onclick = naesteTrinP;
         }
     }
+
+    const progressContainer = document.getElementById('desktop-progress-p');
+
+    if (progressContainer) {
+
+        let dotsHTML = '';
+
+        for (let i = 0; i < aktuelleTrinDataP.length; i++) {
+
+            if (i === nuvaerendeTrinIndexP) {
+                dotsHTML += `<span class="dot active"></span>`;
+            } else {
+                dotsHTML += `<span class="dot"></span>`;
+            }
+        }
+
+        progressContainer.innerHTML = dotsHTML;
+    }
 }
 
 function naesteTrinP() {
@@ -121,7 +171,6 @@ function naesteTrinP() {
 }
 
 function hopTilTrinP(index) {
-    // SIKKERHEDSTJEK: Man kan kun hoppe til trin, der ligger FØR det nuværende trin
     if (index < nuvaerendeTrinIndexP) {
         nuvaerendeTrinIndexP = index;
         visTrinP();
@@ -129,30 +178,98 @@ function hopTilTrinP(index) {
 }
 
 function afslutGuideP() {
-    let modalEl = document.getElementById('desktopCompletionModal-p');
+    const completionText = document.getElementById('desktopCompletionText-p-p');
+
+    if (completionText) {
+        completionText.innerText = "Du har gennemført guiden i " +aktivGuideTitelP + ".";
+    }
+
+    const modalEl = document.getElementById('desktopCompletionModal-p');
+
     if (modalEl) {
-        let myModal = new bootstrap.Modal(modalEl);
+        const myModal = new bootstrap.Modal(modalEl);
         myModal.show();
     }
 }
 
 function nulstilDesktopP() {
-    let modalEl = document.getElementById('desktopCompletionModal-p');
+    const modalEl = document.getElementById('desktopCompletionModal-p');
+
     if (modalEl) {
-        let modalInstance = bootstrap.Modal.getInstance(modalEl);
-        if(modalInstance) modalInstance.hide();
+        const modalInstance = bootstrap.Modal.getInstance(modalEl);
+        if (modalInstance) modalInstance.hide();
     }
 
     const contentArea = document.getElementById('guide-content-area-p');
     const overlay = document.getElementById('desktop-overlay-p');
+    const infoPanel = document.getElementById('desktopInfo');
 
     if (contentArea) contentArea.classList.add('d-none');
+    if (infoPanel) infoPanel.classList.add('d-none');
     if (overlay) overlay.classList.remove('d-none');
+
+    aktuelleTrinDataP = [];
+    nuvaerendeTrinIndexP = 0;
+    nuvaerendeBadgeNavneP = [];
+    aktivGuideTitelP = "";
+}
+
+const closeDesktopInfo = document.getElementById('closeDesktopInfo');
+
+if (closeDesktopInfo) {
+
+    closeDesktopInfo.addEventListener('click', function () {
+
+        const overlay = document.getElementById('desktop-overlay-p');
+        const infoPanel = document.getElementById('desktopInfo');
+
+        if (infoPanel) {
+            infoPanel.classList.add('d-none');
+        }
+
+        if (overlay) {
+            overlay.classList.remove('d-none');
+        }
+    });
 }
 
 // Vent på at DOM'en er helt klar
 document.addEventListener("DOMContentLoaded", function () {
-    const infoModal = document.getElementById('infoModal');
+
+
+document.querySelectorAll('.guide-trigger').forEach(card => {
+    card.addEventListener('click', function () {
+        const guideKey = card.getAttribute('data-guide-key');
+
+        if (guideKey) {
+            indlaesGuideP(guideKey);
+        }
+    });
+});
+
+document.querySelectorAll('.desktop-info-trigger').forEach(card => {
+    card.addEventListener('click', function () {
+        const overlay = document.getElementById('desktop-overlay-p');
+        const contentArea = document.getElementById('guide-content-area-p');
+        const infoPanel = document.getElementById('desktopInfo');
+
+        const infoTitle = document.getElementById('desktopInfoTitle');
+        const infoText = document.getElementById('desktopInfoText');
+        const infoImage = document.getElementById('desktopInfoImage');
+
+        if (overlay) overlay.classList.add('d-none');
+        if (contentArea) contentArea.classList.add('d-none');
+        if (infoPanel) infoPanel.classList.remove('d-none');
+
+        if (infoTitle) infoTitle.innerText = card.getAttribute('data-title');
+        if (infoText) infoText.innerText = card.getAttribute('data-text');
+        if (infoImage) infoImage.src = card.getAttribute('data-image');
+    });
+});
+
+
+    // RETTET: Fjernet '#' og rettet til lille 'i' i infoModalMobil
+    const infoModal = document.getElementById('infoModalMobil');
 
     if (infoModal) {
         infoModal.addEventListener('show.bs.modal', function (event) {
@@ -162,8 +279,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const title = button.getAttribute('data-title');
             const text = button.getAttribute('data-text');
 
-            const modalTitle = infoModal.querySelector('#infoModalLabel');
-            const modalBodyText = infoModal.querySelector('#modalBodyText');
+            // RETTET: Tilføjet '#' foran id'et i querySelector
+            const modalTitle = infoModal.querySelector('#infoModalMobilLabel');
+            // RETTET: Ændret id til #modalBodyTextMobil, så det matcher HTML'en
+            const modalBodyText = infoModal.querySelector('#modalBodyTextMobil');
 
             if (modalTitle) modalTitle.innerText = title;
             if (modalBodyText) modalBodyText.innerText = text;
