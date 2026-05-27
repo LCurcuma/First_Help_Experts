@@ -1844,6 +1844,57 @@ body {
   }
 }
 
+@include media-breakpoint-up(lg) {
+
+  .desktop-container-p .guide-card {
+    height: 180px !important;
+    min-height: 180px !important;
+    width: 100% !important;
+    min-width: 100% !important;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 10px 8px 8px !important;
+    overflow: hidden !important;
+  }
+
+  .desktop-container-p .guide-image-wrapper {
+    height: 100px !important;
+    width: 100% !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .desktop-container-p .guide-image-wrapper img {
+    max-height: 82px !important;
+    max-width: 90px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .desktop-container-p .guide-text-wrapper {
+    height: 40px !important;
+    width: 100% !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .desktop-container-p .guide-text-wrapper span {
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+    max-width: 100% !important;
+  }
+}
+
 
 //--- DESKTOP GUIDES SIDE-BY-SIDE ---//
 
