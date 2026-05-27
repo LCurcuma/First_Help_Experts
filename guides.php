@@ -12,7 +12,7 @@ $id = $_GET["id"];
 <head>
     <meta charset="utf-8">
 
-    <title>guides</title>
+    <title>guide - førstehjælpseksperten</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -310,9 +310,9 @@ $id = $_GET["id"];
 
                     <div class="row g-3">
 
-                        <div class="col-6">
+                        <div class="col-6" style="flex 0 0 50% !important; max-width: 50% !important; width: 50% !important; padding-left: 8px !important; padding-right: 8px !important;">
 
-                            <div class="guide-card guide-card-green guide-trigger"
+                            <div class="guide-card guide-card-green guide-trigger" = "width: 100% !important; min-width: 100% !important;"
                                  data-guide="hlr-guide.php?id=<?php echo $id; ?>" data-guide-key="hlr">
 
                                 <div class="guide-image-wrapper">
@@ -465,9 +465,9 @@ $id = $_GET["id"];
 
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-6" style="flex: 0 0 50% !important; max-width: 50% !important; width: 50% !important; padding-left: 8px !important; padding-right: 8px !important;">
 
-                            <div class="guide-card" onclick="alert('Funktionen er på vej!')"
+                            <div class="guide-card" style="width: 100% !important; min-width: 100% !important;" onclick="alert('Funktionen er på vej!')"
                                  data-guide="psykisk-guide.php?id=<?php echo $id; ?>">
 
                                 <div class="guide-image-wrapper">
