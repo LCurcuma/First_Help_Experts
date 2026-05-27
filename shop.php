@@ -152,7 +152,7 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
                     <?php include "components/score_container_user.php" ?>
                     <!--container med links-->
                     <section class="links_section_desk">
-                        <a href="#" class="link_tile_desk" style="background: #CDB4D1;" onclick="alert('Funktion kommer snart')">
+                        <a href="#" class="link_tile_desk" style="background: #826099;" onclick="alert('Funktion kommer snart')">
                             <h2 class="h2_bold">Check ind</h2>
                             <div class="plus_money_desk">
                                 <h2>+5</h2>
