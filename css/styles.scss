@@ -1944,6 +1944,9 @@ body {
   height: 35px;
   margin-top: -15px;
   margin-bottom: -10px;
+
+  animation: coinAnimation 5s ease-in-out infinite;
+  will-change: transform;
 }
 
 //--------------- AVATAR ---------------//
