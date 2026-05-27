@@ -75,8 +75,8 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
         </a>
         <a href="#" class="link_tile" style="background: #F5A623;">
             <div>
-                <h2 class="d-block d-sm-none h2_bold">Din første<br/>hjælps<br/>bevis</h2>
-                <h2 class="d-none d-sm-block h2_bold">Din førstehjælpsbevis</h2>
+                <h2 class="h2_bold_mobile_small">Din første<br/>hjælps<br/>bevis</h2>
+                <h2 class="h2_bold_mobile_big">Din førstehjælpsbevis</h2>
                 <p>Gyldig til <span>12.04.2026</span></p>
             </div>
             <img src="img/icons/3d-icons/checkmark2.png" class="money_image_big" alt="Check">

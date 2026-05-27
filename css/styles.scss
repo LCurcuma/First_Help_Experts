@@ -2087,6 +2087,26 @@ body {
   font-size: 20px;
 }
 
+.h2_bold_mobile_small{
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+
+  @media (min-width: 350px){
+    display: none;
+  }
+}
+
+.h2_bold_mobile_big{
+  display: none;
+  font-weight: bold;
+  font-size: 20px;
+
+  @media (min-width: 350px){
+    display: block;
+  }
+}
+
 .plus_money{
   display: flex;
   flex-direction: row;
