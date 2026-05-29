@@ -1979,7 +1979,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  margin: 10px 0;
 }
 
 .avatar{
@@ -2026,7 +2026,7 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   padding: 35px 20px;
-  margin: 0 25px;
+  margin: 20px 25px;
   background-color: white;
 }
 
@@ -2081,11 +2081,12 @@ body {
   align-items: center;
   gap: 10px;
 
-  padding: 20px;
+  padding: 30px 20px;
   color: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
   border-radius: 20px;
   width: 100%;
+  border: 0;
 
   @include media-breakpoint-up(sm){
     flex-direction: column-reverse;
