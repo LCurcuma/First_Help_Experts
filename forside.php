@@ -13,6 +13,17 @@ $id = $_GET["id"];
 $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 //tage navn som string og lave array, som eksemplevis ["Laura", "Larsen"]
 $nameArray = explode(" ", $userData[0]->name);
+
+//hvis der er ikke nogle finished mission
+if(EMPTY($userData[0]->finished_missions_names)){
+    $finishedMissionsAmount = 0;
+    //hvis der er nogle finished missions
+} else {
+    //convertere til array og tage arrays størrelse
+    $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
+}
+
+$allMissionsAmount = 8;
 ?>
 <!DOCTYPE html>
 <html lang="da">
