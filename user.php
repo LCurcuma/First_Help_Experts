@@ -125,19 +125,45 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     <?php include "components/score_container_user.php" ?>
     <!--container med links-->
     <section class="links_section">
-
-        <form method="post">
-                <input type="hidden" name="add_points" value="<?php echo $add_points ?>">
-                <input type="hidden" name="check_in_date" value="<?php echo $add_points ?>">
-                <input type="hidden" name="user_id" value="<?php echo $userData[0]->id ?>">
-            <button class="link_tile" type="submit" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
+<?php if(!EMPTY($userData[0]->check_in_date)){
+$currentDate = $userData[0]->check_in_date;
+if($today !== $currentDate){
+    echo '<form method="post" class="form_tile">
+                <input type="hidden" name="add_points" value="'.$add_points.'">
+                <input type="hidden" name="check_in_date" value="'.$today.'">
+                <input type="hidden" name="user_id" value="'.$userData[0]->id.'">
+            <button class="link-tile_check" type="submit" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
             <h2 class="h2_bold">Check ind</h2>
             <div class="plus_money">
                 <h2 class="plus_number">+5</h2>
                 <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
             </div>
             </button>
-        </form>
+        </form>';
+}else{
+    echo '<div class="link_tile" style="background: linear-gradient(180deg, #cdc9d5 0%, #98949e 100%);">
+            <h2 class="h2_bold">Næste check ind er i morgen</h2>
+            <div class="plus_money">
+                <h2 class="plus_number">+5</h2>
+                <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
+            </div>
+            </div>
+';
+}}else{
+    echo '<form method="post" class="form_tile">
+                <input type="hidden" name="add_points" value="'.$add_points.'">
+                <input type="hidden" name="check_in_date" value="'.$today.'">
+                <input type="hidden" name="user_id" value="'.$userData[0]->id.'">
+            <button class="link_tile_check" type="submit" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
+            <h2 class="h2_bold">Check ind</h2>
+            <div class="plus_money">
+                <h2 class="plus_number">+5</h2>
+                <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
+            </div>
+            </button>
+        </form>';
+}?>
+
         <a href="shop.php?id=<?php echo $userData[0]->id?>" class="link_tile" style="background: linear-gradient(180deg, #fcc260 0%, #daa953 100%);">
             <div>
                 <h2 class="h2_bold">Point shop</h2>
