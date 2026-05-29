@@ -18,7 +18,6 @@ if(EMPTY($userData[0]->finished_missions_names)){
 }
 
 $allMissionsAmount = 8;
-$oldDate = $userData[0]->check_in_date;
 
 $add_points = 5;
 date_default_timezone_set("Europe/Copenhagen");
