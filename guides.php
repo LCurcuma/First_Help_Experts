@@ -12,7 +12,7 @@ $id = $_GET["id"];
 <head>
     <meta charset="utf-8">
 
-    <title>guide - førstehjælpseksperten</title>
+    <title>Guide - førstehjælpseksperten</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
