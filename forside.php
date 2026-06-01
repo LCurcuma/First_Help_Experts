@@ -23,24 +23,36 @@ if(EMPTY($userData[0]->finished_missions_names)){
     $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
 }
 
+//alle missioner
 $allMissionsAmount = 8;
-
-
+//hvor meget points tilføjes, når du checker ind
 $add_points = 5;
+//fra hvilken region tager vi tid
 date_default_timezone_set("Europe/Copenhagen");
+//tager dag, som er lige nu
 $today = date("Y-m-d");
 
+//hvis data om points og check ind dato er ikke tomt (altså hvis man klikker på check ind, så den er ikke tomt)
 if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
+    //convertere points, som skal tilføjes, til nummer
     $pointsToAdd = (int) $_POST['add_points'];
+    //convertere id af user til nummer
     $userId = (int) $_POST['user_id'];
+    //tage dato fra form
     $checkInDate = $_POST['check_in_date'];
 
+    //tager data om points og dato fra database
     $user = $db->sql("SELECT points, check_in_date FROM users WHERE id = '$userId'");
+    //convertere points, som bruger har nu, til nummer
     $currentPoints = (int) $user[0]->points;
 
+    //hvis date fra database er ikke tomt
     if(!EMPTY($user[0]->check_in_date)){
+        //date fra database
         $currentDate = $user[0]->check_in_date;
+        //hvis date fra database er ikke den sammen, som date lige nu
         if($today !== $currentDate){
+            //tilføje points
             $newPoints = $currentPoints + $pointsToAdd;
 
             //opdaterer database
@@ -58,7 +70,9 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
             exit();
         }
     } else {
+        //ellers date fra database er null (hvis vi skriver ikke den, får vi fejl, at $currentDate er undefined
         $currentDate = null;
+        //tilføje points
         $newPoints = $currentPoints + $pointsToAdd;
 
         //opdaterer database
@@ -73,10 +87,12 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     }}
 ?>
 
+<!-- hvis der er success med checker ind -->
 <?php if (isset($_GET['successUser'])): ?>
     <script>alert('Checked Ind!');</script>
 <?php endif; ?>
 
+<!-- ellers -->
 <?php if (isset($_GET['errorUser'])): ?>
     <script>alert('Du har allerede checked ind!');</script>
 <?php endif; ?>
