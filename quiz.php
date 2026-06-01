@@ -25,7 +25,7 @@ $allMissionsAmount = 8;
 <head>
     <meta charset="utf-8">
 
-    <title>Quizside</title>
+    <title>Quizside - Førstehjælpeksperten</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
