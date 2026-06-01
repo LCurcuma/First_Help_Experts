@@ -80,7 +80,7 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     <head>
         <meta charset="utf-8">
 
-        <title><?php echo $userData[0]->name ?></title>
+        <title><?php echo $userData[0]->name ?> - Førstehjælpeksperten</title>
 
         <meta name="robots" content="All">
         <meta name="author" content="Udgiver">
