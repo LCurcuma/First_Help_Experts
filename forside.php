@@ -13,7 +13,89 @@ $id = $_GET["id"];
 $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 //tage navn som string og lave array, som eksemplevis ["Laura", "Larsen"]
 $nameArray = explode(" ", $userData[0]->name);
+
+//hvis der er ikke nogle finished mission
+if(EMPTY($userData[0]->finished_missions_names)){
+    $finishedMissionsAmount = 0;
+    //hvis der er nogle finished missions
+} else {
+    //convertere til array og tage arrays størrelse
+    $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
+}
+
+//alle missioner
+$allMissionsAmount = 8;
+//hvor meget points tilføjes, når du checker ind
+$add_points = 5;
+//fra hvilken region tager vi tid
+date_default_timezone_set("Europe/Copenhagen");
+//tager dag, som er lige nu
+$today = date("Y-m-d");
+
+//hvis data om points og check ind dato er ikke tomt (altså hvis man klikker på check ind, så den er ikke tomt)
+if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
+    //convertere points, som skal tilføjes, til nummer
+    $pointsToAdd = (int) $_POST['add_points'];
+    //convertere id af user til nummer
+    $userId = (int) $_POST['user_id'];
+    //tage dato fra form
+    $checkInDate = $_POST['check_in_date'];
+
+    //tager data om points og dato fra database
+    $user = $db->sql("SELECT points, check_in_date FROM users WHERE id = '$userId'");
+    //convertere points, som bruger har nu, til nummer
+    $currentPoints = (int) $user[0]->points;
+
+    //hvis date fra database er ikke tomt
+    if(!EMPTY($user[0]->check_in_date)){
+        //date fra database
+        $currentDate = $user[0]->check_in_date;
+        //hvis date fra database er ikke den sammen, som date lige nu
+        if($today !== $currentDate){
+            //tilføje points
+            $newPoints = $currentPoints + $pointsToAdd;
+
+            //opdaterer database
+            $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+            $db->sql("UPDATE users SET check_in_date = '$today' WHERE id = '$userId'");
+
+            //opdaterer data på side
+            $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+            //gå til den samme side med success index
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&successUser=1");
+            exit();
+        } else {
+            //ellers gå till den samme side med error index
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&errorUser=1");
+            exit();
+        }
+    } else {
+        //ellers date fra database er null (hvis vi skriver ikke den, får vi fejl, at $currentDate er undefined
+        $currentDate = null;
+        //tilføje points
+        $newPoints = $currentPoints + $pointsToAdd;
+
+        //opdaterer database
+        $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+        $db->sql("UPDATE users SET check_in_date = '$today' WHERE id = '$userId'");
+
+        //opdaterer data på side
+        $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+        //gå til den samme side med success index
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&successUser=1");
+        exit();
+    }}
 ?>
+
+<!-- hvis der er success med checker ind -->
+<?php if (isset($_GET['successUser'])): ?>
+    <script>alert('Checked Ind!');</script>
+<?php endif; ?>
+
+<!-- ellers -->
+<?php if (isset($_GET['errorUser'])): ?>
+    <script>alert('Du har allerede checked ind!');</script>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="da">
 <head>
@@ -55,7 +137,13 @@ $nameArray = explode(" ", $userData[0]->name);
     <!-- Velkommen tekst -->
     <div class="fp-container mt-5" data-aos="zoom-in">
 
-        <h1 class="fw-bold display-5 mb-2">Hej <?php echo $nameArray[0] ?>!</h1>
+        <div class="d-flex flex-row justify-content-between">
+            <h1 class="fw-bold display-5 mb-2">Hej <?php echo $nameArray[0] ?>!</h1>
+
+            <!-- User profil -->
+            <?php include "components/avatar_small.php" ?>
+
+        </div>
 
         <p class="fs-4 motivational-text-js">Klar til at redde liv i dag?</p>
 

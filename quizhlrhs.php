@@ -36,7 +36,7 @@ if(!EMPTY($oldMissions)){
 <head>
     <meta charset="utf-8">
 
-    <title>Quiz HLR med hjertestarter</title>
+    <title>Quiz HLR med hjertestarter - Førstehjælpeksperten</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">

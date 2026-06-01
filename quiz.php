@@ -8,13 +8,24 @@ $id = $_GET["id"];
 
 $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 
+//hvis der er ikke nogle finished mission
+if(EMPTY($userData[0]->finished_missions_names)){
+    $finishedMissionsAmount = 0;
+    //hvis der er nogle finished missions
+} else {
+    //convertere til array og tage arrays størrelse
+    $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
+}
+
+$allMissionsAmount = 8;
+
 ?>
 <!DOCTYPE html>
 <html lang="da">
 <head>
     <meta charset="utf-8">
 
-    <title>Quizside</title>
+    <title>Quizside - Førstehjælpeksperten</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -145,56 +156,56 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
                 <!------------ KATEGORI CARDS ------------>
                 <div id="menu-screen" class="kategori-cards px-4">
                     <div class="row g-4">
-                        <div class="col-6">
+                        <div class="col-6" style="cursor: pointer;">
                                 <div class="category-card text-center p-2" id="HLR_desk" data-quiz="data/data_hlr.json">
                                     <img src="img/icons/3d-icons/hlr.png" alt="Person der laver HLR" class="category-card-img">
                                     <p>HLR</p>
                                 </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-6" style="cursor: pointer;">
                             <div class="category-card text-center p-2" id="hjertestarter_desk" data-quiz="data/data_hlrhs.json"">
                                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>HLR med hjertestarter</p>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-6" style="cursor: pointer;">
                             <div class="category-card completed text-center p-2" id="drukning_desk">
                                 <img src="img/icons/3d-icons/drowning.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Drukning</p>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-6" style="cursor: pointer;">
                             <div class="category-card completed text-center p-2" id="forbinding_desk">
                                 <img src="img/icons/3d-icons/bleeding.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Forbinding</p>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-6" style="cursor: pointer;">
                             <div class="category-card completed text-center p-2" id="brandsar_desk">
                                 <img src="img/icons/3d-icons/burn-hand.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Brandsår</p>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-6" style="cursor: pointer;">
                             <div class="category-card completed text-center p-2" id="bilulykke_desk">
                                 <img src="img/icons/3d-icons/ulykke.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Bilulykke</p>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-6" style="cursor: pointer;">
                             <div class="category-card completed text-center p-2" id="kvalning_desk">
                                 <img src="img/icons/3d-icons/choking.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Kvælning</p>
                             </div>
                         </div>
 
-                        <div class="col-6 mb-5">
+                        <div class="col-6 mb-5" style="cursor: pointer;">
                             <div class="category-card completed text-center p-2" id="stroke_desk">
                                 <img src="img/icons/3d-icons/strokeperson.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>Stroke</p>

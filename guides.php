@@ -12,7 +12,7 @@ $id = $_GET["id"];
 <head>
     <meta charset="utf-8">
 
-    <title>guide - førstehjælpseksperten</title>
+    <title>Guide - førstehjælpseksperten</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -621,7 +621,7 @@ $id = $_GET["id"];
 
 
 
-    <script src="guides.js"></script>
+    <script src="func/guides.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

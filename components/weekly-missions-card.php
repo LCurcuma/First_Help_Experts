@@ -7,7 +7,7 @@
     <img src="img/ui/circle1.svg" class="weekly-circle weekly-c4" alt="Baggrunds element">
 
     <!-- Gør selve kortet klikbar -->
-    <a href="quiz.php?id=1" class="stretched-link"></a>
+    <a href="quiz.php?id=<?php echo $userData[0]->id ?>" class="stretched-link"></a>
 
     <!-- Top row -->
     <div class="d-flex justify-content-between align-items-start position-relative z-2">
@@ -38,9 +38,9 @@
         <!-- Opgaver fuldført -->
         <div class="d-flex justify-content-end">
             <div class="mb-1">
-                <span class="fw-semibold"><?php echo $userData[0]->finished_weekly_missions ?></span>
+                <span class="fw-semibold"><?php echo ($finishedMissionsAmount + 6) ?></span>
                 /
-                <span class="fw-normal">8</span> opgaver fuldført
+                <span class="fw-normal"><?php echo $allMissionsAmount ?></span> opgaver fuldført
             </div>
         </div>
 
@@ -48,10 +48,10 @@
         <div class="weekly-missions-progress-bg position-relative rounded-5">
 
             <!-- Selve progress baren -->
-            <div class="weekly-missions-progress-bar rounded-5" style="width: <?php echo $userData[0]->finished_weekly_missions/8*100?>%;"></div>
+            <div class="weekly-missions-progress-bar rounded-5" style="width: <?php echo (int)(($finishedMissionsAmount + 6) / $allMissionsAmount*100);?>%"></div>
 
             <!-- Procent tekst -->
-            <span class="weekly-missions-progress-text fw-light small opacity-50"><?php echo ($userData[0]->finished_weekly_missions / 8) * 100; ?>%</span>
+            <span class="weekly-missions-progress-text fw-light small opacity-50"><?php echo (int)(($finishedMissionsAmount + 6) / $allMissionsAmount*100); ?>%</span>
 
         </div>
 

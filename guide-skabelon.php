@@ -34,7 +34,7 @@ $id = $_GET["id"];
 <html lang="da">
 <head>
     <meta charset="utf-8">
-    <title><?php echo $guideTitel; ?></title>
+    <title><?php echo $guideTitel; ?> - Førstehjælpeksperten</title>
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
     <meta name="copyright" content="Information om copyright">
