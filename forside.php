@@ -50,11 +50,11 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
             //opdaterer data på side
             $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
             //gå til den samme side med success index
-            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&success=1");
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&successUser=1");
             exit();
         } else {
             //ellers gå till den samme side med error index
-            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&error=1");
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&errorUser=1");
             exit();
         }
     } else {
@@ -68,16 +68,16 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
         //opdaterer data på side
         $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
         //gå til den samme side med success index
-        header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&success=1");
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&successUser=1");
         exit();
     }}
 ?>
 
-<?php if (isset($_GET['success'])): ?>
+<?php if (isset($_GET['successUser'])): ?>
     <script>alert('Checked Ind!');</script>
 <?php endif; ?>
 
-<?php if (isset($_GET['error'])): ?>
+<?php if (isset($_GET['errorUser'])): ?>
     <script>alert('Du har allerede checked ind!');</script>
 <?php endif; ?>
 <!DOCTYPE html>
