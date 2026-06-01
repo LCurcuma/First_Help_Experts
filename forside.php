@@ -118,12 +118,13 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
 <!--------------- MOBIL LAYOUT -------------->
 <div class="d-lg-none">
 
-
     <!-- Velkommen tekst -->
     <div class="fp-container mt-5" data-aos="zoom-in">
 
         <div class="d-flex flex-row justify-content-between">
             <h1 class="fw-bold display-5 mb-2">Hej <?php echo $nameArray[0] ?>!</h1>
+
+            <!-- User profil -->
             <?php include "components/avatar_small.php" ?>
 
         </div>
