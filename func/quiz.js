@@ -99,14 +99,14 @@ function loadQuestions() {
         totalQuestionsText.innerText = myQuestions.length;
 
         if (activeCard) {
-            //activeCardIndex er id-attribute af activeCard
+
             activeCardIndex = activeCard.id;
-            //hvis den har _desk (for eksempel "HLR_desk"
+
             if(activeCardIndex.includes("_desk")) {
-                //fjern "_desk"
+
                 activeCardIndex = activeCardIndex.replace("_desk", "");
             }
-            //sender data om cardIndex til save_quiz.php
+
             fetch("save_quiz.php?id=" + userId, {
                 method: "POST",
                 headers: {
