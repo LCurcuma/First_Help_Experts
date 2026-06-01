@@ -15,6 +15,17 @@ $id = $_GET["id"];
 //tage data om bruger med den id
 $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 
+//hvis der er ikke nogle finished mission
+if(EMPTY($userData[0]->finished_missions_names)){
+    $finishedMissionsAmount = 0;
+    //hvis der er nogle finished missions
+} else {
+    //convertere til array og tage arrays størrelse
+    $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
+}
+
+$allMissionsAmount = 8;
+
 //når man laver withdraw (eller submitter formular)
 if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
 
@@ -46,6 +57,53 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
         exit();
     }
 }
+
+
+$add_points = 5;
+date_default_timezone_set("Europe/Copenhagen");
+$today = date("Y-m-d");
+
+if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
+    $pointsToAdd = (int) $_POST['add_points'];
+    $userId = (int) $_POST['user_id'];
+    $checkInDate = $_POST['check_in_date'];
+
+    $user = $db->sql("SELECT points, check_in_date FROM users WHERE id = '$userId'");
+    $currentPoints = (int) $user[0]->points;
+
+    if(!EMPTY($user[0]->check_in_date)){
+        $currentDate = $user[0]->check_in_date;
+        if($today !== $currentDate){
+            $newPoints = $currentPoints + $pointsToAdd;
+
+            //opdaterer database
+            $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+            $db->sql("UPDATE users SET check_in_date = '$today' WHERE id = '$userId'");
+
+            //opdaterer data på side
+            $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+            //gå til den samme side med success index
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&successUser=1");
+            exit();
+        } else {
+            //ellers gå till den samme side med error index
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&errorUser=1");
+            exit();
+        }
+    } else {
+        $currentDate = null;
+        $newPoints = $currentPoints + $pointsToAdd;
+
+        //opdaterer database
+        $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+        $db->sql("UPDATE users SET check_in_date = '$today' WHERE id = '$userId'");
+
+        //opdaterer data på side
+        $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+        //gå til den samme side med success index
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&successUser=1");
+        exit();
+    }}
 ?>
 <!-- hvis success, alerte Købt, ellers - Ikke nok -->
 <?php if (isset($_GET['success'])): ?>
@@ -54,6 +112,14 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
 
 <?php if (isset($_GET['error'])): ?>
     <script>alert('Ikke nok!');</script>
+<?php endif; ?>
+
+<?php if (isset($_GET['successUser'])): ?>
+    <script>alert('Checked Ind!');</script>
+<?php endif; ?>
+
+<?php if (isset($_GET['errorUser'])): ?>
+    <script>alert('Du har allerede checked ind!');</script>
 <?php endif; ?>
 
     <!DOCTYPE html>
@@ -92,7 +158,7 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
     <body>
     <!--MOBILE VERSION-->
     <div class="d-flex flex-column d-lg-none">
-        <a href="user.php?id=<?php echo $userData[0]->id?>" class="arrow_back_to_user">
+        <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back_to_user">
             <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
         </a>
         <?php include "components/money_container_shop.php"; ?>

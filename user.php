@@ -8,7 +8,73 @@ require "settings/init.php";
 $id = $_GET["id"];
 //tage data om bruger med den id
 $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+//hvis der er ikke nogle finished mission
+if(EMPTY($userData[0]->finished_missions_names)){
+    $finishedMissionsAmount = 0;
+    //hvis der er nogle finished missions
+} else {
+    //convertere til array og tage arrays størrelse
+    $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
+}
+
+$allMissionsAmount = 8;
+
+$add_points = 5;
+date_default_timezone_set("Europe/Copenhagen");
+$today = date("Y-m-d");
+
+if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
+    $pointsToAdd = (int) $_POST['add_points'];
+    $userId = (int) $_POST['user_id'];
+    $checkInDate = $_POST['check_in_date'];
+
+    $user = $db->sql("SELECT points, check_in_date FROM users WHERE id = '$userId'");
+    $currentPoints = (int) $user[0]->points;
+
+    if(!EMPTY($user[0]->check_in_date)){
+        $currentDate = $user[0]->check_in_date;
+        if($today !== $currentDate){
+            $newPoints = $currentPoints + $pointsToAdd;
+
+            //opdaterer database
+            $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+            $db->sql("UPDATE users SET check_in_date = '$today' WHERE id = '$userId'");
+
+            //opdaterer data på side
+            $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+            //gå til den samme side med success index
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&success=1");
+            exit();
+        } else {
+            //ellers gå till den samme side med error index
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&error=1");
+            exit();
+        }
+    } else {
+        $currentDate = null;
+        $newPoints = $currentPoints + $pointsToAdd;
+
+    //opdaterer database
+    $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+    $db->sql("UPDATE users SET check_in_date = '$today' WHERE id = '$userId'");
+
+    //opdaterer data på side
+    $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+    //gå til den samme side med success index
+    header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&success=1");
+    exit();
+    }}
+
+
 ?>
+
+<?php if (isset($_GET['success'])): ?>
+    <script>alert('Checked Ind!');</script>
+<?php endif; ?>
+
+<?php if (isset($_GET['error'])): ?>
+    <script>alert('Du har allerede checked ind!');</script>
+<?php endif; ?>
     <!DOCTYPE html>
     <html lang="da">
     <head>
@@ -44,7 +110,6 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
     </head>
 
     <body>
-
     <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
     <div class="top_container">
     <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back">
@@ -59,13 +124,45 @@ $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
     <?php include "components/score_container_user.php" ?>
     <!--container med links-->
     <section class="links_section">
-        <a href="#" class="link_tile" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
+<?php if(!EMPTY($userData[0]->check_in_date)){
+$currentDate = $userData[0]->check_in_date;
+if($today !== $currentDate){
+    echo '<form method="post" class="form_tile">
+                <input type="hidden" name="add_points" value="'.$add_points.'">
+                <input type="hidden" name="check_in_date" value="'.$today.'">
+                <input type="hidden" name="user_id" value="'.$userData[0]->id.'">
+            <button class="link-tile_check" type="submit" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
             <h2 class="h2_bold">Check ind</h2>
             <div class="plus_money">
                 <h2 class="plus_number">+5</h2>
                 <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
             </div>
-        </a>
+            </button>
+        </form>';
+}else{
+    echo '<div class="link_tile" style="background: linear-gradient(180deg, #cdc9d5 0%, #98949e 100%);">
+            <h2 class="h2_bold">Næste check ind er i morgen</h2>
+            <div class="plus_money">
+                <h2 class="plus_number">+5</h2>
+                <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
+            </div>
+            </div>
+';
+}}else{
+    echo '<form method="post" class="form_tile">
+                <input type="hidden" name="add_points" value="'.$add_points.'">
+                <input type="hidden" name="check_in_date" value="'.$today.'">
+                <input type="hidden" name="user_id" value="'.$userData[0]->id.'">
+            <button class="link_tile_check" type="submit" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
+            <h2 class="h2_bold">Check ind</h2>
+            <div class="plus_money">
+                <h2 class="plus_number">+5</h2>
+                <img src="img/icons/3d-icons/money.png" class="money_plus_image" alt="Points">
+            </div>
+            </button>
+        </form>';
+}?>
+
         <a href="shop.php?id=<?php echo $userData[0]->id?>" class="link_tile" style="background: linear-gradient(180deg, #fcc260 0%, #daa953 100%);">
             <div>
                 <h2 class="h2_bold">Point shop</h2>

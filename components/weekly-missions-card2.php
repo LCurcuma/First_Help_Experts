@@ -11,24 +11,24 @@
 
         <div>
             <div class="fw-lighter mb-1">Ugens mission</div>
-            <div class="fw-semibold fs-3">Tag 3 quizzer<br>denne uge</div>
+            <div class="fw-semibold fs-3">Tag <?php echo $allMissionsAmount ?> quizzer<br>denne uge</div>
         </div>
 
         <div class="w-100 mb-1">
 
             <div class="d-flex justify-content-end">
                 <div class="mb-1">
-                    <span class="fw-semibold"><?php echo $userData[0]->finished_weekly_missions ?></span>
+                    <span class="fw-semibold"><?php echo ($finishedMissionsAmount + 6) ?></span>
                     /
-                    <span class="fw-normal">5</span>
+                    <span class="fw-normal"><?php echo $allMissionsAmount ?></span>
                 </div>
             </div>
 
             <div class="weekly-missions-progress-bg position-relative rounded-5">
 
-                <div class="weekly-missions-progress-bar rounded-5" style="width: <?php echo $userData[0]->finished_weekly_missions/5*100?>%;"></div>
+                <div class="weekly-missions-progress-bar rounded-5" style="width: <?php echo (int)(($finishedMissionsAmount + 6) / $allMissionsAmount*100);?>%"></div>
 
-                <span class="weekly-missions-progress-text fw-light small opacity-50"><?php echo ($userData[0]->finished_weekly_missions / 5) * 100; ?>%</span>
+                <span class="weekly-missions-progress-text fw-light small opacity-50"><?php echo (int)(($finishedMissionsAmount + 6) / $allMissionsAmount*100); ?>%</span>
 
             </div>
 

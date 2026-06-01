@@ -13,7 +13,73 @@ $id = $_GET["id"];
 $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
 //tage navn som string og lave array, som eksemplevis ["Laura", "Larsen"]
 $nameArray = explode(" ", $userData[0]->name);
+
+//hvis der er ikke nogle finished mission
+if(EMPTY($userData[0]->finished_missions_names)){
+    $finishedMissionsAmount = 0;
+    //hvis der er nogle finished missions
+} else {
+    //convertere til array og tage arrays størrelse
+    $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
+}
+
+$allMissionsAmount = 8;
+
+
+$add_points = 5;
+date_default_timezone_set("Europe/Copenhagen");
+$today = date("Y-m-d");
+
+if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
+    $pointsToAdd = (int) $_POST['add_points'];
+    $userId = (int) $_POST['user_id'];
+    $checkInDate = $_POST['check_in_date'];
+
+    $user = $db->sql("SELECT points, check_in_date FROM users WHERE id = '$userId'");
+    $currentPoints = (int) $user[0]->points;
+
+    if(!EMPTY($user[0]->check_in_date)){
+        $currentDate = $user[0]->check_in_date;
+        if($today !== $currentDate){
+            $newPoints = $currentPoints + $pointsToAdd;
+
+            //opdaterer database
+            $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+            $db->sql("UPDATE users SET check_in_date = '$today' WHERE id = '$userId'");
+
+            //opdaterer data på side
+            $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+            //gå til den samme side med success index
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&successUser=1");
+            exit();
+        } else {
+            //ellers gå till den samme side med error index
+            header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&errorUser=1");
+            exit();
+        }
+    } else {
+        $currentDate = null;
+        $newPoints = $currentPoints + $pointsToAdd;
+
+        //opdaterer database
+        $db->sql("UPDATE users SET points = '$newPoints' WHERE id = '$userId'");
+        $db->sql("UPDATE users SET check_in_date = '$today' WHERE id = '$userId'");
+
+        //opdaterer data på side
+        $userData = $db->sql("SELECT * FROM users WHERE id = '$id'");
+        //gå til den samme side med success index
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&successUser=1");
+        exit();
+    }}
 ?>
+
+<?php if (isset($_GET['successUser'])): ?>
+    <script>alert('Checked Ind!');</script>
+<?php endif; ?>
+
+<?php if (isset($_GET['errorUser'])): ?>
+    <script>alert('Du har allerede checked ind!');</script>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="da">
 <head>
@@ -158,7 +224,7 @@ $nameArray = explode(" ", $userData[0]->name);
 
 
 <!-------------- DESKTOP LAYOUT ------------->
-<div class="d-none d-lg-block container mt-5">
+<div class="d-none d-lg-block container mt-5" >
 
     <!-- Desktop grid layout -->
     <div class="row g-5">
@@ -167,7 +233,7 @@ $nameArray = explode(" ", $userData[0]->name);
         <div class="col-8 ">
 
             <!-- Velkomst tekst -->
-            <div class="mb-4">
+            <div class="mb-4" data-aos="zoom-in">
 
                 <h1 class="fw-bold display-4 mb-2">Hej <?php echo $nameArray[0] ?>!</h1>
 
@@ -176,7 +242,7 @@ $nameArray = explode(" ", $userData[0]->name);
             </div>
 
             <!-- Grid med action cards -->
-            <div class="row g-3">
+            <div class="row g-3" data-aos="zoom-in">
 
                 <!-- Card: Start quiz -->
                 <div class="col-6">
@@ -238,7 +304,7 @@ $nameArray = explode(" ", $userData[0]->name);
             </div>
 
             <!-- Nyheder section -->
-            <div class="mt-5 mb-5">
+            <div class="mt-5 mb-5" data-aos="zoom-in">
 
                 <!-- Nyheder overskrift -->
                 <h2 class="text-start fw-bold mb-4 fp-news-heading">NYHEDER</h2>
@@ -253,49 +319,13 @@ $nameArray = explode(" ", $userData[0]->name);
 
         </div>
 
-        <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
-        <div class="col col-4 user_section">
-            <div class="top_container">
-                <!--the container with points-->
-                <?php include "components/money_container.php" ?>
-            </div>
-            <!--the avatar container-->
-            <?php include "components/avatar.php" ?>
-            <!--the score container-->
-            <?php include "components/score_container_user.php" ?>
-            <!--container med links-->
-            <section class="links_section_desk">
-                <a href="#" class="link_tile_desk" style="background: #826099;" onclick="alert('Funktion kommer snart')">
-                    <h2 class="h2_bold">Check ind</h2>
-                    <div class="plus_money_desk">
-                        <h2>+5</h2>
-                        <img src="img/icons/3d-icons/money.png" class="money_plus_image_desk" alt="Points">
-                    </div>
-                </a>
-                <a href="shop.php?id=<?php echo $id?>" class="link_tile_desk" style="background: #88DB95;">
-                    <div>
-                        <h2 class="h2_bold">Point shop</h2>
-                        <p>350 tilgængelige rewards</p>
-                    </div>
-                    <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
-                </a>
-                <a href="#" class="link_tile_desk" style="background: linear-gradient(180deg, #F5A623 0%, #DE951C 100%);" onclick="alert('Funktion kommer snart')">
-                    <div>
-                        <h2 class="h2_bold">Din førstehjælps<br/>bevis</h2>
-                        <p>Gyldig til <span>12.04.2026</span></p>
-                    </div>
-                    <img src="img/icons/3d-icons/checkmark2.png" class="money_image_big" alt="Check">
-                </a>
-            </section>
-
-            <a href="index.php" class="logout">Log ud</a>
+        <!-- USER SECTION.PHP COMPONENTS -->
+        <div class="col col-4 user_section" data-aos="zoom-in">
+            <?php include "components/user_section.php"; ?>
         </div>
-        <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
 
-
-
-
-
+    </div>
+</div>
 <!-------------- DESKTOP LAYOUT ------------->
 
 
