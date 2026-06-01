@@ -17,23 +17,36 @@ if(EMPTY($userData[0]->finished_missions_names)){
     $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
 }
 
+//alle missioner
 $allMissionsAmount = 8;
-
+//points, som skal tilføjes
 $add_points = 5;
+//tid fra Danmark
 date_default_timezone_set("Europe/Copenhagen");
+//i dag i format År-Måned-Dag
 $today = date("Y-m-d");
 
+//hvis point og check in date er ikke tome
 if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
+    //convertere points til nummer
     $pointsToAdd = (int) $_POST['add_points'];
+    //convertere id til nummer
     $userId = (int) $_POST['user_id'];
+    //tage den sidste check ind date
     $checkInDate = $_POST['check_in_date'];
 
+    //tage data om points og check ind date fra database
     $user = $db->sql("SELECT points, check_in_date FROM users WHERE id = '$userId'");
+    //convertere points til nummer
     $currentPoints = (int) $user[0]->points;
 
+    //hvis check ind date er ikke tomt
     if(!EMPTY($user[0]->check_in_date)){
+        //tage den sidste checked in date
         $currentDate = $user[0]->check_in_date;
+        //hvis man checked ind ikke i dag
         if($today !== $currentDate){
+            //tilføje points
             $newPoints = $currentPoints + $pointsToAdd;
 
             //opdaterer database
@@ -50,8 +63,11 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
             header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&error=1");
             exit();
         }
+        //hvis date er tomt
     } else {
+        //date er null (så der kommer ikke fejl med currentDate
         $currentDate = null;
+        //tilføje points
         $newPoints = $currentPoints + $pointsToAdd;
 
     //opdaterer database
@@ -68,10 +84,11 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
 
 ?>
 
+<!--Hvis link har success, altså bruger checked ind-->
 <?php if (isset($_GET['success'])): ?>
     <script>alert('Checked Ind!');</script>
 <?php endif; ?>
-
+<!--Hvis link har error, for eksempel bruger prøver at checke ind igen-->
 <?php if (isset($_GET['error'])): ?>
     <script>alert('Du har allerede checked ind!');</script>
 <?php endif; ?>
@@ -112,7 +129,9 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     <body>
     <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
     <div class="top_container">
+        <!--Tilbage knap-->
     <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back">
+        <!--Pil-->
         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
     </a>
         <!--the container with points-->
@@ -124,9 +143,13 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     <?php include "components/score_container_user.php" ?>
     <!--container med links-->
     <section class="links_section">
+        <!--Hvis date er ikke tomt-->
 <?php if(!EMPTY($userData[0]->check_in_date)){
+    //tage den sidste check ind date fra database
 $currentDate = $userData[0]->check_in_date;
+//hvis man checked ikke ind i dag
 if($today !== $currentDate){
+    //vise form knap, som checker ind
     echo '<form method="post" class="form_tile">
                 <input type="hidden" name="add_points" value="'.$add_points.'">
                 <input type="hidden" name="check_in_date" value="'.$today.'">
@@ -139,6 +162,7 @@ if($today !== $currentDate){
             </div>
             </button>
         </form>';
+    //hvis man er allerede checked ind, viser kontainer med info, at bruger er checked ind
 }else{
     echo '<div class="link_tile" style="background: linear-gradient(180deg, #cdc9d5 0%, #98949e 100%);">
             <h2 class="h2_bold">Næste check ind er i morgen</h2>
@@ -148,6 +172,7 @@ if($today !== $currentDate){
             </div>
             </div>
 ';
+    //hvis date er tomt, viser form, som checker brugeren ind
 }}else{
     echo '<form method="post" class="form_tile">
                 <input type="hidden" name="add_points" value="'.$add_points.'">
@@ -162,7 +187,7 @@ if($today !== $currentDate){
             </button>
         </form>';
 }?>
-
+        <!--Link til shop side-->
         <a href="shop.php?id=<?php echo $userData[0]->id?>" class="link_tile" style="background: linear-gradient(180deg, #fcc260 0%, #daa953 100%);">
             <div>
                 <h2 class="h2_bold">Point shop</h2>
@@ -170,6 +195,7 @@ if($today !== $currentDate){
             </div>
                 <img src="img/icons/3d-icons/money.png" class="money_image_big" alt="Points">
         </a>
+        <!--Din førstehjælpsbevis knap-->
         <a href="#" class="link_tile" style="background: linear-gradient(180deg, #77e37d 0%, #46b14c 100%);">
             <div>
                 <h2 class="h2_bold_mobile_small">Din første<br/>hjælps<br/>bevis</h2>
@@ -179,7 +205,7 @@ if($today !== $currentDate){
             <img src="img/icons/3d-icons/checkmark2.png" class="money_image_big" alt="Check">
         </a>
     </section>
-
+<!--Log ud knap-->
     <a href="index.php" class="logout">Log ud</a>
 
     <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
