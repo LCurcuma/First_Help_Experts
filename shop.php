@@ -24,6 +24,7 @@ if(EMPTY($userData[0]->finished_missions_names)){
     $finishedMissionsAmount = sizeof(explode(" ",$userData[0]->finished_missions_names));
 }
 
+//alle missioner
 $allMissionsAmount = 8;
 
 //når man laver withdraw (eller submitter formular)
@@ -58,22 +59,34 @@ if (!empty($_POST['withdraw_points']) && !empty($_POST['user_id'])) {
     }
 }
 
-
+//tilføje points
 $add_points = 5;
+//tage tid, som er nu i Danmark
 date_default_timezone_set("Europe/Copenhagen");
+//tage date i År-Måned-Dag format
 $today = date("Y-m-d");
 
+//hvis points og date er ikke tome
 if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
+    //convertere points til nummer
     $pointsToAdd = (int) $_POST['add_points'];
+    //convertere id til nummer
     $userId = (int) $_POST['user_id'];
+    //tage date
     $checkInDate = $_POST['check_in_date'];
 
+    //tage data om points og sidste check ind date fra database
     $user = $db->sql("SELECT points, check_in_date FROM users WHERE id = '$userId'");
+    //convertere points til nummer
     $currentPoints = (int) $user[0]->points;
 
+    //hvis date er ikke tomt
     if(!EMPTY($user[0]->check_in_date)){
+        //tage dag, når man checked ind sidste gang
         $currentDate = $user[0]->check_in_date;
+        //hvi man er ikke checked ind i dag
         if($today !== $currentDate){
+            //tilføje points
             $newPoints = $currentPoints + $pointsToAdd;
 
             //opdaterer database
@@ -90,8 +103,11 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
             header("Location: " . $_SERVER['PHP_SELF'] . "?id=".$userData[0]->id."&errorUser=1");
             exit();
         }
+        //hvis date er tomt
     } else {
+        //date er null (ellers der bliver error, fordi date er undefined)
         $currentDate = null;
+        //tilføje points
         $newPoints = $currentPoints + $pointsToAdd;
 
         //opdaterer database
@@ -114,6 +130,7 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     <script>alert('Ikke nok!');</script>
 <?php endif; ?>
 
+<!-- Hvis man checked ind - der kommer alert "Checked ind". Ellers - "Du har allerede checked ind") -->
 <?php if (isset($_GET['successUser'])): ?>
     <script>alert('Checked Ind!');</script>
 <?php endif; ?>
@@ -158,10 +175,14 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     <body>
     <!--MOBILE VERSION-->
     <div class="d-flex flex-column d-lg-none">
+        <!--Tilbage knap-->
         <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back_to_user">
+            <!--Pil-->
             <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
         </a>
+        <!--Points container-->
         <?php include "components/money_container_shop.php"; ?>
+        <!--Cards-->
         <div class="cards_container">
         <?php
         //loop for at lave cards, som har data fra json fil
@@ -184,10 +205,14 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     <div class="d-none flex-column d-lg-block">
         <div class="container">
             <div class="row w-100">
+                <!--Shop container-->
                 <div class="col col-8 shop_column">
+                    <!--Tilbage knap-->
                     <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back_to_user">
+                        <!--Pil-->
                         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
                     </a>
+                    <!--Cards-->
                     <div class="cards_container">
                         <?php
                         //loop for at lave cards, som har data fra json fil
@@ -206,15 +231,15 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
                     </div>
                 </div>
 
-                <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
+                <!--User section-->
                 <div class="col col-4 user_section">
                     <?php include "components/user_section.php"; ?>
                 </div>
-                <!--USER SECTION DESKTOP, SOM KAN GENNEMBRUGES-->
             </div>
         </div>
     </div>
 
+    <!--Alle modals til cards-->
     <?php
     //loop for at lave cards, som har data fra json fil
     foreach($data as $card) {
