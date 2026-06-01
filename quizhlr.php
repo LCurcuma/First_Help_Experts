@@ -41,7 +41,7 @@ if(!EMPTY($oldMissions)){
 <head>
     <meta charset="utf-8">
 
-    <title>Quiz HLR</title>
+    <title>Quiz HLR - Førstehjælpeksperten</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
