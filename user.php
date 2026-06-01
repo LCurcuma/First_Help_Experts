@@ -131,7 +131,7 @@ if($today !== $currentDate){
                 <input type="hidden" name="add_points" value="'.$add_points.'">
                 <input type="hidden" name="check_in_date" value="'.$today.'">
                 <input type="hidden" name="user_id" value="'.$userData[0]->id.'">
-            <button class="link-tile_check" type="submit" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
+            <button class="link_tile_check" type="submit" style="background: linear-gradient(180deg, #b68ed1 0%, #826099 100%);">
             <h2 class="h2_bold">Check ind</h2>
             <div class="plus_money">
                 <h2 class="plus_number">+5</h2>
