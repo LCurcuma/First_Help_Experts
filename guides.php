@@ -72,7 +72,7 @@ $id = $_GET["id"];
     <div class="col-4 px-1">
         <div class="data-card bg-data-violet cursor-pointer-p" data-bs-toggle="modal" data-bs-target="#infoModalMobil" data-title="ABC" data-text="👄 A – Airway&#10;Sørg for frie luftveje.&#10;&#10;💨 B – Breathing&#10;Tjek om personen trækker vejret normalt.&#10;&#10;❤️ C – Circulation&#10;Undersøg blodcirkulation og stop kraftige blødninger.">
             <div class="card-image-wrapper">
-                <img src="img/icons/3d-icons/oxygen mask.png" alt="ABC">
+                <img src="img/icons/3d-icons/oxygen_mask.png" alt="ABC">
             </div>
             <div class="card-text-wrapper">
                 <span>ABC</span>
@@ -270,11 +270,11 @@ $id = $_GET["id"];
 
                             <div class="data-card bg-data-violet desktop-info-trigger"
                                  data-title="ABC"
-                                 data-image="img/icons/3d-icons/oxygen mask.png"
+                                 data-image="img/icons/3d-icons/oxygen_mask.png"
                                  data-text="👄 A – Airway&#10;Sørg for frie luftveje.&#10;&#10;💨 B – Breathing&#10;Tjek om personen trækker vejret normalt.&#10;&#10;❤️ C – Circulation&#10;Undersøg blodcirkulation og stop kraftige blødninger.">
 
                                 <div class="card-image-wrapper">
-                                    <img src="img/icons/3d-icons/oxygen mask.png" alt="">
+                                    <img src="img/icons/3d-icons/oxygen_mask.png" alt="Oxygen mask icon">
                                 </div>
 
                                 <div class="card-text-wrapper">
@@ -314,7 +314,7 @@ $id = $_GET["id"];
 
                         <div class="col-6" style="flex 0 0 50% !important; max-width: 50% !important; width: 50% !important; padding-left: 8px !important; padding-right: 8px !important;">
 
-                            <div class="guide-card guide-card-green guide-trigger" = "width: 100% !important; min-width: 100% !important;"
+                            <div class="guide-card guide-card-green guide-trigger" style="width: 100% !important; min-width: 100% !important;"
                                  data-guide="hlr-guide.php?id=<?php echo $id; ?>" data-guide-key="hlr">
 
                                 <div class="guide-image-wrapper">
