@@ -164,7 +164,7 @@ $allMissionsAmount = 8;
                         </div>
 
                         <div class="col-6" style="cursor: pointer;">
-                            <div class="category-card text-center p-2" id="hjertestarter_desk" data-quiz="data/data_hlrhs.json"">
+                            <div class="category-card text-center p-2" id="hjertestarter_desk" data-quiz="data/data_hlrhs.json">
                                 <img src="img/icons/3d-icons/defibrillator.png" alt="Person der laver HLR" class="category-card-img">
                                 <p>HLR med hjertestarter</p>
                             </div>
