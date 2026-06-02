@@ -28,6 +28,8 @@ $id = $_GET["id"];
     <!-- Bootstraps ikoner -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- AOS - Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Favicon: https://favicon.io/favicon-converter/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/logo/favicon/apple-touch-icon.png">
@@ -43,7 +45,7 @@ $id = $_GET["id"];
 <div class="d-flex justify-content-center d-lg-none">
     <div class="phone-container">
 
-        <div class="row mb-3">
+        <div class="row mb-3" >
             <div class="col-12">
                 <!--Hvis man kommer via AKUT ADGANG, så tilbage er index.php-->
                 <?php if($id === "0"){
@@ -55,7 +57,7 @@ $id = $_GET["id"];
             </div>
         </div>
 
-        <div class="row g-0 mb-4">
+        <div class="row g-0 mb-4" data-aos="zoom-in">
             <div class="col-4 px-1">
         <div class="data-card bg-data-salmon cursor-pointer-p" data-bs-toggle="modal" data-bs-target="#infoModalMobil" data-title="DE 4 H'ER" data-text="🚨 Skab sikkerhed&#10;Sørg for, at ulykken ikke bliver værre – og pas på dig selv først.&#10;&#10;👀 Vurder personen&#10;Tjek om personen er ved bevidsthed og reagerer.&#10;&#10;📞 Tilkald hjælp&#10;Ring 1-1-2 hvis ingen andre allerede har gjort det.&#10;&#10;🩹 Giv førstehjælp&#10;Hjælp personen efter situationen, indtil hjælpen kommer.">
             <div class="card-image-wrapper">
@@ -92,7 +94,7 @@ $id = $_GET["id"];
 </div>
 
 
-    <div class="row g-3">
+    <div class="row g-3" data-aos="zoom-in">
 
         <div class="col-6">
             <a href="hlr-guide.php?id=<?php echo $id?>" class="text-decoration-none">
@@ -243,7 +245,7 @@ $id = $_GET["id"];
                 <div class="col-6">
 
                     <!-- INFO CARDS -->
-                    <div class="row g-0 mb-4">
+                    <div class="row g-0 mb-4" data-aos="zoom-in">
 
                         <div class="col-4 px-1">
 
@@ -308,7 +310,7 @@ $id = $_GET["id"];
 
                     <!-- GUIDE CARDS -->
 
-                    <div class="row g-3">
+                    <div class="row g-3" data-aos="zoom-in">
 
                         <div class="col-6" style="flex 0 0 50% !important; max-width: 50% !important; width: 50% !important; padding-left: 8px !important; padding-right: 8px !important;">
 
@@ -492,7 +494,7 @@ $id = $_GET["id"];
                 <!-- HØJRE SIDE -->
                 <!-- ========================= -->
 
-                <div class="col-6">
+                <div class="col-6" data-aos="zoom-in">
 
                     <!-- OVERLAY -->
                     <div id="desktop-overlay-p"
@@ -621,7 +623,16 @@ $id = $_GET["id"];
 
 
 
-    <script src="func/guides.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="func/guides.js"></script>
+
+<!------------ Bootstrap library ------------>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--------------- AOS LIBRARY --------------->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </body>
 </html>
