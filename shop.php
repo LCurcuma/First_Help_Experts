@@ -183,7 +183,7 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
         <!--Points container-->
         <?php include "components/money_container_shop.php"; ?>
         <!--Cards-->
-        <div class="cards_container">
+        <div class="cards_container" data-aos="zoom-in">
         <?php
         //loop for at lave cards, som har data fra json fil
         foreach($data as $card) {
@@ -202,7 +202,7 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
     </div>
 
     <!--DESKTOP VERSION-->
-    <div class="d-none flex-column d-lg-block">
+    <div class="d-none flex-column d-lg-block" >
         <div class="container">
             <div class="row w-100">
                 <!--Shop container-->
@@ -213,7 +213,7 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
                         <i class="fa-solid fa-chevron-left" style="color: rgb(0, 0, 0);"></i>
                     </a>
                     <!--Cards-->
-                    <div class="cards_container">
+                    <div class="cards_container" data-aos="zoom-in">
                         <?php
                         //loop for at lave cards, som har data fra json fil
                         foreach($data as $card) {
@@ -232,7 +232,7 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
                 </div>
 
                 <!--User section-->
-                <div class="col col-4 user_section">
+                <div class="col col-4 user_section" data-aos="zoom-in">
                     <?php include "components/user_section.php"; ?>
                 </div>
             </div>
