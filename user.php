@@ -126,8 +126,7 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
         <script src="https://kit.fontawesome.com/737b386bab.js" crossorigin="anonymous"></script>
     </head>
 
-    <body>
-    <!--DEN KAN TILFØJES TIL FORSIDE DESKTOP VERSION!!!!! BARE FJERN PILE-->
+    <body data-aos="zoom-in">
     <div class="top_container">
         <!--Tilbage knap-->
     <a href="forside.php?id=<?php echo $userData[0]->id?>" class="arrow_back">
