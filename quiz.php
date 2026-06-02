@@ -61,7 +61,7 @@ $allMissionsAmount = 8;
 
 <!------------ UGENS MISSION CARD ------------>
 
-<div class="d-flex justify-content-center align-items-center fp-container mt-2 mb-5 d-lg-none">
+<div class="d-flex justify-content-center align-items-center fp-container mt-2 mb-5 d-lg-none" data-aos="zoom-in">
     <?php include 'components/weekly-missions-card2.php';?>
 </div>
 
@@ -70,7 +70,7 @@ $allMissionsAmount = 8;
 
 
 <!------------ KATEGORI CARDS ------------>
-<div class="px-4 d-flex flex-column d-lg-none">
+<div class="px-4 d-flex flex-column d-lg-none" data-aos="zoom-in">
     <div class="row g-4">
         <div id="menu-screen" class="col-6">
             <a href="quizhlr.php?id=<?php echo $id?>&quiz_id=HLR" class="text-decoration-none text-reset">
@@ -145,7 +145,7 @@ $allMissionsAmount = 8;
         <div class="row">
 
             <!------------ UGENS MISSION CARD ------------>
-            <div class="col col-6 cate-colone">
+            <div class="col col-6 cate-colone" data-aos="zoom-in">
 
                 <div class="d-flex justify-content-center align-items-center fp-container mt-2 mb-5 ">
                     <?php include 'components/weekly-missions-card2.php';?>
@@ -154,7 +154,7 @@ $allMissionsAmount = 8;
                 <!------------ UGENS MISSION CARD ------------>
 
                 <!------------ KATEGORI CARDS ------------>
-                <div id="menu-screen" class="kategori-cards px-4">
+                <div id="menu-screen" class="kategori-cards px-4" data-aos="zoom-in">
                     <div class="row g-4">
                         <div class="col-6" style="cursor: pointer;">
                                 <div class="category-card text-center p-2" id="HLR_desk" data-quiz="data/data_hlr.json">
@@ -221,7 +221,7 @@ $allMissionsAmount = 8;
             <div class="col col-6 quiz-colone">
 
                 <!------------ PLACEHOLDER ------------>
-                <div id="desktop-placeholder" class="d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 50%;">
+                <div id="desktop-placeholder" class="d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 50%;" data-aos="zoom-in">
                     <p class="placeholder-overskrift">Vælg en kategori og start quizzen!</p>
                     <p class="placeholder-underrubrik">Test din vide og se hvad du kan.</p>
                 </div>
@@ -295,6 +295,13 @@ $allMissionsAmount = 8;
 </script>
 <!------------ Bootstrap library ------------>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--------------- AOS LIBRARY --------------->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </body>
 </html>
 
