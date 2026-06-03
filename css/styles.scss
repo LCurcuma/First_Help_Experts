@@ -245,8 +245,9 @@ body {
 
 //------------ (INDEX) WAVE -----------//
 .login-wave {
-  position: absolute;
-  bottom: -15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
   margin-bottom: -15px;
   left: 0;
   z-index: 2;

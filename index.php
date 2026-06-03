@@ -132,9 +132,6 @@ require "func/login.php";
     </div>
 </body>
 
-
-<img src="img/ui/wave.svg" class="login-wave" alt="Wave UI element i bunden af skærmen">
-
 <!-- Login modalL -->
 <div class="modal fade" id="loginModal" tabindex="-1">
 
