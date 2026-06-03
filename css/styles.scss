@@ -247,6 +247,7 @@ body {
 .login-wave {
   position: absolute;
   bottom: -15px;
+  margin-bottom: -15px;
   left: 0;
   z-index: 2;
 
@@ -254,6 +255,7 @@ body {
 
   @include media-breakpoint-up(mg) {
     bottom: -55px;
+    margin-bottom: -55px;
   }
 
   @include media-breakpoint-up(lg) {
@@ -264,6 +266,7 @@ body {
 
   @include media-breakpoint-up(xl) {
     bottom: -20px;
+    margin-bottom: -20px;
 
     width: 100%;
     transform: scaleY(0.4);
