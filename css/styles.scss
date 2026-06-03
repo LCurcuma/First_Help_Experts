@@ -245,6 +245,7 @@ body {
 
 //------------ (INDEX) WAVE -----------//
 .login-wave {
+  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -255,17 +256,20 @@ body {
   transition: 0.2s ease-in-out;
 
   @include media-breakpoint-up(mg) {
+    display: none;
     bottom: -55px;
     margin-bottom: -55px;
   }
 
   @include media-breakpoint-up(lg) {
+    display: block;
     width: 100%;
     transform: scaleY(0.8);
     transform-origin: bottom;
   }
 
   @include media-breakpoint-up(xl) {
+    display: block;
     bottom: -20px;
     margin-bottom: -20px;
 
