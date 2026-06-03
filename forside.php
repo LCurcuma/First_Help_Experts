@@ -195,14 +195,6 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
 
                     <p class="fp-card-subtitle">Svar på dagens <br> spørgsmål</p>
 
-                    <div class="d-flex align-items-center">
-
-                        <span class="fw-medium fs-6">+10</span>
-
-                        <img src="img/icons/3d-icons/money.png" alt="Mønt ikon" class="ms-1 fp-small-coin">
-
-                    </div>
-
                     <img src="img/icons/3d-icons/questionmarks.png" alt="Mission ikon" class="fp-card-icon">
 
                 </a>
@@ -307,15 +299,6 @@ if (!empty($_POST['add_points']) && !empty($_POST['check_in_date'])) {
                         <h2 class="fw-semibold fs-4 mb-1">Dagens mission</h2>
 
                         <p class="fp-card-subtitle">Svar på dagens <br> spørgsmål</p>
-
-                        <!-- Point reward -->
-                        <div class="d-flex align-items-center">
-
-                            <span class="fw-medium fs-5">+10</span>
-
-                            <img src="img/icons/3d-icons/money.png" alt="Mønt ikon" class="ms-1 fp-small-coin">
-
-                        </div>
 
                         <img src="img/icons/3d-icons/questionmarks.png" alt="Mission ikon" class="fp-card-icon">
 
